@@ -1281,5 +1281,5 @@ export default function HackOrbitLanding() {
             transform: translateY(0);
           }
         `}</style>
-      </div>\
+      </div>
     </>
