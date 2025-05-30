@@ -879,13 +879,13 @@ export default function HackOrbitLanding() {
                   name: "DLG GROUP",
                   color: "blue",
                   role: "TITLE SPONSOR",
-                  desc: "Digital Learning Group - Premier Tech Community"
+                  desc: "Digital Learning Group - Premier Tech Community",
                 },
                 {
                   name: "MITS GWALIOR",
                   color: "purple",
                   role: "ACADEMIC PARTNER",
-                  desc: "Madhav Institute of Technology & Science"
+                  desc: "Madhav Institute of Technology & Science",
                 },
               ].map((sponsor, index) => (
                 <Card
@@ -1142,11 +1142,14 @@ export default function HackOrbitLanding() {
                   title: "CONTACT",
                   items: ["MITS GWALIOR", "dlg@mitsgwalior.in", "+91 XXXXX XXXXX"],
                 },
-                { title: "COMMUNITY", items: [
-                  { name: "DISCORD", icon: MessageCircle },
-                  { name: "INSTAGRAM", icon: Instagram }, 
-                  { name: "WHATSAPP", icon: Phone }
-                ] },
+                {
+                  title: "COMMUNITY",
+                  items: [
+                    { name: "DISCORD", icon: MessageCircle },
+                    { name: "INSTAGRAM", icon: Instagram },
+                    { name: "WHATSAPP", icon: Phone },
+                  ],
+                },
               ].map((section, index) => (
                 <div key={section.title}>
                   <h3 className="text-blue-300 font-semibold mb-4 font-mono">{section.title}</h3>
@@ -1283,3 +1286,5 @@ export default function HackOrbitLanding() {
         `}</style>
       </div>
     </>
+  )
+}
