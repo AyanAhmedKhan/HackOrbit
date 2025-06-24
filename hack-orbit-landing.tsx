@@ -1234,7 +1234,7 @@ export default function HackOrbitLanding() {
                   portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/",
                 },
                 {
-                  row: 2,
+                  row: 3,
                   name: "Prashant Pippal",
                   role: "MARKETING HEAD",
                   organization: "DLG GROUP",
