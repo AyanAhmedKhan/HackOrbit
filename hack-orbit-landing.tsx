@@ -1172,7 +1172,7 @@ export default function HackOrbitLanding() {
         {/* Organizing Committee Section */}
         {/* Organizing Committee Section */}
 {/* Organizing Committee Section */}
-<section id="team" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
+<section id="team" className="overflow-x-hidden py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
   <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 backdrop-blur-3xl"></div>
   <div className="max-w-7xl mx-auto text-center relative">
     <h2 className="text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
@@ -1185,13 +1185,13 @@ export default function HackOrbitLanding() {
     {(() => {
       const teamMembers = [
         { row: 1, name: "Dr. Punit Kumar Johari", role: "COORDINATOR", organization: "DLG GROUP", color: "purple", icon: Rocket, imageUrl: "https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg", portfolioUrl: "https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/" },
-        { row: 2, name: "Shiv Shrivastava", role: "PRESIDENT", organization: "DLG GROUP", color: "blue", icon: Users, imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQHKgRv1IDAVtg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706464098389?e=1755734400&v=beta&t=WIRTKOaoVMqykrVfAXOy4ZG02vomSSscXkdbfzjJ_Dc", portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/" },
+        { row: 2, name: "Shiv Shrivastava", role: "PRESIDENT", organization: "DLG GROUP", color: "blue", icon: Users, imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQHKgRv1IDAVtg/profile-displayphoto-shrink_800_800/0/1706464098389?e=1755734400&v=beta&t=WIRTKOaoVMqykrVfAXOy4ZG02vomSSscXkdbfzjJ_Dc", portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/" },
         { row: 2, name: "Pooja Bhagel", role: "VICE PRESIDENT", organization: "DLG GROUP", color: "indigo", icon: Award, imageUrl: "https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg", portfolioUrl: "https://www.linkedin.com/in/pooja-baghel-6a8913251/" },
         { row: 2, name: "Tanmay Garg", role: "MANAGEMENT HEAD", organization: "DLG GROUP", color: "emerald", icon: Target, imageUrl: "https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg", portfolioUrl: "https://www.linkedin.com/in/tanmaygarg926/" },
         { row: 2, name: "Shivraj Singh", role: "TECHNICAL HEAD", organization: "DLG GROUP", color: "cyan", icon: Code, imageUrl: "https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg", portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/" },
         { row: 2, name: "Prashant Pippal", role: "MARKETING HEAD", organization: "DLG GROUP", color: "orange", icon: Zap, imageUrl: "https://i.ibb.co/5hdxZp1h/Prashant-pippal-promotion-headjpg.jpg", portfolioUrl: "https://www.linkedin.com/in/prashant-pippal-759325292/" },
         { row: 3, name: "Riya Payak", role: "MARKETING HEAD", organization: "DLG GROUP", color: "teal", icon: Globe, imageUrl: "https://i.ibb.co/35CSbJvf/Riya-payak-promotion-head.jpg", portfolioUrl: null },
-        { row: 3, name: "Yashshav Khandelwal ", role: "CONTENT HEAD", organization: "DLG GROUP", color: "yellow", icon: Trophy, imageUrl: "https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg", portfolioUrl: null },
+        { row: 3, name: "Yashshav Khandelwal", role: "CONTENT HEAD", organization: "DLG GROUP", color: "yellow", icon: Trophy, imageUrl: "https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg", portfolioUrl: null },
         { row: 3, name: "Sanjay Singh", role: "Video Editing Head", organization: "DLG GROUP", color: "pink", icon: MessageCircle, imageUrl: "https://i.ibb.co/SX2PSkHX/sanjaysingh.jpg", portfolioUrl: null },
         { row: 3, name: "AYAN AHMED KHAN", role: "WEB DEVELOPER", organization: "DLG GROUP", color: "green", icon: Globe, imageUrl: "https://ayanahmedkhan.live/assets/image/image.png", portfolioUrl: "https://ayanahmedkhan.live", isSpecial: true },
         { row: 3, name: "Gagandeep Kushwah", role: "EXECUTIVE MEMBER", organization: "DLG GROUP", color: "violet", icon: Zap, imageUrl: "https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png", portfolioUrl: "https://www.linkedin.com/in/gagandeepkushwah730221b/" }
@@ -1213,7 +1213,8 @@ export default function HackOrbitLanding() {
         textSub: `text-${color}-200/80`,
         textOrg: `text-${color}-200/60`,
         ringBorder: `border-${color}-400/50 group-hover:border-${color}-400`,
-        blurBg: `bg-${color}-400/20`
+        blurBg: `bg-${color}-400/20`,
+        shadowColor: `shadow-${color}-500/25`
       });
 
       const renderMemberCard = (member, index) => {
@@ -1221,14 +1222,16 @@ export default function HackOrbitLanding() {
         return (
           <Card
             key={`${member.name}-${index}`}
-            className={`w-48 group relative bg-black/40 backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl overflow-hidden
+            className={`w-full max-w-[11rem] sm:max-w-[13rem] group relative bg-black/40 backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 overflow-hidden
               ${member.isSpecial
                 ? "border-yellow-400/60 hover:border-yellow-300 ring-2 ring-yellow-400/30 shadow-2xl shadow-yellow-500/20"
                 : `${styles.border} ${styles.shadow}`}`}
           >
             {member.isSpecial && (
               <div className="absolute -top-2 -right-2 z-10">
-                <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold text-xs px-2 py-1 animate-pulse">⭐ CREATOR</Badge>
+                <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold text-xs px-2 py-1 animate-pulse">
+                  ⭐ CREATOR
+                </Badge>
               </div>
             )}
             <div className={`absolute inset-0 bg-gradient-to-br ${styles.bgGradient} ${member.isSpecial ? "to-yellow-500/20" : "to-blue-500/10"} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
@@ -1250,7 +1253,7 @@ export default function HackOrbitLanding() {
                 <div className="flex justify-center space-x-1">
                   <Button
                     size="sm"
-                    className={`group/btn text-black font-bold border-0 shadow-lg overflow-hidden text-xs px-2 py-1 transition-all duration-300 hover:scale-105 bg-gradient-to-r ${styles.bgGradient} ${member.isSpecial ? "to-yellow-500 hover:to-yellow-400" : "to-blue-500 hover:to-blue-400"} ${styles.hoverGradient} shadow-${member.color}-500/25`}
+                    className={`group/btn text-black font-bold border-0 shadow-lg overflow-hidden text-xs px-2 py-1 transition-all duration-300 hover:scale-105 bg-gradient-to-r ${styles.bgGradient} ${member.isSpecial ? "to-yellow-500 hover:to-yellow-400" : "to-blue-500 hover:to-blue-400"} ${styles.hoverGradient} ${styles.shadowColor}`}
                     onClick={() => window.open(member.portfolioUrl, "_blank")}
                   >
                     <Linkedin className="w-3 h-3 mr-1" /> LinkedIn
@@ -1265,8 +1268,10 @@ export default function HackOrbitLanding() {
 
       return (
         <>
-          <div className="flex justify-center mb-8">{membersByRow[1]?.map(renderMemberCard)}</div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto justify-items-center w-full">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {membersByRow[1]?.map(renderMemberCard)}
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto justify-items-center w-full px-4">
             {[...(membersByRow[2] || []), ...(membersByRow[3] || [])].map(renderMemberCard)}
           </div>
           <div className="mt-8">
@@ -1282,6 +1287,7 @@ export default function HackOrbitLanding() {
     })()}
   </div>
 </section>
+
 
 
 
