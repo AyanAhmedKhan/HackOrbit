@@ -1049,8 +1049,8 @@ export default function HackOrbitLanding() {
                   color: "blue",
                   role: "🌐 WEB INNOVATION PARTNER",
                   desc: "Next Generation Domain Solutions",
-                  logo: "/placeholder.svg?height=64&width=120",
-                  link: "https://i.ibb.co/F4B2s9bS/xyzdownload-5.png",
+                  logo: "https://i.ibb.co/F4B2s9bS/xyzdownload-5.png",
+                  link: "https://gen.xyz/",",
                 },
                 {
                   name: "CODECRAFTERS",
