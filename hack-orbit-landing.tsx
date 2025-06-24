@@ -1294,6 +1294,16 @@ export default function HackOrbitLanding() {
                   imageUrl: "https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png",
                   portfolioUrl: 'https://www.linkedin.com/in/gagandeepkushwah730221b/',
                 },
+                {
+                  row: 3,
+                  name: "Sanjay Singh",
+                  role: "Video Editing Head",
+                  organization: "DLG GROUP",
+                  color: "pink",
+                  icon: MessageCircle,
+                  imageUrl: "https://i.ibb.co/SX2PSkHX/sanjaysingh.jpg",
+                  portfolioUrl: null,
+                },
               ]
 
               const membersByRow = teamMembers.reduce((acc, member) => {
