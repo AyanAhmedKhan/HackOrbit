@@ -34,10 +34,10 @@ export const metadata: Metadata = {
 
 export default function SponsorsPage() {
   const eventStats = [
-    { icon: Users, label: "Expected Participants", value: "2000+", color: "blue" },
+    { icon: Users, label: "Expected Participants", value: "500+", color: "blue" },
     { icon: Globe, label: "Pan-India Reach", value: "All States", color: "green" },
     { icon: Calendar, label: "Event Duration", value: "36 Hours", color: "purple" },
-    { icon: Trophy, label: "Prize Pool", value: "₹2.5 lakhs+", color: "yellow" },
+    { icon: Trophy, label: "Prize Pool", value: "₹25K+", color: "yellow" },
   ]
 
   const benefits = [
