@@ -1398,6 +1398,17 @@ export default function HackOrbitLanding() {
                 </>
               )
             })()}
+            <div className="mt-8">
+      <p className="text-green-100/60 font-mono text-sm">
+        <span className="text-green-400">{">"}</span> Dedicated team working together to make HackOrbit a success
+        <br />
+        <span className="text-green-400">{">"}</span> Bringing innovation and excellence to Central India's biggest hackathon
+        <br />
+        <span className="text-green-400">{">"}</span> Huge shoutout to all the DLG team — especially our juniors 👏 Kudos to you all!
+        <br />
+        <span className="text-green-400">{">"}</span> Special appreciation to <strong className="text-green-300">Ayan Ahmed Khan</strong> for leading the web development of this HackOrbit platform 🚀
+      </p>
+    </div>
           </div>
         </section>
 
