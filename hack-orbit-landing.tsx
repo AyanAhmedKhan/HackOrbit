@@ -1,5 +1,6 @@
 "use client"
 import Image from 'next/image';
+import { Rocket, Users, Award, Target, Code, Zap, Globe, Trophy, MessageCircle, Linkedin } from "lucide-react";
 
 
 import {
@@ -29,6 +30,25 @@ import { Badge } from "@/components/ui/badge"
 import dynamic from "next/dynamic"
 
 import FallbackBackground from "./fallback-background"
+const teamMembers = [
+  { row: 1, name: "Dr. Punit Kumar Johari", role: "COORDINATOR", organization: "DLG GROUP", color: "purple", icon: Rocket, imageUrl: 'https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg', portfolioUrl: 'https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/' },
+  { row: 2, name: "Shiv Shrivastava", role: "PRESIDENT", organization: "DLG GROUP", color: "blue", icon: Users, imageUrl: 'https://media.licdn.com/dms/image/v2/D4D03AQHKgRv1IDAVtg/profile-displayphoto-shrink_800_800/0/1706464098389?e=1755734400&v=beta&t=WIRTKOaoVMqykrVfAXOy4ZG02vomSSscXkdbfzjJ_Dc', portfolioUrl: 'https://www.linkedin.com/in/shiv-shrivastava-4137bb268/' },
+  { row: 2, name: "Pooja Bhagel", role: "VICE PRESIDENT", organization: "DLG GROUP", color: "indigo", icon: Award, imageUrl: 'https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg', portfolioUrl: 'https://www.linkedin.com/in/pooja-baghel-6a8913251/' },
+  { row: 2, name: "Tanmay Garg", role: "MANAGEMENT HEAD", organization: "DLG GROUP", color: "emerald", icon: Target, imageUrl: 'https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg', portfolioUrl: 'https://www.linkedin.com/in/tanmaygarg926/' },
+  { row: 2, name: "Shivraj Singh", role: "TECHNICAL HEAD", organization: "DLG GROUP", color: "cyan", icon: Code, imageUrl: 'https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg', portfolioUrl: 'https://www.linkedin.com/in/shivrajsingh435/' },
+  { row: 2, name: "Prashant Pippal", role: "MARKETING HEAD", organization: "DLG GROUP", color: "orange", icon: Zap, imageUrl: 'https://i.ibb.co/5hdxZp1h/Prashant-pippal-promotion-headjpg.jpg', portfolioUrl: null },
+  { row: 3, name: "Riya Payak", role: "MARKETING HEAD", organization: "DLG GROUP", color: "teal", icon: Globe, imageUrl: 'https://i.ibb.co/35CSbJvf/Riya-payak-promotion-head.jpg', portfolioUrl: null },
+  { row: 3, name: "Yashshav Khandelwal ", role: "CONTENT HEAD", organization: "DLG GROUP", color: "yellow", icon: Trophy, imageUrl: 'https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg', portfolioUrl: null },
+  { row: 3, name: "Aniruddh Kushwaha", role: "GRAPHICS HEAD", organization: "DLG GROUP", color: "pink", icon: MessageCircle, imageUrl: 'https://i.ibb.co/35mBdhLY/Aniruddh-kushwaha-graphic-head.png', portfolioUrl: null },
+  { row: 3, name: "AYAN AHMED KHAN", role: "WEB DEVELOPER", organization: "DLG Group", color: "green", icon: Globe, imageUrl: "https://ayanahmedkhan.live/assets/image/image.png", portfolioUrl: "https://www.linkedin.com/in/ayanahmedkhan/", isSpecial: true },
+  { row: 3, name: "Gagandeep Kushwah", role: "EXECUTIVE MEMBER", organization: "DLG GROUP", color: "violet", icon: Zap, imageUrl: 'https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png', portfolioUrl: null }
+];
+
+const membersByRow = teamMembers.reduce((acc, member) => {
+  if (!acc[member.row]) acc[member.row] = [];
+  acc[member.row].push(member);
+  return acc;
+}, {});
 
 // Dynamically import Three.js components with no SSR
 const ThreeComponents = dynamic(() => import("./three-components"), { ssr: false })
@@ -1096,7 +1116,7 @@ export default function HackOrbitLanding() {
   </div>
 </section>
 
-        {/* Community Section with Enhanced Social Icons */}
+{/* Community Section with Enhanced Social Icons */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
           <div className="max-w-4xl mx-auto text-center">
             <div>
@@ -1173,9 +1193,11 @@ export default function HackOrbitLanding() {
               ))}
             </div>
 
-            
+           
           </div>
         </section>
+
+       
 
            {/* Organizing Committee Section */}
 <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
@@ -1190,221 +1212,109 @@ export default function HackOrbitLanding() {
       </p>
     </div>
 
-    {(() => {
-      // Team members data array
-      const teamMembers = [
-        // First Row - Coordinator Only
-        {
-          row: 1,
-          name: "Dr. Punit Kumar Johari",
-          role: "COORDINATOR",
-          organization: "DLG GROUP",
-          color: "purple",
-          icon: Rocket,
-          imageUrl: 'https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg', // Set to image URL or null for icon
-          portfolioUrl: 'https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/',
-        },
-        
-        // Second Row - 5 Cards
-        {
-          row: 2,
-          name: "Shiv Shrivastava",
-          role: "PRESIDENT",
-          organization: "DLG GROUP",
-          color: "blue",
-          icon: Users,
-          imageUrl: 'https://media.licdn.com/dms/image/v2/D4D03AQHKgRv1IDAVtg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706464098389?e=1755734400&v=beta&t=WIRTKOaoVMqykrVfAXOy4ZG02vomSSscXkdbfzjJ_Dc',
-          portfolioUrl: 'https://www.linkedin.com/in/shiv-shrivastava-4137bb268/',
-        },
-        {
-          row: 2,
-          name: "Pooja Bhagel",
-          role: "VICE PRESIDENT",
-          organization: "DLG GROUP",
-          color: "indigo",
-          icon: Award,
-          imageUrl: 'https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg',
-          portfolioUrl: 'https://www.linkedin.com/in/pooja-baghel-6a8913251/',
-        },
-        {
-          row: 2,
-          name: "Tanmay Garg",
-          role: "MANAGEMENT HEAD",
-          organization: "DLG GROUP",
-          color: "emerald",
-          icon: Target,
-          imageUrl: 'https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg',
-          portfolioUrl: 'https://www.linkedin.com/in/tanmaygarg926/',
-        },
-        {
-          row: 2,
-          name: "Shivraj Singh",
-          role: "TECHNICAL HEAD",
-          organization: "DLG GROUP",
-          color: "cyan",
-          icon: Code,
-          imageUrl: 'https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg',
-          portfolioUrl: 'https://www.linkedin.com/in/shivrajsingh435/https://www.linkedin.com/in/shivrajsingh435/',
-        },
-        {
-          row: 2,
-          name: "Prashant Pippal",
-          role: "MARKETING HEAD",
-          organization: "DLG GROUP",
-          color: "orange",
-          icon: Zap,
-          imageUrl: 'https://i.ibb.co/5hdxZp1h/Prashant-pippal-promotion-headjpg.jpg',
-          portfolioUrl: null,
-        },
-        
-        // Third Row - 5 Cards
-        {
-          row: 3,
-          name: "Riya Payak",
-          role: "MARKETING HEAD",
-          organization: "DLG GROUP",
-          color: "teal",
-          icon: Globe,
-          imageUrl: 'https://i.ibb.co/35CSbJvf/Riya-payak-promotion-head.jpg',
-          portfolioUrl: null,
-        },
-        {
-          row: 3,
-          name: "Yashshav Khandelwal ",
-          role: "CONTENT HEAD",
-          organization: "DLG GROUP",
-          color: "yellow",
-          icon: Trophy,
-          imageUrl: 'https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg',
-          portfolioUrl: null,
-        },
-        {
-          row: 3,
-          name: "Aniruddh Kushwaha",
-          role: "GRAPHICS HEAD",
-          organization: "DLG GROUP",
-          color: "pink",
-          icon: MessageCircle,
-          imageUrl: 'https://i.ibb.co/35mBdhLY/Aniruddh-kushwaha-graphic-head.png',
-          portfolioUrl: null,
-        },
-        {
-          row: 3,
-          name: "AYAN AHMED KHAN",
-          role: "WEB DEVELOPER",
-          organization: "DLG Group",
-          color: "green",
-          icon: Globe,
-          imageUrl: "https://ayanahmedkhan.live/assets/image/image.png",
-          portfolioUrl: "https://ayanahmedkhan.live",
-          isSpecial: true,
-
-        },
-        {
-          row: 3,
-          name: "Gagandeep Kushwah",
-          role: "EXECUTIVE MEMBER",
-          organization: "DLG GROUP",
-          color: "violet",
-          icon: Zap,
-          imageUrl: 'https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png',
-          portfolioUrl: null,
-        },
-        
-      ];
-
-      // Group members by row
-      const membersByRow = teamMembers.reduce((acc, member) => {
-        if (!acc[member.row]) acc[member.row] = [];
-        acc[member.row].push(member);
-        return acc;
-      }, {} as Record<number, typeof teamMembers>);
-
-      // Render function for individual card
-      const renderMemberCard = (member: typeof teamMembers[0], index: number) => (
-        <Card 
-          key={`${member.name}-${index}`}
-          className={`group relative bg-black/40 border-${member.color}-500/30 backdrop-blur-xl hover:border-${member.color}-400/60 transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-${member.color}-500/20 overflow-hidden ${member.row === 1 ? 'w-48' : ''}`}
-        >
-          <div className={`absolute inset-0 bg-gradient-to-br from-${member.color}-500/10 ${member.color === 'purple' ? 'to-pink-500/10' : member.color === 'indigo' ? 'to-blue-500/10' : member.color === 'emerald' ? 'to-green-500/10' : member.color === 'cyan' ? 'to-blue-500/10' : member.color === 'orange' ? 'to-red-500/10' : member.color === 'teal' ? 'to-cyan-500/10' : member.color === 'yellow' ? 'to-orange-500/10' : member.color === 'pink' ? 'to-rose-500/10' : member.color === 'violet' ? 'to-purple-500/10' : 'to-blue-500/10'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-
-          <CardHeader className="text-center relative p-4">
-            <div className="relative mb-3">
-              <div className={`w-12 h-12 mx-auto rounded-full ${member.imageUrl ? 'overflow-hidden' : `bg-gradient-to-r from-${member.color}-400 ${member.color === 'purple' ? 'to-pink-400' : member.color === 'indigo' ? 'to-blue-400' : member.color === 'emerald' ? 'to-green-400' : member.color === 'cyan' ? 'to-blue-400' : member.color === 'orange' ? 'to-red-400' : member.color === 'teal' ? 'to-cyan-400' : member.color === 'yellow' ? 'to-orange-400' : member.color === 'pink' ? 'to-rose-400' : member.color === 'violet' ? 'to-purple-400' : 'to-blue-400'} flex items-center justify-center`} border-2 border-${member.color}-400/50 group-hover:border-${member.color}-400 transition-all duration-500 group-hover:scale-110`}>
-                {member.imageUrl ? (
-                  <img
-                    src={member.imageUrl || "/placeholder.svg"}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                ) : (
-                  <member.icon className="w-6 h-6 text-black" />
-                )}
+    {/* Map Rows */}
+    {[1, 2, 3].map((row) => (
+      <div
+        key={row}
+        className={`${
+          row === 1 ? "flex justify-center mb-8" : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8 max-w-6xl mx-auto"
+        }`}
+      >
+        {membersByRow[row]?.map((member, index) => (
+          <Card
+            key={`${member.name}-${index}`}
+            className={`group relative bg-black/40 border-${member.color}-500/30 backdrop-blur-xl hover:border-${member.color}-400/60 transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-${member.color}-500/20 overflow-hidden ${
+              row === 1 ? 'w-48' : ''
+            } ${
+              member.isSpecial ? 'ring-2 ring-yellow-400/30 border-yellow-400/60 shadow-2xl shadow-yellow-500/20' : ''
+            }`}
+          >
+            {member.isSpecial && (
+              <div className="absolute -top-2 -right-2 z-10">
+                <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold text-xs px-2 py-1 animate-pulse">
+                  ⭐ CREATOR
+                </Badge>
               </div>
-              <div className={`absolute inset-0 bg-${member.color}-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-            </div>
+            )}
+            <div className={`absolute inset-0 bg-gradient-to-br from-${member.color}-500/10 ${
+              member.isSpecial ? 'to-yellow-500/20' : member.color === 'purple' ? 'to-pink-500/10' : member.color === 'indigo' ? 'to-blue-500/10' : member.color === 'emerald' ? 'to-green-500/10' : member.color === 'cyan' ? 'to-blue-500/10' : member.color === 'orange' ? 'to-red-500/10' : member.color === 'teal' ? 'to-cyan-500/10' : member.color === 'yellow' ? 'to-orange-500/10' : member.color === 'pink' ? 'to-rose-500/10' : member.color === 'violet' ? 'to-purple-500/10' : 'to-blue-500/10'
+            } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 
-            <CardTitle className={`text-sm text-${member.color}-300 font-mono group-hover:text-${member.color}-200 transition-colors duration-300 mb-1`}>
-              {member.name}
-            </CardTitle>
-            <CardDescription className={`text-${member.color}-200/80 font-mono text-xs mb-1`}>
-              {member.role}
-            </CardDescription>
-            <CardDescription className={`text-${member.color}-200/60 font-mono text-xs`}>
-              {member.organization}
-            </CardDescription>
-          </CardHeader>
-
-          {member.portfolioUrl && (
-            <CardContent className="text-center relative p-2">
-              <div className="flex justify-center space-x-1">
-                <Button
-                  size="sm"
-                  className={`group/btn bg-gradient-to-r from-${member.color}-500 to-blue-500 hover:from-${member.color}-400 hover:to-blue-400 text-black font-bold border-0 shadow-lg shadow-${member.color}-500/25 transition-all duration-300 hover:scale-105 overflow-hidden text-xs px-2 py-1`}
-                  onClick={() => window.open(member.portfolioUrl!, "_blank")}
-                >
-                  <Globe className="w-3 h-3 mr-1" />
-                  LinkedIn
-                </Button>
+            <CardHeader className="text-center relative p-4">
+              <div className="relative mb-3">
+                <div className={`${member.isSpecial ? 'w-16 h-16' : 'w-12 h-12'} mx-auto rounded-full ${
+                  member.imageUrl ? 'overflow-hidden' : `bg-gradient-to-r from-${member.color}-400 to-${member.color}-500 flex items-center justify-center`
+                } border-2 border-${member.color}-400/50 group-hover:border-${member.color}-400 transition-all duration-500 group-hover:scale-110 ${
+                  member.isSpecial ? 'ring-2 ring-yellow-400/50' : ''
+                }`}>
+                  {member.imageUrl ? (
+                    <img
+                      src={member.imageUrl || "/placeholder.svg"}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <member.icon className={`${member.isSpecial ? 'w-8 h-8' : 'w-6 h-6'} text-black`} />
+                  )}
+                </div>
+                <div className={`absolute inset-0 bg-${member.color}-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                  member.isSpecial ? 'animate-pulse' : ''
+                }`}></div>
               </div>
-            </CardContent>
-          )}
+              <CardTitle className={`${member.isSpecial ? 'text-base' : 'text-sm'} text-${member.color}-300 font-mono group-hover:text-${member.color}-200 transition-colors duration-300 mb-1 ${
+                member.isSpecial ? 'font-bold' : ''
+              }`}>
+                {member.name}
+              </CardTitle>
+              <CardDescription className={`text-${member.color}-200/80 font-mono text-xs mb-1 ${
+                member.isSpecial ? 'font-semibold' : ''
+              }`}>
+                {member.role}
+              </CardDescription>
+              <CardDescription className={`text-${member.color}-200/60 font-mono text-xs ${
+                member.isSpecial ? 'mb-2' : ''
+              }`}>
+                {member.organization}
+              </CardDescription>
+            </CardHeader>
 
-          <div className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-${member.color}-500 ${member.color === 'purple' ? 'to-pink-500' : member.color === 'indigo' ? 'to-blue-500' : member.color === 'emerald' ? 'to-green-500' : member.color === 'cyan' ? 'to-blue-500' : member.color === 'orange' ? 'to-red-500' : member.color === 'teal' ? 'to-cyan-500' : member.color === 'yellow' ? 'to-orange-500' : member.color === 'pink' ? 'to-rose-500' : member.color === 'violet' ? 'to-purple-500' : 'to-blue-500'} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
-        </Card>
-      );
+            {member.portfolioUrl && (
+              <CardContent className="text-center relative p-2">
+                <div className="flex justify-center space-x-1">
+                  <Button
+                    size="sm"
+                    className={`group/btn bg-gradient-to-r from-${member.color}-500 ${
+                      member.isSpecial ? 'to-yellow-500' : 'to-blue-500'
+                    } hover:from-${member.color}-400 ${
+                      member.isSpecial ? 'hover:to-yellow-400' : 'hover:to-blue-400'
+                    } text-black font-bold border-0 shadow-lg shadow-${member.color}-500/25 transition-all duration-300 hover:scale-105 overflow-hidden text-xs px-2 py-1`}
+                    onClick={() => window.open(member.portfolioUrl!, "_blank")}
+                  >
+                    <Linkedin className="w-3 h-3 mr-1" />
+                    LinkedIn
+                  </Button>
+                </div>
+              </CardContent>
+            )}
 
-      return (
-        <>
-          {/* First Row - Coordinator Only */}
-          <div className="flex justify-center mb-8">
-            {membersByRow[1]?.map((member, index) => renderMemberCard(member, index))}
-          </div>
-
-          {/* Second Row - 5 Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8 max-w-6xl mx-auto">
-            {membersByRow[2]?.map((member, index) => renderMemberCard(member, index))}
-          </div>
-
-          {/* Third Row - 5 Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mx-auto">
-            {membersByRow[3]?.map((member, index) => renderMemberCard(member, index))}
-          </div>
-        </>
-      );
-    })()}
+            <div className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-${member.color}-500 ${
+              member.isSpecial ? 'to-yellow-500' : member.color === 'purple' ? 'to-pink-500' : member.color === 'indigo' ? 'to-blue-500' : member.color === 'emerald' ? 'to-green-500' : member.color === 'cyan' ? 'to-blue-500' : member.color === 'orange' ? 'to-red-500' : member.color === 'teal' ? 'to-cyan-500' : member.color === 'yellow' ? 'to-orange-500' : member.color === 'pink' ? 'to-rose-500' : member.color === 'violet' ? 'to-purple-500' : 'to-blue-500'
+            } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
+          </Card>
+        ))}
+      </div>
+    ))}
 
     <div className="mt-8">
       <p className="text-green-100/60 font-mono text-sm">
-        <span className="text-green-400">{">"}</span> Dedicated team working together to make HackOrbit a
-        success
+        <span className="text-green-400">{">"}</span> Dedicated team working together to make HackOrbit a success
         <br />
-        <span className="text-green-400">{">"}</span> Bringing innovation and excellence to Central India's
-        biggest hackathon
+        <span className="text-green-400">{">"}</span> Bringing innovation and excellence to Central India's biggest hackathon
       </p>
     </div>
   </div>
 </section>
+
 
         <section
           id="faq"
