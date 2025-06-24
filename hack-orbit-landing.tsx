@@ -1010,7 +1010,7 @@ export default function HackOrbitLanding() {
                   <div className="text-center relative p-0">
                     <div className="h-20 flex items-center justify-center mb-4">
                       <img
-                        src="/placeholder.svg?height=80&width=200"
+                        src="https://i.ibb.co/h1Cq93jQ/downloadtimelogo.svg?height=80&width=200"
                         alt="T.I.M.E Gwalior"
                         className="h-full object-contain transition-transform duration-300 group-hover:scale-110"
                       />
