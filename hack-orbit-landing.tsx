@@ -1171,6 +1171,7 @@ export default function HackOrbitLanding() {
 
         {/* Organizing Committee Section */}
         {/* Organizing Committee Section */}
+{/* Organizing Committee Section */}
 <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
   <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 backdrop-blur-3xl"></div>
   <div className="max-w-7xl mx-auto text-center relative">
@@ -1305,7 +1306,11 @@ export default function HackOrbitLanding() {
       const renderMemberCard = (member, index) => (
         <Card
           key={`${member.name}-${index}`}
-          className={`group relative bg-black/40 backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl overflow-hidden ${member.row === 1 ? "w-48" : ""} ${member.isSpecial ? "border-yellow-400/60 hover:border-yellow-300 ring-2 ring-yellow-400/30 shadow-2xl shadow-yellow-500/20" : `border-${member.color}-500/30 hover:border-${member.color}-400/60 hover:shadow-${member.color}-500/20`}`}
+          className={`w-48 group relative bg-black/40 backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl overflow-hidden ${
+            member.isSpecial
+              ? "border-yellow-400/60 hover:border-yellow-300 ring-2 ring-yellow-400/30 shadow-2xl shadow-yellow-500/20"
+              : `border-${member.color}-500/30 hover:border-${member.color}-400/60 hover:shadow-${member.color}-500/20`
+          }`}
         >
           {member.isSpecial && (
             <div className="absolute -top-2 -right-2 z-10">
@@ -1316,13 +1321,21 @@ export default function HackOrbitLanding() {
           )}
 
           <div
-            className={`absolute inset-0 bg-gradient-to-br from-${member.color}-500/10 ${member.isSpecial ? "to-yellow-500/20" : "to-blue-500/10"} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+            className={`absolute inset-0 bg-gradient-to-br from-${member.color}-500/10 ${
+              member.isSpecial ? "to-yellow-500/20" : "to-blue-500/10"
+            } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
           ></div>
 
           <CardHeader className="text-center relative p-4">
             <div className="relative mb-3">
               <div
-                className={`${member.isSpecial ? "w-16 h-16" : "w-12 h-12"} mx-auto rounded-full ${member.imageUrl ? "overflow-hidden" : `bg-gradient-to-r from-${member.color}-400 to-blue-400 flex items-center justify-center`} border-2 border-${member.color}-400/50 group-hover:border-${member.color}-400 transition-all duration-500 group-hover:scale-110 ${member.isSpecial ? "ring-2 ring-yellow-400/50" : ""}`}
+                className={`w-16 h-16 mx-auto rounded-full ${
+                  member.imageUrl
+                    ? "overflow-hidden"
+                    : `bg-gradient-to-r from-${member.color}-400 to-blue-400 flex items-center justify-center`
+                } border-2 border-${member.color}-400/50 group-hover:border-${member.color}-400 transition-all duration-500 group-hover:scale-110 ${
+                  member.isSpecial ? "ring-2 ring-yellow-400/50" : ""
+                }`}
               >
                 {member.imageUrl ? (
                   <img
@@ -1336,13 +1349,13 @@ export default function HackOrbitLanding() {
                 )}
               </div>
               <div
-                className={`absolute inset-0 bg-${member.color}-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${member.isSpecial ? "animate-pulse" : ""}`}
+                className={`absolute inset-0 bg-${member.color}-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                  member.isSpecial ? "animate-pulse" : ""
+                }`}
               ></div>
             </div>
 
-            <CardTitle
-              className={`text-sm text-${member.color}-300 font-mono group-hover:text-${member.color}-200 transition-colors duration-300 mb-1`}
-            >
+            <CardTitle className={`text-sm text-${member.color}-300 font-mono group-hover:text-${member.color}-200 transition-colors duration-300 mb-1`}>
               {member.name}
             </CardTitle>
             <CardDescription className={`text-${member.color}-200/80 font-mono text-xs mb-1`}>
@@ -1358,7 +1371,11 @@ export default function HackOrbitLanding() {
               <div className="flex justify-center space-x-1">
                 <Button
                   size="sm"
-                  className={`group/btn bg-gradient-to-r from-${member.color}-500 ${member.isSpecial ? "to-yellow-500" : "to-blue-500"} hover:from-${member.color}-400 ${member.isSpecial ? "hover:to-yellow-400" : "hover:to-blue-400"} text-black font-bold border-0 shadow-lg shadow-${member.color}-500/25 transition-all duration-300 hover:scale-105 overflow-hidden text-xs px-2 py-1`}
+                  className={`group/btn bg-gradient-to-r from-${member.color}-500 ${
+                    member.isSpecial ? "to-yellow-500" : "to-blue-500"
+                  } hover:from-${member.color}-400 ${
+                    member.isSpecial ? "hover:to-yellow-400" : "hover:to-blue-400"
+                  } text-black font-bold border-0 shadow-lg shadow-${member.color}-500/25 transition-all duration-300 hover:scale-105 overflow-hidden text-xs px-2 py-1`}
                   onClick={() => window.open(member.portfolioUrl, "_blank")}
                 >
                   <Linkedin className="w-3 h-3 mr-1" />
@@ -1369,7 +1386,9 @@ export default function HackOrbitLanding() {
           )}
 
           <div
-            className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-${member.color}-500 ${member.isSpecial ? "to-yellow-500" : "to-blue-500"} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
+            className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-${member.color}-500 ${
+              member.isSpecial ? "to-yellow-500" : "to-blue-500"
+            } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
           ></div>
         </Card>
       )
@@ -1381,13 +1400,14 @@ export default function HackOrbitLanding() {
             {membersByRow[1]?.map((member, index) => renderMemberCard(member, index))}
           </div>
 
-          {/* Unified grid for Row 2 + Row 3 */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto justify-items-center w-full">
+          {/* Combined Grid for Row 2 & 3 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 auto-cols-fr gap-4 max-w-6xl mx-auto justify-items-center w-full">
             {[...(membersByRow[2] || []), ...(membersByRow[3] || [])].map((member, index) =>
               renderMemberCard(member, index)
             )}
           </div>
 
+          {/* Appreciation Text */}
           <div className="mt-8">
             <p className="text-green-100/60 font-mono text-sm">
               <span className="text-green-400">{">"}</span> Dedicated team working together to make HackOrbit a success
