@@ -1170,8 +1170,6 @@ export default function HackOrbitLanding() {
         </section>
 
         {/* Organizing Committee Section */}
-        {/* Organizing Committee Section */}
-{/* Organizing Committee Section */}
 <section id="team" className="overflow-x-hidden py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
   <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 backdrop-blur-3xl"></div>
   <div className="max-w-7xl mx-auto text-center relative">
