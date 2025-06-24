@@ -1244,7 +1244,7 @@ export default function HackOrbitLanding() {
                   portfolioUrl: 'https://www.linkedin.com/in/prashant-pippal-759325292/',
                 },
                 {
-                  row: 2,
+                  row: 3,
                   name: "Riya Payak",
                   role: "MARKETING HEAD",
                   organization: "DLG GROUP",
