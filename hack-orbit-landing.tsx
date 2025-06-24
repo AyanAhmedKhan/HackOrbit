@@ -1,5 +1,10 @@
 "use client"
 
+import dynamic from "next/dynamic"
+
+// Dynamically import the Three.js components with no SSR
+const ThreeComponents = dynamic(() => import("./three-components"), { ssr: false })
+
 import {
   Clock,
   Code,
@@ -23,133 +28,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
-import dynamic from "next/dynamic"
-
 import FallbackBackground from "./fallback-background"
-
-const teamMembers = [
-  {
-                  row: 1,
-                  name: "Dr. Punit Kumar Johari",
-                  role: "COORDINATOR",
-                  organization: "DLG GROUP",
-                  color: "purple",
-                  icon: Rocket,
-                  imageUrl: "https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg",
-                  portfolioUrl: "https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/",
-                },
-                {
-                  row: 2,
-                  name: "Shiv Shrivastava",
-                  role: "PRESIDENT",
-                  organization: "DLG GROUP",
-                  color: "blue",
-                  icon: Users,
-                  imageUrl:
-                    "https://media.licdn.com/dms/image/v2/D4D03AQHKgRv1IDAVtg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706464098389?e=1755734400&v=beta&t=WIRTKOaoVMqykrVfAXOy4ZG02vomSSscXkdbfzjJ_Dc",
-                  portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/",
-                },
-                {
-                  row: 2,
-                  name: "Pooja Bhagel",
-                  role: "VICE PRESIDENT",
-                  organization: "DLG GROUP",
-                  color: "indigo",
-                  icon: Award,
-                  imageUrl: "https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg",
-                  portfolioUrl: "https://www.linkedin.com/in/pooja-baghel-6a8913251/",
-                },
-                {
-                  row: 2,
-                  name: "Tanmay Garg",
-                  role: "MANAGEMENT HEAD",
-                  organization: "DLG GROUP",
-                  color: "emerald",
-                  icon: Target,
-                  imageUrl: "https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg",
-                  portfolioUrl: "https://www.linkedin.com/in/tanmaygarg926/",
-                },
-                {
-                  row: 2,
-                  name: "Shivraj Singh",
-                  role: "TECHNICAL HEAD",
-                  organization: "DLG GROUP",
-                  color: "cyan",
-                  icon: Code,
-                  imageUrl: "https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg",
-                  portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/",
-                },
-                {
-                  row: 2,
-                  name: "Prashant Pippal",
-                  role: "MARKETING HEAD",
-                  organization: "DLG GROUP",
-                  color: "orange",
-                  icon: Zap,
-                  imageUrl: "https://i.ibb.co/5hdxZp1h/Prashant-pippal-promotion-headjpg.jpg",
-                  portfolioUrl: null,
-                },
-                {
-                  row: 3,
-                  name: "Riya Payak",
-                  role: "MARKETING HEAD",
-                  organization: "DLG GROUP",
-                  color: "teal",
-                  icon: Globe,
-                  imageUrl: "https://i.ibb.co/35CSbJvf/Riya-payak-promotion-head.jpg",
-                  portfolioUrl: null,
-                },
-                {
-                  row: 3,
-                  name: "Yashshav Khandelwal ",
-                  role: "CONTENT HEAD",
-                  organization: "DLG GROUP",
-                  color: "yellow",
-                  icon: Trophy,
-                  imageUrl: "https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg",
-                  portfolioUrl: null,
-                },
-                {
-                  row: 3,
-                  name: "Sanjay Singh",
-                  role: "Video Editing Head",
-                  organization: "DLG GROUP",
-                  color: "pink",
-                  icon: MessageCircle,
-                  imageUrl: "https://i.ibb.co/SX2PSkHX/sanjaysingh.jpg",
-                  portfolioUrl: null,
-                },
-                {
-                  row: 3,
-                  name: "AYAN AHMED KHAN",
-                  role: "WEB DEVELOPER",
-                  organization: "DLG GROUP",
-                  color: "green",
-                  icon: Globe,
-                  imageUrl: "https://ayanahmedkhan.live/assets/image/image.png",
-                  portfolioUrl: "https://ayanahmedkhan.live",
-                  isSpecial: true,
-                },
-                {
-                  row: 3,
-                  name: "Gagandeep Kushwah",
-                  role: "EXECUTIVE MEMBER",
-                  organization: "DLG GROUP",
-                  color: "violet",
-                  icon: Zap,
-                  imageUrl: "https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png",
-                  portfolioUrl: null,
-                },
-]
-
-const membersByRow = teamMembers.reduce((acc, member) => {
-  if (!acc[member.row]) acc[member.row] = []
-  acc[member.row].push(member)
-  return acc
-}, {})
-
-// Dynamically import Three.js components with no SSR
-const ThreeComponents = dynamic(() => import("./three-components"), { ssr: false })
 
 // Loading Screen Component
 function LoadingScreen({ isLoading }: { isLoading: boolean }) {
@@ -1075,74 +954,6 @@ export default function HackOrbitLanding() {
           </div>
         </section>
 
-        {/* Prizes Section */}
-        <section id="prizes" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-lg z-0"></div>
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-white mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
-                ORBITAL REWARDS
-              </h2>
-              <p className="text-xl text-white font-mono">
-                <span className="text-yellow-400">{">"}</span> ₹25,000+ PRIZE POOL + EXCLUSIVE REWARDS
-              </p>
-            </div>
-
-            <div className="flex justify-center mb-12">
-              <Card className="group relative bg-yellow-500/10 border border-yellow-400 backdrop-blur-md z-10 hover:scale-105 transition-all duration-500 hover:-translate-y-2 animate-slide-up max-w-md">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <CardHeader className="text-center relative">
-                  <div className="relative mb-4">
-                    <Trophy className="h-16 w-16 text-yellow-400 mx-auto transition-all duration-500 group-hover:scale-125 group-hover:rotate-12" />
-                    <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  </div>
-                  <CardTitle className="text-3xl text-white font-mono">₹25,000+</CardTitle>
-                  <CardDescription className="text-yellow-200 font-mono">TOTAL PRIZE POOL</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center relative">
-                  <div className="text-xl font-bold text-yellow-300 font-mono mb-2">CASH PRIZES</div>
-                  <p className="text-yellow-100 font-mono text-sm">
-                    <span className="text-yellow-400">{">"}</span> DISTRIBUTED AMONG TOP PERFORMERS
-                  </p>
-                </CardContent>
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-yellow-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-              </Card>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="group relative bg-purple-500/10 border border-purple-400 backdrop-blur-md z-10 hover:scale-105 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <CardHeader className="text-center relative">
-                  <Trophy className="h-12 w-12 text-purple-400 mx-auto mb-4" />
-                  <CardTitle className="text-xl text-white font-mono">TOP 10 TEAMS</CardTitle>
-                  <CardDescription className="text-purple-200 font-mono">EXCLUSIVE REWARDS</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center relative">
-                  <div className="text-2xl font-bold text-purple-300 font-mono mb-2">SWAGS & GOODIES</div>
-                  <p className="text-purple-100 font-mono text-sm">
-                    <span className="text-purple-400">{">"}</span> CERTIFICATES + MERCHANDISE VIA COURIER
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="group relative bg-green-500/10 border border-green-400 backdrop-blur-md z-10 hover:scale-105 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <CardHeader className="text-center relative">
-                  <Rocket className="h-12 w-12 text-green-400 mx-auto mb-4" />
-                  <CardTitle className="text-xl text-white font-mono">ALL PARTICIPANTS</CardTitle>
-                  <CardDescription className="text-green-200 font-mono">PARTICIPATION REWARDS</CardDescription>
-                </CardHeader>
-                <CardContent className="text-center relative">
-                  <div className="text-2xl font-bold text-green-300 font-mono mb-2">CERTIFICATES</div>
-                  <p className="text-green-100 font-mono text-sm">
-                    <span className="text-green-400">{">"}</span> NATIONAL LEVEL PARTICIPATION CERTIFICATES
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
         <section id="sponsors" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 backdrop-blur-3xl"></div>
           <div className="max-w-7xl mx-auto text-center relative">
@@ -1168,9 +979,12 @@ export default function HackOrbitLanding() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="text-center relative p-0">
-                    <div className="h-20 bg-gradient-to-r from-cyan-400 to-cyan-300 rounded-xl flex items-center justify-center text-black font-bold font-mono text-2xl mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-1 relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                      UNSTOP
+                    <div className="h-20 flex items-center justify-center mb-4">
+                      <img
+                        src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/svg/unstop-logo.svg"
+                        alt="Unstop Logo"
+                        className="h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                      />
                     </div>
                     <div className="text-cyan-300 font-mono text-lg mb-2">PLATFORM PARTNER</div>
                     <div className="text-cyan-100/80 font-mono text-sm">
@@ -1194,9 +1008,12 @@ export default function HackOrbitLanding() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="text-center relative p-0">
-                    <div className="h-20 bg-gradient-to-r from-orange-400 to-orange-300 rounded-xl flex items-center justify-center text-black font-bold font-mono text-lg mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-1 relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                      T.I.M.E
+                    <div className="h-20 flex items-center justify-center mb-4">
+                      <img
+                        src="/placeholder.svg?height=80&width=200"
+                        alt="T.I.M.E Gwalior"
+                        className="h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                      />
                     </div>
                     <div className="text-orange-300 font-mono text-lg mb-2">T.I.M.E – GWALIOR</div>
                     <div className="text-orange-100/80 font-mono text-sm">
@@ -1209,13 +1026,14 @@ export default function HackOrbitLanding() {
             </div>
 
             {/* Other Sponsors */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
               {[
                 {
                   name: "GEEKSFORGEEKS",
                   color: "green",
                   role: "🎓 KNOWLEDGE PARTNER",
                   desc: "Leading Programming Education Platform",
+                  logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/GeeksforGeeks.svg/1200px-GeeksforGeeks.svg.png",
                   link: "https://www.geeksforgeeks.org/",
                 },
                 {
@@ -1223,6 +1041,7 @@ export default function HackOrbitLanding() {
                   color: "purple",
                   role: "💼 CAREER SUPPORT PARTNER",
                   desc: "AI-Powered Interview Preparation Platform",
+                  logo: "https://media.licdn.com/dms/image/v2/D560BAQFIdYutkMbK4w/company-logo_200_200/company-logo_200_200/0/1729591843173/interviewbuddy_logo?e=1755734400&v=beta&t=WXszNIxda5R3pEw9kQZgWPuC5WAg2tOeNWI8KWlaMSU",
                   link: "https://interviewbuddy.net/",
                 },
                 {
@@ -1230,6 +1049,7 @@ export default function HackOrbitLanding() {
                   color: "blue",
                   role: "🌐 WEB INNOVATION PARTNER",
                   desc: "Next Generation Domain Solutions",
+                  logo: "/placeholder.svg?height=64&width=120",
                   link: "https://gen.xyz/",
                 },
                 {
@@ -1237,6 +1057,7 @@ export default function HackOrbitLanding() {
                   color: "cyan",
                   role: "🧠 TECH PARTNER",
                   desc: "Advanced Programming Challenges Platform",
+                  logo: "https://codecrafters.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.df7bb93f.png&w=96&q=75",
                   link: "https://codecrafters.io/",
                 },
               ].map((sponsor) => (
@@ -1247,10 +1068,16 @@ export default function HackOrbitLanding() {
                   rel="noopener noreferrer"
                   className={`group bg-black/60 p-6 rounded-2xl border border-${sponsor.color}-500/30 hover:border-${sponsor.color}-400/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 backdrop-blur-sm cursor-pointer overflow-hidden max-w-xs`}
                 >
+                  <div className="h-16 mb-3 flex items-center justify-center">
+                    <img
+                      src={sponsor.logo || "/placeholder.svg"}
+                      alt={`${sponsor.name} logo`}
+                      className="object-contain max-h-full group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
                   <div
-                    className={`h-12 bg-gradient-to-r from-${sponsor.color}-400 to-${sponsor.color}-300 rounded-xl flex items-center justify-center text-black font-bold font-mono text-sm mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-1 relative overflow-hidden`}
+                    className={`h-12 rounded-xl flex items-center justify-center font-bold font-mono text-lg mb-3 bg-gradient-to-r from-${sponsor.color}-400 to-${sponsor.color}-300 text-black relative overflow-hidden`}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                     {sponsor.name}
                   </div>
                   <p className={`text-${sponsor.color}-300 font-mono text-sm mb-1`}>{sponsor.role}</p>
@@ -1346,163 +1173,243 @@ export default function HackOrbitLanding() {
         <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
           <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 backdrop-blur-3xl"></div>
           <div className="max-w-7xl mx-auto text-center relative">
-            <div>
-              <h2 className="text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
-                ORGANIZING COMMITTEE
-              </h2>
-              <p className="text-xl text-green-100/80 mb-12 font-mono">
-                <span className="text-green-400">{">"}</span> MEET THE MINDS BEHIND HACKORBIT
-              </p>
-            </div>
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
+              ORGANIZING COMMITTEE
+            </h2>
+            <p className="text-xl text-green-100/80 mb-12 font-mono">
+              <span className="text-green-400">{">"}</span> MEET THE MINDS BEHIND HACKORBIT
+            </p>
 
-            {/* Map Rows */}
-            {[1, 2, 3].map((row) => (
-              <div
-                key={row}
-                className={`${
-                  row === 1
-                    ? "flex justify-center mb-8"
-                    : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8 max-w-6xl mx-auto"
-                }`}
-              >
-                {membersByRow[row]?.map((member, index) => (
-                  <Card
-                    key={`${member.name}-${index}`}
-                    className={`group relative bg-black/40 border-${member.color}-500/30 backdrop-blur-xl hover:border-${member.color}-400/60 transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-${member.color}-500/20 overflow-hidden ${
-                      row === 1 ? "w-48" : ""
-                    } ${
-                      member.isSpecial
-                        ? "ring-2 ring-yellow-400/30 border-yellow-400/60 shadow-2xl shadow-yellow-500/20"
-                        : ""
-                    }`}
-                  >
-                    {member.isSpecial && (
-                      <div className="absolute -top-2 -right-2 z-10">
-                        <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold text-xs px-2 py-1 animate-pulse">
-                          ⭐ CREATOR
-                        </Badge>
+            {(() => {
+              const teamMembers = [
+                {
+                  row: 1,
+                  name: "Dr. Punit Kumar Johari",
+                  role: "COORDINATOR",
+                  organization: "DLG GROUP",
+                  color: "purple",
+                  icon: Rocket,
+                  imageUrl: "https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/",
+                },
+                {
+                  row: 2,
+                  name: "Shiv Shrivastava",
+                  role: "PRESIDENT",
+                  organization: "DLG GROUP",
+                  color: "blue",
+                  icon: Users,
+                  imageUrl:
+                    "https://media.licdn.com/dms/image/v2/D4D03AQHKgRv1IDAVtg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706464098389?e=1755734400&v=beta&t=WIRTKOaoVMqykrVfAXOy4ZG02vomSSscXkdbfzjJ_Dc",
+                  portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/",
+                },
+                {
+                  row: 2,
+                  name: "Pooja Bhagel",
+                  role: "VICE PRESIDENT",
+                  organization: "DLG GROUP",
+                  color: "indigo",
+                  icon: Award,
+                  imageUrl: "https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/pooja-baghel-6a8913251/",
+                },
+                {
+                  row: 2,
+                  name: "Tanmay Garg",
+                  role: "MANAGEMENT HEAD",
+                  organization: "DLG GROUP",
+                  color: "emerald",
+                  icon: Target,
+                  imageUrl: "https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/tanmaygarg926/",
+                },
+                {
+                  row: 2,
+                  name: "Shivraj Singh",
+                  role: "TECHNICAL HEAD",
+                  organization: "DLG GROUP",
+                  color: "cyan",
+                  icon: Code,
+                  imageUrl: "https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/",
+                },
+                {
+                  row: 2,
+                  name: "Prashant Pippal",
+                  role: "MARKETING HEAD",
+                  organization: "DLG GROUP",
+                  color: "orange",
+                  icon: Zap,
+                  imageUrl: "https://i.ibb.co/5hdxZp1h/Prashant-pippal-promotion-headjpg.jpg",
+                  portfolioUrl: null,
+                },
+                {
+                  row: 3,
+                  name: "Riya Payak",
+                  role: "MARKETING HEAD",
+                  organization: "DLG GROUP",
+                  color: "teal",
+                  icon: Globe,
+                  imageUrl: "https://i.ibb.co/35CSbJvf/Riya-payak-promotion-head.jpg",
+                  portfolioUrl: null,
+                },
+                {
+                  row: 3,
+                  name: "Yashshav Khandelwal ",
+                  role: "CONTENT HEAD",
+                  organization: "DLG GROUP",
+                  color: "yellow",
+                  icon: Trophy,
+                  imageUrl: "https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg",
+                  portfolioUrl: null,
+                },
+                {
+                  row: 3,
+                  name: "Sanjay Singh",
+                  role: "Video Editing Head",
+                  organization: "DLG GROUP",
+                  color: "pink",
+                  icon: MessageCircle,
+                  imageUrl: "https://i.ibb.co/SX2PSkHX/sanjaysingh.jpg",
+                  portfolioUrl: null,
+                },
+                {
+                  row: 3,
+                  name: "AYAN AHMED KHAN",
+                  role: "WEB DEVELOPER",
+                  organization: "DLG GROUP",
+                  color: "green",
+                  icon: Globe,
+                  imageUrl: "https://ayanahmedkhan.live/assets/image/image.png",
+                  portfolioUrl: "https://ayanahmedkhan.live",
+                  isSpecial: true,
+                },
+                {
+                  row: 3,
+                  name: "Gagandeep Kushwah",
+                  role: "EXECUTIVE MEMBER",
+                  organization: "DLG GROUP",
+                  color: "violet",
+                  icon: Zap,
+                  imageUrl: "https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png",
+                  portfolioUrl: null,
+                },
+              ]
+
+              const membersByRow = teamMembers.reduce((acc, member) => {
+                if (!acc[member.row]) acc[member.row] = []
+                acc[member.row].push(member)
+                return acc
+              }, {})
+
+              const renderMemberCard = (member, index) => (
+                <Card
+                  key={`${member.name}-${index}`}
+                  className={`group relative bg-black/40 backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl overflow-hidden h-full flex flex-col ${member.isSpecial ? "border-yellow-400/60 hover:border-yellow-300 ring-2 ring-yellow-400/30 shadow-2xl shadow-yellow-500/20" : `border-${member.color}-500/30 hover:border-${member.color}-400/60 hover:shadow-${member.color}-500/20`}`}
+                >
+                  {member.isSpecial && (
+                    <div className="absolute -top-2 -right-2 z-10">
+                      <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold text-xs px-2 py-1 animate-pulse">
+                        ⭐ CREATOR
+                      </Badge>
+                    </div>
+                  )}
+
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br from-${member.color}-500/10 ${member.isSpecial ? "to-yellow-500/20" : "to-blue-500/10"} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  ></div>
+
+                  <CardHeader className="text-center relative p-4 flex-shrink-0">
+                    <div className="relative mb-3">
+                      <div
+                        className={`${member.isSpecial ? "w-16 h-16" : "w-12 h-12"} mx-auto rounded-full ${member.imageUrl ? "overflow-hidden" : `bg-gradient-to-r from-${member.color}-400 to-blue-400 flex items-center justify-center`} border-2 border-${member.color}-400/50 group-hover:border-${member.color}-400 transition-all duration-500 group-hover:scale-110 ${member.isSpecial ? "ring-2 ring-yellow-400/50" : ""}`}
+                      >
+                        {member.imageUrl ? (
+                          <img
+                            src={member.imageUrl || "/placeholder.svg"}
+                            alt={`Portrait of ${member.name}`}
+                            loading="lazy"
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                        ) : (
+                          <member.icon className="w-6 h-6 text-black" />
+                        )}
                       </div>
+                      <div
+                        className={`absolute inset-0 bg-${member.color}-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${member.isSpecial ? "animate-pulse" : ""}`}
+                      ></div>
+                    </div>
+
+                    <CardTitle
+                      className={`text-sm text-${member.color}-300 font-mono group-hover:text-${member.color}-200 transition-colors duration-300 mb-1 leading-tight`}
+                    >
+                      {member.name}
+                    </CardTitle>
+                    <CardDescription className={`text-${member.color}-200/80 font-mono text-xs mb-1`}>
+                      {member.role}
+                    </CardDescription>
+                    <CardDescription className={`text-${member.color}-200/60 font-mono text-xs`}>
+                      {member.organization}
+                    </CardDescription>
+                  </CardHeader>
+
+                  {/* Spacer to push button to bottom */}
+                  <div className="flex-grow"></div>
+
+                  {/* Button container with consistent height */}
+                  <CardContent className="text-center relative p-2 flex-shrink-0 h-12 flex items-center justify-center">
+                    {member.portfolioUrl ? (
+                      <Button
+                        size="sm"
+                        className={`group/btn bg-gradient-to-r from-${member.color}-500 ${member.isSpecial ? "to-yellow-500" : "to-blue-500"} hover:from-${member.color}-400 ${member.isSpecial ? "hover:to-yellow-400" : "hover:to-blue-400"} text-black font-bold border-0 shadow-lg shadow-${member.color}-500/25 transition-all duration-300 hover:scale-105 overflow-hidden text-xs px-2 py-1`}
+                        onClick={() => window.open(member.portfolioUrl, "_blank")}
+                      >
+                        <Linkedin className="w-3 h-3 mr-1" />
+                        LinkedIn
+                      </Button>
+                    ) : (
+                      // Empty div to maintain consistent spacing
+                      <div className="h-8"></div>
                     )}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br from-${member.color}-500/10 ${
-                        member.isSpecial
-                          ? "to-yellow-500/20"
-                          : member.color === "purple"
-                            ? "to-pink-500/10"
-                            : member.color === "indigo"
-                              ? "to-blue-500/10"
-                              : member.color === "emerald"
-                                ? "to-green-500/10"
-                                : member.color === "cyan"
-                                  ? "to-blue-500/10"
-                                  : member.color === "orange"
-                                    ? "to-red-500/10"
-                                    : member.color === "teal"
-                                      ? "to-cyan-500/10"
-                                      : member.color === "yellow"
-                                        ? "to-orange-500/10"
-                                        : member.color === "pink"
-                                          ? "to-rose-500/10"
-                                          : member.color === "violet"
-                                            ? "to-purple-500/10"
-                                            : "to-blue-500/10"
-                      } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                    ></div>
+                  </CardContent>
 
-                    <CardHeader className="text-center relative p-4">
-                      <div className="relative mb-3">
-                        <div
-                          className={`${member.isSpecial ? "w-16 h-16" : "w-12 h-12"} mx-auto rounded-full bg-gradient-to-r from-${member.color}-400 to-${member.color}-500 flex items-center justify-center border-2 border-${member.color}-400/50 group-hover:border-${member.color}-400 transition-all duration-500 group-hover:scale-110 ${
-                            member.isSpecial ? "ring-2 ring-yellow-400/50" : ""
-                          }`}
-                        >
-                          <member.icon className={`${member.isSpecial ? "w-8 h-8" : "w-6 h-6"} text-black`} />
-                        </div>
-                        <div
-                          className={`absolute inset-0 bg-${member.color}-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                            member.isSpecial ? "animate-pulse" : ""
-                          }`}
-                        ></div>
-                      </div>
-                      <CardTitle
-                        className={`${member.isSpecial ? "text-base" : "text-sm"} text-${member.color}-300 font-mono group-hover:text-${member.color}-200 transition-colors duration-300 mb-1 ${
-                          member.isSpecial ? "font-bold" : ""
-                        }`}
-                      >
-                        {member.name}
-                      </CardTitle>
-                      <CardDescription
-                        className={`text-${member.color}-200/80 font-mono text-xs mb-1 ${
-                          member.isSpecial ? "font-semibold" : ""
-                        }`}
-                      >
-                        {member.role}
-                      </CardDescription>
-                      <CardDescription
-                        className={`text-${member.color}-200/60 font-mono text-xs ${member.isSpecial ? "mb-2" : ""}`}
-                      >
-                        {member.organization}
-                      </CardDescription>
-                    </CardHeader>
+                  <div
+                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-${member.color}-500 ${member.isSpecial ? "to-yellow-500" : "to-blue-500"} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
+                  ></div>
+                </Card>
+              )
 
-                    {member.portfolioUrl && (
-                      <CardContent className="text-center relative p-2">
-                        <div className="flex justify-center space-x-1">
-                          <Button
-                            size="sm"
-                            className={`group/btn bg-gradient-to-r from-${member.color}-500 ${
-                              member.isSpecial ? "to-yellow-500" : "to-blue-500"
-                            } hover:from-${member.color}-400 ${
-                              member.isSpecial ? "hover:to-yellow-400" : "hover:to-blue-400"
-                            } text-black font-bold border-0 shadow-lg shadow-${member.color}-500/25 transition-all duration-300 hover:scale-105 overflow-hidden text-xs px-2 py-1`}
-                            onClick={() => window.open(member.portfolioUrl!, "_blank")}
-                          >
-                            <Linkedin className="w-3 h-3 mr-1" />
-                            LinkedIn
-                          </Button>
-                        </div>
-                      </CardContent>
-                    )}
+              return (
+                <>
+                  {/* Coordinator - Single card centered */}
+                  <div className="flex justify-center mb-8">
+                    <div className="w-full max-w-xs">
+                      {membersByRow[1]?.map((member, index) => renderMemberCard(member, index))}
+                    </div>
+                  </div>
 
-                    <div
-                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-${member.color}-500 ${
-                        member.isSpecial
-                          ? "to-yellow-500"
-                          : member.color === "purple"
-                            ? "to-pink-500"
-                            : member.color === "indigo"
-                              ? "to-blue-500"
-                              : member.color === "emerald"
-                                ? "to-green-500"
-                                : member.color === "cyan"
-                                  ? "to-blue-500"
-                                  : member.color === "orange"
-                                    ? "to-red-500"
-                                    : member.color === "teal"
-                                      ? "to-cyan-500"
-                                      : member.color === "yellow"
-                                        ? "to-orange-500"
-                                        : member.color === "pink"
-                                          ? "to-rose-500"
-                                          : member.color === "violet"
-                                            ? "to-purple-500"
-                                            : "to-blue-500"
-                      } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
-                    ></div>
-                  </Card>
-                ))}
-              </div>
-            ))}
+                  {/* Row 2 - Leadership Team */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8 max-w-7xl mx-auto">
+                    {membersByRow[2]?.map((member, index) => renderMemberCard(member, index))}
+                  </div>
 
-            <div className="mt-8">
-              <p className="text-green-100/60 font-mono text-sm">
-                <span className="text-green-400">{">"}</span> Dedicated team working together to make HackOrbit a
-                success
-                <br />
-                <span className="text-green-400">{">"}</span> Bringing innovation and excellence to Central India's
-                biggest hackathon
-              </p>
-            </div>
+                  {/* Row 3 - Team Members */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 max-w-7xl mx-auto">
+                    {membersByRow[3]?.map((member, index) => renderMemberCard(member, index))}
+                  </div>
+
+                  <div className="mt-8">
+                    <p className="text-green-100/60 font-mono text-sm text-center px-4">
+                      <span className="text-green-400">{">"}</span> Dedicated team working together to make HackOrbit a
+                      success
+                      <br />
+                      <span className="text-green-400">{">"}</span> Bringing innovation and excellence to Central
+                      India's biggest hackathon
+                    </p>
+                  </div>
+                </>
+              )
+            })()}
           </div>
         </section>
 
