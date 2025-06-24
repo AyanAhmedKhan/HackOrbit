@@ -1214,7 +1214,7 @@ export default function HackOrbitLanding() {
                   portfolioUrl: "https://www.linkedin.com/in/pooja-baghel-6a8913251/",
                 },
                 {
-                  row: 3,
+                  row: 2,
                   name: "Tanmay Garg",
                   role: "MANAGEMENT HEAD",
                   organization: "DLG GROUP",
@@ -1224,7 +1224,7 @@ export default function HackOrbitLanding() {
                   portfolioUrl: "https://www.linkedin.com/in/tanmaygarg926/",
                 },
                 {
-                  row: 3,
+                  row: 2,
                   name: "Shivraj Singh",
                   role: "TECHNICAL HEAD",
                   organization: "DLG GROUP",
@@ -1234,7 +1234,7 @@ export default function HackOrbitLanding() {
                   portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/",
                 },
                 {
-                  row: 3,
+                  row: 2,
                   name: "Prashant Pippal",
                   role: "MARKETING HEAD",
                   organization: "DLG GROUP",
