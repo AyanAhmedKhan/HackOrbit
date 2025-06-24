@@ -1,7 +1,6 @@
 "use client"
 import Image from 'next/image';
-import FallbackBackground from "../fallback-background"
-import ThreeComponents from "../three-components"
+
 
 import {
   Clock,
