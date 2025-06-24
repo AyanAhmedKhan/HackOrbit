@@ -1376,15 +1376,17 @@ export default function HackOrbitLanding() {
 
               return (
                 <>
-                  <div className="flex justify-center mb-8">
-                    {membersByRow[1]?.map((member, index) => renderMemberCard(member, index))}
-                  </div>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8 max-w-6xl mx-auto">
-                    {membersByRow[2]?.map((member, index) => renderMemberCard(member, index))}
-                  </div>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mx-auto">
-                    {membersByRow[3]?.map((member, index) => renderMemberCard(member, index))}
-                  </div>
+                  {/* Row 1 (Coordinator) */}
+          <div className="flex justify-center mb-8">
+            {membersByRow[1]?.map((member, index) => renderMemberCard(member, index))}
+          </div>
+
+          {/* Unified grid for Row 2 + Row 3 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto justify-items-center w-full">
+            {[...(membersByRow[2] || []), ...(membersByRow[3] || [])].map((member, index) =>
+              renderMemberCard(member, index)
+            )}
+          </div>
 
                   <div className="mt-8">
       <p className="text-green-100/60 font-mono text-sm">
