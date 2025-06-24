@@ -1,7 +1,4 @@
 "use client"
-import Image from 'next/image';
-import { Rocket, Users, Award, Target, Code, Zap, Globe, Trophy, MessageCircle, Linkedin } from "lucide-react";
-
 
 import {
   Clock,
@@ -13,42 +10,131 @@ import {
   Rocket,
   Globe,
   Award,
-  Mail,
   Phone,
   ExternalLink,
   MessageCircle,
   Instagram,
+  Linkedin,
 } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 
 import dynamic from "next/dynamic"
 
 import FallbackBackground from "./fallback-background"
+
 const teamMembers = [
-  { row: 1, name: "Dr. Punit Kumar Johari", role: "COORDINATOR", organization: "DLG GROUP", color: "purple", icon: Rocket, imageUrl: 'https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg', portfolioUrl: 'https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/' },
-  { row: 2, name: "Shiv Shrivastava", role: "PRESIDENT", organization: "DLG GROUP", color: "blue", icon: Users, imageUrl: 'https://media.licdn.com/dms/image/v2/D4D03AQHKgRv1IDAVtg/profile-displayphoto-shrink_800_800/0/1706464098389?e=1755734400&v=beta&t=WIRTKOaoVMqykrVfAXOy4ZG02vomSSscXkdbfzjJ_Dc', portfolioUrl: 'https://www.linkedin.com/in/shiv-shrivastava-4137bb268/' },
-  { row: 2, name: "Pooja Bhagel", role: "VICE PRESIDENT", organization: "DLG GROUP", color: "indigo", icon: Award, imageUrl: 'https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg', portfolioUrl: 'https://www.linkedin.com/in/pooja-baghel-6a8913251/' },
-  { row: 2, name: "Tanmay Garg", role: "MANAGEMENT HEAD", organization: "DLG GROUP", color: "emerald", icon: Target, imageUrl: 'https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg', portfolioUrl: 'https://www.linkedin.com/in/tanmaygarg926/' },
-  { row: 2, name: "Shivraj Singh", role: "TECHNICAL HEAD", organization: "DLG GROUP", color: "cyan", icon: Code, imageUrl: 'https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg', portfolioUrl: 'https://www.linkedin.com/in/shivrajsingh435/' },
-  { row: 2, name: "Prashant Pippal", role: "MARKETING HEAD", organization: "DLG GROUP", color: "orange", icon: Zap, imageUrl: 'https://i.ibb.co/5hdxZp1h/Prashant-pippal-promotion-headjpg.jpg', portfolioUrl: null },
-  { row: 3, name: "Riya Payak", role: "MARKETING HEAD", organization: "DLG GROUP", color: "teal", icon: Globe, imageUrl: 'https://i.ibb.co/35CSbJvf/Riya-payak-promotion-head.jpg', portfolioUrl: null },
-  { row: 3, name: "Yashshav Khandelwal ", role: "CONTENT HEAD", organization: "DLG GROUP", color: "yellow", icon: Trophy, imageUrl: 'https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg', portfolioUrl: null },
-  { row: 3, name: "Aniruddh Kushwaha", role: "GRAPHICS HEAD", organization: "DLG GROUP", color: "pink", icon: MessageCircle, imageUrl: 'https://i.ibb.co/35mBdhLY/Aniruddh-kushwaha-graphic-head.png', portfolioUrl: null },
-  { row: 3, name: "AYAN AHMED KHAN", role: "WEB DEVELOPER", organization: "DLG Group", color: "green", icon: Globe, imageUrl: "https://ayanahmedkhan.live/assets/image/image.png", portfolioUrl: "https://www.linkedin.com/in/ayanahmedkhan/", isSpecial: true },
-  { row: 3, name: "Gagandeep Kushwah", role: "EXECUTIVE MEMBER", organization: "DLG GROUP", color: "violet", icon: Zap, imageUrl: 'https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png', portfolioUrl: null }
-];
+  {
+    row: 1,
+    name: "Dr. Punit Kumar Johari",
+    role: "COORDINATOR",
+    organization: "DLG GROUP",
+    color: "purple",
+    icon: Rocket,
+    portfolioUrl: "https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/",
+  },
+  {
+    row: 2,
+    name: "Shiv Shrivastava",
+    role: "PRESIDENT",
+    organization: "DLG GROUP",
+    color: "blue",
+    icon: Users,
+    portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/",
+  },
+  {
+    row: 2,
+    name: "Pooja Bhagel",
+    role: "VICE PRESIDENT",
+    organization: "DLG GROUP",
+    color: "indigo",
+    icon: Award,
+    portfolioUrl: "https://www.linkedin.com/in/pooja-baghel-6a8913251/",
+  },
+  {
+    row: 2,
+    name: "Tanmay Garg",
+    role: "MANAGEMENT HEAD",
+    organization: "DLG GROUP",
+    color: "emerald",
+    icon: Target,
+    portfolioUrl: "https://www.linkedin.com/in/tanmaygarg926/",
+  },
+  {
+    row: 2,
+    name: "Shivraj Singh",
+    role: "TECHNICAL HEAD",
+    organization: "DLG GROUP",
+    color: "cyan",
+    icon: Code,
+    portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/",
+  },
+  {
+    row: 2,
+    name: "Prashant Pippal",
+    role: "MARKETING HEAD",
+    organization: "DLG GROUP",
+    color: "orange",
+    icon: Zap,
+    portfolioUrl: null,
+  },
+  {
+    row: 3,
+    name: "Riya Payak",
+    role: "MARKETING HEAD",
+    organization: "DLG GROUP",
+    color: "teal",
+    icon: Globe,
+    portfolioUrl: null,
+  },
+  {
+    row: 3,
+    name: "Yashshav Khandelwal ",
+    role: "CONTENT HEAD",
+    organization: "DLG GROUP",
+    color: "yellow",
+    icon: Trophy,
+    portfolioUrl: null,
+  },
+  {
+    row: 3,
+    name: "Aniruddh Kushwaha",
+    role: "GRAPHICS HEAD",
+    organization: "DLG GROUP",
+    color: "pink",
+    icon: MessageCircle,
+    portfolioUrl: null,
+  },
+  {
+    row: 3,
+    name: "AYAN AHMED KHAN",
+    role: "WEB DEVELOPER",
+    organization: "DLG Group",
+    color: "green",
+    icon: Globe,
+    portfolioUrl: "https://www.linkedin.com/in/ayanahmedkhan/",
+    isSpecial: true,
+  },
+  {
+    row: 3,
+    name: "Gagandeep Kushwah",
+    role: "EXECUTIVE MEMBER",
+    organization: "DLG GROUP",
+    color: "violet",
+    icon: Zap,
+    portfolioUrl: null,
+  },
+]
 
 const membersByRow = teamMembers.reduce((acc, member) => {
-  if (!acc[member.row]) acc[member.row] = [];
-  acc[member.row].push(member);
-  return acc;
-}, {});
+  if (!acc[member.row]) acc[member.row] = []
+  acc[member.row].push(member)
+  return acc
+}, {})
 
 // Dynamically import Three.js components with no SSR
 const ThreeComponents = dynamic(() => import("./three-components"), { ssr: false })
@@ -131,7 +217,7 @@ function CountdownTimer() {
     hours: 0,
     minutes: 0,
     seconds: 0,
-  });
+  })
 
   const colorMap = {
     red: {
@@ -170,36 +256,34 @@ function CountdownTimer() {
       text: "text-green-400",
       label: "text-green-200/60",
     },
-  };
+  }
 
   useEffect(() => {
-    const targetDate = new Date("2025-07-05T23:59:59").getTime();
+    const targetDate = new Date("2025-07-05T23:59:59").getTime()
 
     const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
+      const now = new Date().getTime()
+      const difference = targetDate - now
 
       if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000)
 
-        setTimeLeft({ days, hours, minutes, seconds });
+        setTimeLeft({ days, hours, minutes, seconds })
       } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
       }
-    }, 1000);
+    }, 1000)
 
-    return () => clearInterval(timer);
-  }, []);
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <div className="animate-fade-in-up" style={{ animationDelay: "1s" }}>
       <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold text-red-400 mb-2 font-mono animate-pulse">
-          REGISTRATION CLOSES IN
-        </h3>
+        <h3 className="text-2xl font-bold text-red-400 mb-2 font-mono animate-pulse">REGISTRATION CLOSES IN</h3>
         <a
           href="https://unstop.com/o/wYNVQPM?lb=aDpL27B4&utm_medium=Share&utm_source=shortUrl"
           target="_blank"
@@ -218,7 +302,7 @@ function CountdownTimer() {
           { value: timeLeft.minutes, label: "MINUTES", color: "yellow" },
           { value: timeLeft.seconds, label: "SECONDS", color: "green" },
         ].map((item, index) => {
-          const c = colorMap[item.color as keyof typeof colorMap];
+          const c = colorMap[item.color as keyof typeof colorMap]
           return (
             <div
               key={item.label}
@@ -238,7 +322,7 @@ function CountdownTimer() {
               </div>
               <div className={`font-mono text-sm ${c.label}`}>{item.label}</div>
             </div>
-          );
+          )
         })}
       </div>
 
@@ -259,9 +343,8 @@ function CountdownTimer() {
         </a>
       </div>
     </div>
-  );
+  )
 }
-
 
 export default function HackOrbitLanding() {
   const [isLoading, setIsLoading] = useState(true)
@@ -404,52 +487,50 @@ export default function HackOrbitLanding() {
         ></div>
 
         {/* Navigation */}
-<nav className="fixed top-0 w-full bg-black/20 backdrop-blur-xl z-50 border-b border-blue-500/20 transition-all duration-300">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex justify-between items-center py-4">
-      
-      {/* Logo + Title */}
-      <div className="flex items-center space-x-3 group">
-        <div className="relative group-hover:animate-bounce">
-          <Globe className="h-8 w-8 text-blue-400 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
-          <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-        </div>
-        <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-mono">
-          HackOrbit
-        </span>
-      </div>
+        <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-xl z-50 border-b border-blue-500/20 transition-all duration-300">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center py-4">
+              {/* Logo + Title */}
+              <div className="flex items-center space-x-3 group">
+                <div className="relative group-hover:animate-bounce">
+                  <Globe className="h-8 w-8 text-blue-400 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                  <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                </div>
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-mono">
+                  HackOrbit
+                </span>
+              </div>
 
-      {/* Navigation Links */}
-      <div className="hidden md:flex space-x-8">
-        {["ABOUT", "THEMES", "TIMELINE", "PRIZES", "SPONSORS"].map((item, index) => (
-          <Link
-            key={item}
-            href={item === "SPONSORS" ? "/sponsors" : `#${item.toLowerCase()}`}
-            className="relative text-blue-300/80 hover:text-blue-300 transition-all duration-300 font-mono group animate-slide-down"
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            {item}
-            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
-          </Link>
-        ))}
-      </div>
+              {/* Navigation Links */}
+              <div className="hidden md:flex space-x-8">
+                {["ABOUT", "THEMES", "TIMELINE", "PRIZES", "SPONSORS"].map((item, index) => (
+                  <Link
+                    key={item}
+                    href={item === "SPONSORS" ? "/sponsors" : `#${item.toLowerCase()}`}
+                    className="relative text-blue-300/80 hover:text-blue-300 transition-all duration-300 font-mono group animate-slide-down"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {item}
+                    <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
+                  </Link>
+                ))}
+              </div>
 
-      {/* Register Now Button with Link */}
-      <a
-        href="https://unstop.com/o/wYNVQPM?lb=aDpL27B4&utm_medium=Share&utm_source=shortUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button className="relative bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-black font-bold border-0 shadow-lg shadow-blue-500/25 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/40 overflow-hidden group animate-slide-down">
-          <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-          <Rocket className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:rotate-12" />
-          REGISTER NOW
-        </Button>
-      </a>
-    </div>
-  </div>
-</nav>
-
+              {/* Register Now Button with Link */}
+              <a
+                href="https://unstop.com/o/wYNVQPM?lb=aDpL27B4&utm_medium=Share&utm_source=shortUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="relative bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-black font-bold border-0 shadow-lg shadow-blue-500/25 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/40 overflow-hidden group animate-slide-down">
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                  <Rocket className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:rotate-12" />
+                  REGISTER NOW
+                </Button>
+              </a>
+            </div>
+          </div>
+        </nav>
 
         <nav aria-label="Breadcrumb" className="fixed top-20 left-4 z-40 hidden md:block">
           <ol className="flex space-x-2 text-sm font-mono">
@@ -474,81 +555,81 @@ export default function HackOrbitLanding() {
         </nav>
 
         {/* Hero Section */}
-<section id="hero" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative" aria-label="Hero section">
-  <header className="max-w-7xl mx-auto text-center">
-    <div className="animate-fade-in-up">
-      <Badge className="mb-6 bg-blue-500/20 text-blue-300 border-blue-500/50 font-mono backdrop-blur-sm hover:scale-105 transition-all duration-300">
-        <Globe className="w-4 h-4 mr-2 animate-spin" />
-        NATIONAL LEVEL ONLINE HACKATHON
-      </Badge>
-    </div>
+        <section id="hero" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative" aria-label="Hero section">
+          <header className="max-w-7xl mx-auto text-center">
+            <div className="animate-fade-in-up">
+              <Badge className="mb-6 bg-blue-500/20 text-blue-300 border-blue-500/50 font-mono backdrop-blur-sm hover:scale-105 transition-all duration-300">
+                <Globe className="w-4 h-4 mr-2 animate-spin" />
+                NATIONAL LEVEL ONLINE HACKATHON
+              </Badge>
+            </div>
 
-    <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-      <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight font-mono">
-        <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">
-          HackOrbit 2025
-        </span>
-      </h1>
-      <p className="text-2xl md:text-3xl text-blue-200 mb-4 font-mono">Get into the orbit of innovation.</p>
-    </div>
+            <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+              <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight font-mono">
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x">
+                  HackOrbit 2025
+                </span>
+              </h1>
+              <p className="text-2xl md:text-3xl text-blue-200 mb-4 font-mono">Get into the orbit of innovation.</p>
+            </div>
 
-    <div className="animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-      <div className="relative max-w-4xl mx-auto mb-8">
-        <p className="text-lg text-blue-100/90 font-mono leading-relaxed mb-4">
-          <span className="text-blue-400">{">"}</span> CENTRAL INDIA'S ULTIMATE CODE BATTLE
-        </p>
-        <p className="text-base text-cyan-200/80 font-mono">
-          National Level Online Hackathon by{" "}
-          <span className="text-cyan-400 font-bold">Digital Learning Group</span> and{" "}
-          <span className="text-blue-400 font-bold">Madhav Institute of Technology & Science, Gwalior</span>
-        </p>
-        <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-lg blur-xl opacity-50"></div>
-      </div>
-    </div>
+            <div className="animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+              <div className="relative max-w-4xl mx-auto mb-8">
+                <p className="text-lg text-blue-100/90 font-mono leading-relaxed mb-4">
+                  <span className="text-blue-400">{">"}</span> CENTRAL INDIA'S ULTIMATE CODE BATTLE
+                </p>
+                <p className="text-base text-cyan-200/80 font-mono">
+                  National Level Online Hackathon by{" "}
+                  <span className="text-cyan-400 font-bold">Digital Learning Group</span> and{" "}
+                  <span className="text-blue-400 font-bold">Madhav Institute of Technology & Science, Gwalior</span>
+                </p>
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-lg blur-xl opacity-50"></div>
+              </div>
+            </div>
 
-    {/* Buttons Section */}
-    <div
-      className="animate-fade-in-up flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
-      style={{ animationDelay: "0.6s" }}
-    >
-      {/* JOIN THE ORBIT -> Link */}
-      <a
-        href="https://unstop.com/o/wYNVQPM?lb=aDpL27B4&utm_medium=Share&utm_source=shortUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button
-          size="lg"
-          className="group relative bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-black font-bold text-lg px-10 py-4 border-0 shadow-2xl shadow-blue-500/30 transition-all duration-500 hover:scale-110 hover:shadow-blue-500/50 overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-          <Rocket className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:rotate-45" />
-          JOIN THE ORBIT
-        </Button>
-      </a>
+            {/* Buttons Section */}
+            <div
+              className="animate-fade-in-up flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+              style={{ animationDelay: "0.6s" }}
+            >
+              {/* JOIN THE ORBIT -> Link */}
+              <a
+                href="https://unstop.com/o/wYNVQPM?lb=aDpL27B4&utm_medium=Share&utm_source=shortUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  className="group relative bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-black font-bold text-lg px-10 py-4 border-0 shadow-2xl shadow-blue-500/30 transition-all duration-500 hover:scale-110 hover:shadow-blue-500/50 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                  <Rocket className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:rotate-45" />
+                  JOIN THE ORBIT
+                </Button>
+              </a>
 
-      {/* VIEW DETAILS -> Also Link */}
-      <a
-        href="https://unstop.com/o/wYNVQPM?lb=aDpL27B4&utm_medium=Share&utm_source=shortUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button
-          size="lg"
-          variant="outline"
-          className="group border-2 border-purple-500/50 text-purple-300 hover:bg-purple-500/20 text-lg px-10 py-4 font-mono backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-500/25"
-        >
-          <ExternalLink className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" />
-          VIEW DETAILS
-        </Button>
-      </a>
-    </div>
-          <div
+              {/* VIEW DETAILS -> Also Link */}
+              <a
+                href="https://unstop.com/o/wYNVQPM?lb=aDpL27B4&utm_medium=Share&utm_source=shortUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="group border-2 border-purple-500/50 text-purple-300 hover:bg-purple-500/20 text-lg px-10 py-4 font-mono backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-500/25"
+                >
+                  <ExternalLink className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" />
+                  VIEW DETAILS
+                </Button>
+              </a>
+            </div>
+            <div
               className="animate-fade-in-up grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16"
               style={{ animationDelay: "0.8s" }}
             >
               {[
-                { number: "36-HOUR", label: "HACKATHON", color: "blue", icon: Clock }, 
+                { number: "36-HOUR", label: "HACKATHON", color: "blue", icon: Clock },
                 { number: "₹25K+", label: "PRIZE POOL", color: "purple", icon: Trophy },
                 { number: "4", label: "MAX TEAM SIZE", color: "cyan", icon: Users },
                 { number: "NATIONAL", label: "LEVEL", color: "green", icon: Globe },
@@ -620,8 +701,9 @@ export default function HackOrbitLanding() {
                       <span className="text-blue-400">{">"}</span> With a focus on accessibility, creativity, and
                       future-readiness, DLG fosters a vibrant ecosystem of continuous digital learning.
                     </p>
-                     <p>
-                      <span className="text-blue-400">{">"}</span> The club is guided by Dr. Punit Kumar Johari, a dedicated faculty mentor who brings valuable expertise and support to the team.
+                    <p>
+                      <span className="text-blue-400">{">"}</span> The club is guided by Dr. Punit Kumar Johari, a
+                      dedicated faculty mentor who brings valuable expertise and support to the team.
                     </p>
                   </div>
                 </CardContent>
@@ -809,314 +891,367 @@ export default function HackOrbitLanding() {
           </div>
         </section>
 
-  <section id="timeline" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
-  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 backdrop-blur-3xl"></div>
-  <div className="max-w-4xl mx-auto relative">
-    <div className="text-center mb-16">
-      <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
-        MISSION TIMELINE
-      </h2>
-      <p className="text-xl text-cyan-100/80 font-mono">
-        <span className="text-cyan-400">{">"}</span> PREPARE FOR ORBITAL LAUNCH
-      </p>
-    </div>
-
-    <div className="space-y-8">
-      {[
-        {
-          icon: Users,
-          title: "REGISTRATION OPENS",
-          desc: "June 17, 2025 – Secure your spot in the orbit",
-          color: "blue",
-        },
-        {
-          icon: Clock,
-          title: "REGISTRATION CLOSES",
-          desc: "July 3, 2025 – Last day to board the mission",
-          color: "sky",
-        },
-        {
-          icon: Code,
-          title: "ROUND 1 – PPT SUBMISSION",
-          desc: "July 5, 2025 – Submit your concept pitch",
-          color: "indigo",
-        },
-        {
-          icon: Clock,
-          title: "ROUND 2 – FINAL SHOWDOWN BEGINS",
-          desc: "July 6, 2025, 11:00 AM – Hackathon kicks off (36 hours)",
-          color: "purple",
-        },
-        {
-          icon: Code,
-          title: "SUBMISSION DEADLINE",
-          desc: "July 7, 2025, 11:00 PM – Wrap up your mission",
-          color: "cyan",
-        },
-        {
-          icon: Trophy,
-          title: "RESULTS ANNOUNCEMENT",
-          desc: "July 10, 2025 – Winners revealed",
-          color: "green",
-        },
-      ].map((item, index) => {
-        const colorMap = {
-          blue: {
-            bg: "bg-blue-500/10",
-            border: "border-blue-500/30",
-            hoverBorder: "hover:border-blue-400/60",
-            gradient: "from-blue-500",
-            icon: "text-blue-400",
-            title: "text-blue-300",
-            hoverTitle: "group-hover:text-blue-200",
-            desc: "text-blue-100/80",
-            arrow: "text-blue-400",
-            pulse: "bg-blue-400/20",
-            bar: "from-blue-500 to-blue-300",
-          },
-          sky: {
-            bg: "bg-sky-500/10",
-            border: "border-sky-500/30",
-            hoverBorder: "hover:border-sky-400/60",
-            gradient: "from-sky-500",
-            icon: "text-sky-400",
-            title: "text-sky-300",
-            hoverTitle: "group-hover:text-sky-200",
-            desc: "text-sky-100/80",
-            arrow: "text-sky-400",
-            pulse: "bg-sky-400/20",
-            bar: "from-sky-500 to-sky-300",
-          },
-          indigo: {
-            bg: "bg-indigo-500/10",
-            border: "border-indigo-500/30",
-            hoverBorder: "hover:border-indigo-400/60",
-            gradient: "from-indigo-500",
-            icon: "text-indigo-400",
-            title: "text-indigo-300",
-            hoverTitle: "group-hover:text-indigo-200",
-            desc: "text-indigo-100/80",
-            arrow: "text-indigo-400",
-            pulse: "bg-indigo-400/20",
-            bar: "from-indigo-500 to-indigo-300",
-          },
-          purple: {
-            bg: "bg-purple-500/10",
-            border: "border-purple-500/30",
-            hoverBorder: "hover:border-purple-400/60",
-            gradient: "from-purple-500",
-            icon: "text-purple-400",
-            title: "text-purple-300",
-            hoverTitle: "group-hover:text-purple-200",
-            desc: "text-purple-100/80",
-            arrow: "text-purple-400",
-            pulse: "bg-purple-400/20",
-            bar: "from-purple-500 to-purple-300",
-          },
-          cyan: {
-            bg: "bg-cyan-500/10",
-            border: "border-cyan-500/30",
-            hoverBorder: "hover:border-cyan-400/60",
-            gradient: "from-cyan-500",
-            icon: "text-cyan-400",
-            title: "text-cyan-300",
-            hoverTitle: "group-hover:text-cyan-200",
-            desc: "text-cyan-100/80",
-            arrow: "text-cyan-400",
-            pulse: "bg-cyan-400/20",
-            bar: "from-cyan-500 to-cyan-300",
-          },
-          green: {
-            bg: "bg-green-500/10",
-            border: "border-green-500/30",
-            hoverBorder: "hover:border-green-400/60",
-            gradient: "from-green-500",
-            icon: "text-green-400",
-            title: "text-green-300",
-            hoverTitle: "group-hover:text-green-200",
-            desc: "text-green-100/80",
-            arrow: "text-green-400",
-            pulse: "bg-green-400/20",
-            bar: "from-green-500 to-green-300",
-          },
-        };
-
-        const styles = colorMap[item.color as keyof typeof colorMap];
-        const Icon = item.icon;
-
-        return (
-          <div
-            key={item.title}
-            className={`group flex items-center space-x-6 p-8 ${styles.bg} rounded-2xl ${styles.border} backdrop-blur-sm ${styles.hoverBorder} transition-all duration-500 hover:scale-105 hover:-translate-y-1 cursor-pointer overflow-hidden animate-slide-up`}
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            <div
-              className={`absolute inset-0 bg-gradient-to-r ${styles.gradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-            ></div>
-            <div className="relative">
-              <Icon
-                className={`h-10 w-10 ${styles.icon} transition-all duration-500 group-hover:scale-125 group-hover:rotate-12`}
-              />
-              <div
-                className={`absolute inset-0 ${styles.pulse} rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-              ></div>
-            </div>
-            <div className="relative flex-1">
-              <h3 className={`text-xl font-semibold font-mono mb-1 ${styles.title} ${styles.hoverTitle} transition-colors duration-300`}>
-                {item.title}
-              </h3>
-              <p className={`${styles.desc} font-mono`}>
-                <span className={`${styles.arrow}`}>{">"}</span> {item.desc}
+        <section id="timeline" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 backdrop-blur-3xl"></div>
+          <div className="max-w-4xl mx-auto relative">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
+                MISSION TIMELINE
+              </h2>
+              <p className="text-xl text-cyan-100/80 font-mono">
+                <span className="text-cyan-400">{">"}</span> PREPARE FOR ORBITAL LAUNCH
               </p>
             </div>
-            <div
-              className={`absolute left-0 top-0 h-full w-1 bg-gradient-to-b ${styles.bar} transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500`}
-            ></div>
+
+            <div className="space-y-8">
+              {[
+                {
+                  icon: Users,
+                  title: "REGISTRATION OPENS",
+                  desc: "June 17, 2025 – Secure your spot in the orbit",
+                  color: "blue",
+                },
+                {
+                  icon: Clock,
+                  title: "REGISTRATION CLOSES",
+                  desc: "July 3, 2025 – Last day to board the mission",
+                  color: "sky",
+                },
+                {
+                  icon: Code,
+                  title: "ROUND 1 – PPT SUBMISSION",
+                  desc: "July 5, 2025 – Submit your concept pitch",
+                  color: "indigo",
+                },
+                {
+                  icon: Clock,
+                  title: "ROUND 2 – FINAL SHOWDOWN BEGINS",
+                  desc: "July 6, 2025, 11:00 AM – Hackathon kicks off (36 hours)",
+                  color: "purple",
+                },
+                {
+                  icon: Code,
+                  title: "SUBMISSION DEADLINE",
+                  desc: "July 7, 2025, 11:00 PM – Wrap up your mission",
+                  color: "cyan",
+                },
+                {
+                  icon: Trophy,
+                  title: "RESULTS ANNOUNCEMENT",
+                  desc: "July 10, 2025 – Winners revealed",
+                  color: "green",
+                },
+              ].map((item, index) => {
+                const colorMap = {
+                  blue: {
+                    bg: "bg-blue-500/10",
+                    border: "border-blue-500/30",
+                    hoverBorder: "hover:border-blue-400/60",
+                    gradient: "from-blue-500",
+                    icon: "text-blue-400",
+                    title: "text-blue-300",
+                    hoverTitle: "group-hover:text-blue-200",
+                    desc: "text-blue-100/80",
+                    arrow: "text-blue-400",
+                    pulse: "bg-blue-400/20",
+                    bar: "from-blue-500 to-blue-300",
+                  },
+                  sky: {
+                    bg: "bg-sky-500/10",
+                    border: "border-sky-500/30",
+                    hoverBorder: "hover:border-sky-400/60",
+                    gradient: "from-sky-500",
+                    icon: "text-sky-400",
+                    title: "text-sky-300",
+                    hoverTitle: "group-hover:text-sky-200",
+                    desc: "text-sky-100/80",
+                    arrow: "text-sky-400",
+                    pulse: "bg-sky-400/20",
+                    bar: "from-sky-500 to-sky-300",
+                  },
+                  indigo: {
+                    bg: "bg-indigo-500/10",
+                    border: "border-indigo-500/30",
+                    hoverBorder: "hover:border-indigo-400/60",
+                    gradient: "from-indigo-500",
+                    icon: "text-indigo-400",
+                    title: "text-indigo-300",
+                    hoverTitle: "group-hover:text-indigo-200",
+                    desc: "text-indigo-100/80",
+                    arrow: "text-indigo-400",
+                    pulse: "bg-indigo-400/20",
+                    bar: "from-indigo-500 to-indigo-300",
+                  },
+                  purple: {
+                    bg: "bg-purple-500/10",
+                    border: "border-purple-500/30",
+                    hoverBorder: "hover:border-purple-400/60",
+                    gradient: "from-purple-500",
+                    icon: "text-purple-400",
+                    title: "text-purple-300",
+                    hoverTitle: "group-hover:text-purple-200",
+                    desc: "text-purple-100/80",
+                    arrow: "text-purple-400",
+                    pulse: "bg-purple-400/20",
+                    bar: "from-purple-500 to-purple-300",
+                  },
+                  cyan: {
+                    bg: "bg-cyan-500/10",
+                    border: "border-cyan-500/30",
+                    hoverBorder: "hover:border-cyan-400/60",
+                    gradient: "from-cyan-500",
+                    icon: "text-cyan-400",
+                    title: "text-cyan-300",
+                    hoverTitle: "group-hover:text-cyan-200",
+                    desc: "text-cyan-100/80",
+                    arrow: "text-cyan-400",
+                    pulse: "bg-cyan-400/20",
+                    bar: "from-cyan-500 to-cyan-300",
+                  },
+                  green: {
+                    bg: "bg-green-500/10",
+                    border: "border-green-500/30",
+                    hoverBorder: "hover:border-green-400/60",
+                    gradient: "from-green-500",
+                    icon: "text-green-400",
+                    title: "text-green-300",
+                    hoverTitle: "group-hover:text-green-200",
+                    desc: "text-green-100/80",
+                    arrow: "text-green-400",
+                    pulse: "bg-green-400/20",
+                    bar: "from-green-500 to-green-300",
+                  },
+                }
+
+                const styles = colorMap[item.color as keyof typeof colorMap]
+                const Icon = item.icon
+
+                return (
+                  <div
+                    key={item.title}
+                    className={`group flex items-center space-x-6 p-8 ${styles.bg} rounded-2xl ${styles.border} backdrop-blur-sm ${styles.hoverBorder} transition-all duration-500 hover:scale-105 hover:-translate-y-1 cursor-pointer overflow-hidden animate-slide-up`}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-r ${styles.gradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                    ></div>
+                    <div className="relative">
+                      <Icon
+                        className={`h-10 w-10 ${styles.icon} transition-all duration-500 group-hover:scale-125 group-hover:rotate-12`}
+                      />
+                      <div
+                        className={`absolute inset-0 ${styles.pulse} rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                      ></div>
+                    </div>
+                    <div className="relative flex-1">
+                      <h3
+                        className={`text-xl font-semibold font-mono mb-1 ${styles.title} ${styles.hoverTitle} transition-colors duration-300`}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className={`${styles.desc} font-mono`}>
+                        <span className={`${styles.arrow}`}>{">"}</span> {item.desc}
+                      </p>
+                    </div>
+                    <div
+                      className={`absolute left-0 top-0 h-full w-1 bg-gradient-to-b ${styles.bar} transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500`}
+                    ></div>
+                  </div>
+                )
+              })}
+            </div>
           </div>
-        );
-      })}
-    </div>
-  </div>
-</section>
+        </section>
 
+        {/* Prizes Section */}
+        <section id="prizes" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-lg z-0"></div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-white mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
+                ORBITAL REWARDS
+              </h2>
+              <p className="text-xl text-white font-mono">
+                <span className="text-yellow-400">{">"}</span> ₹25,000+ PRIZE POOL + EXCLUSIVE REWARDS
+              </p>
+            </div>
 
-<section id="sponsors" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
-  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 backdrop-blur-3xl"></div>
-  <div className="max-w-7xl mx-auto text-center relative">
-    
-    {/* Heading */}
-    <div className="mb-16">
-      <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
-        ORBITAL PARTNERS
-      </h2>
-      <p className="text-xl text-purple-100/80 mb-12 font-mono">
-        <span className="text-purple-400">{">"}</span> POWERED BY INDUSTRY LEADERS
-      </p>
-    </div>
+            <div className="flex justify-center mb-12">
+              <Card className="group relative bg-yellow-500/10 border border-yellow-400 backdrop-blur-md z-10 hover:scale-105 transition-all duration-500 hover:-translate-y-2 animate-slide-up max-w-md">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <CardHeader className="text-center relative">
+                  <div className="relative mb-4">
+                    <Trophy className="h-16 w-16 text-yellow-400 mx-auto transition-all duration-500 group-hover:scale-125 group-hover:rotate-12" />
+                    <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  <CardTitle className="text-3xl text-white font-mono">₹25,000+</CardTitle>
+                  <CardDescription className="text-yellow-200 font-mono">TOTAL PRIZE POOL</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center relative">
+                  <div className="text-xl font-bold text-yellow-300 font-mono mb-2">CASH PRIZES</div>
+                  <p className="text-yellow-100 font-mono text-sm">
+                    <span className="text-yellow-400">{">"}</span> DISTRIBUTED AMONG TOP PERFORMERS
+                  </p>
+                </CardContent>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-yellow-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              </Card>
+            </div>
 
-    {/* Unstop (main partner) */}
-<div className="mb-24">
-  <h3 className="text-3xl font-bold text-cyan-400 mb-8 font-mono text-center">POWERED BY</h3>
-  <div className="flex justify-center">
-    <a
-      href="https://unstop.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative bg-black/60 border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 backdrop-blur-sm overflow-hidden cursor-pointer max-w-sm p-6 rounded-xl"
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      <div className="text-center relative p-0">
-        <div className="h-20 flex items-center justify-center mb-4">
-          <img
-            src="https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/svg/unstop-logo.svg"
-            alt="Unstop Logo"
-            className="h-full object-contain transition-transform duration-300 group-hover:scale-110"
-          />
-        </div>
-        <div className="text-cyan-300 font-mono text-lg mb-2">PLATFORM PARTNER</div>
-        <div className="text-cyan-100/80 font-mono text-sm">
-          <span className="text-cyan-400">{">"}</span> India's Leading Student Community Platform
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-cyan-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-    </a>
-  </div>
-</div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="group relative bg-purple-500/10 border border-purple-400 backdrop-blur-md z-10 hover:scale-105 transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <CardHeader className="text-center relative">
+                  <Trophy className="h-12 w-12 text-purple-400 mx-auto mb-4" />
+                  <CardTitle className="text-xl text-white font-mono">TOP 10 TEAMS</CardTitle>
+                  <CardDescription className="text-purple-200 font-mono">EXCLUSIVE REWARDS</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center relative">
+                  <div className="text-2xl font-bold text-purple-300 font-mono mb-2">SWAGS & GOODIES</div>
+                  <p className="text-purple-100 font-mono text-sm">
+                    <span className="text-purple-400">{">"}</span> CERTIFICATES + MERCHANDISE VIA COURIER
+                  </p>
+                </CardContent>
+              </Card>
 
-<div className="mb-24">
-  <h3 className="text-3xl font-bold text-orange-400 mb-8 font-mono text-center">CO-POWERED BY</h3>
-  <div className="flex justify-center gap-6 flex-wrap">
-    {/* Time Coaching Gwalior */}
-    <a
-      href="https://www.time4education.com/Gwalior"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative bg-black/60 border-orange-500/30 hover:border-orange-400/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 backdrop-blur-sm overflow-hidden cursor-pointer max-w-sm p-6 rounded-xl"
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      <div className="text-center relative p-0">
-        <div className="h-20 flex items-center justify-center mb-4">
-          <img
-            src="https://i.ibb.co/h1Cq93jQ/downloadtimelogo.jpg"
-            alt="T.I.M.E Gwalior"
-            className="h-full object-contain transition-transform duration-300 group-hover:scale-110"
-          />
-        </div>
-        <div className="text-orange-300 font-mono text-lg mb-2">T.I.M.E – GWALIOR</div>
-        <div className="text-orange-100/80 font-mono text-sm">
-          <span className="text-orange-400">{">"}</span> Shaping Careers. Empowering Dreams.
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-    </a>
-  </div>
-</div>
-
-
-    {/* Other Sponsors */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
-      {[
-        {
-          name: "GEEKSFORGEEKS",
-          color: "green",
-          role: "🎓 KNOWLEDGE PARTNER",
-          desc: "Leading Programming Education Platform",
-          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/GeeksforGeeks.svg/1200px-GeeksforGeeks.svg.png",
-          link: "https://www.geeksforgeeks.org/",
-        },
-        {
-          name: "INTERVIEWBUDDY",
-          color: "purple",
-          role: "💼 CAREER SUPPORT PARTNER",
-          desc: "AI-Powered Interview Preparation Platform",
-          logo: "https://media.licdn.com/dms/image/v2/D560BAQFIdYutkMbK4w/company-logo_200_200/company-logo_200_200/0/1729591843173/interviewbuddy_logo?e=1755734400&v=beta&t=WXszNIxda5R3pEw9kQZgWPuC5WAg2tOeNWI8KWlaMSU",
-          link: "https://interviewbuddy.net/",
-        },
-        {
-          name: ".XYZ DOMAIN",
-          color: "blue",
-          role: "🌐 WEB INNOVATION PARTNER",
-          desc: "Next Generation Domain Solutions",
-          logo: "https://i.ibb.co/F4B2s9bS/xyzdownload-5.png",
-          link: "https://gen.xyz/",
-        },
-        {
-          name: "CODECRAFTERS",
-          color: "cyan",
-          role: "🧠 TECH PARTNER",
-          desc: "Advanced Programming Challenges Platform",
-          logo: "https://codecrafters.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.df7bb93f.png&w=96&q=75",
-          link: "https://codecrafters.io/",
-        },
-      ].map((sponsor) => (
-        <a
-          key={sponsor.name}
-          href={sponsor.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`group bg-black/60 p-6 rounded-2xl border border-${sponsor.color}-500/30 hover:border-${sponsor.color}-400/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 backdrop-blur-sm cursor-pointer overflow-hidden max-w-xs`}
-        >
-          <div className="h-16 mb-3 flex items-center justify-center">
-            <img
-              src={sponsor.logo}
-              alt={`${sponsor.name} logo`}
-              className="object-contain max-h-full group-hover:scale-110 transition-transform duration-300"
-            />
+              <Card className="group relative bg-green-500/10 border border-green-400 backdrop-blur-md z-10 hover:scale-105 transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <CardHeader className="text-center relative">
+                  <Rocket className="h-12 w-12 text-green-400 mx-auto mb-4" />
+                  <CardTitle className="text-xl text-white font-mono">ALL PARTICIPANTS</CardTitle>
+                  <CardDescription className="text-green-200 font-mono">PARTICIPATION REWARDS</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center relative">
+                  <div className="text-2xl font-bold text-green-300 font-mono mb-2">CERTIFICATES</div>
+                  <p className="text-green-100 font-mono text-sm">
+                    <span className="text-green-400">{">"}</span> NATIONAL LEVEL PARTICIPATION CERTIFICATES
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-          <div className={`h-12 rounded-xl flex items-center justify-center font-bold font-mono text-lg mb-3 bg-gradient-to-r from-${sponsor.color}-400 to-${sponsor.color}-300 text-black relative overflow-hidden`}>
-            {sponsor.name}
-          </div>
-          <p className={`text-${sponsor.color}-300 font-mono text-sm mb-1`}>{sponsor.role}</p>
-          <p className={`text-${sponsor.color}-100/80 font-mono text-xs text-center`}>
-            <span className={`text-${sponsor.color}-400`}>{">"}</span> {sponsor.desc}
-          </p>
-        </a>
-      ))}
-    </div>
-  </div>
-</section>
+        </section>
 
-{/* Community Section with Enhanced Social Icons */}
+        <section id="sponsors" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 backdrop-blur-3xl"></div>
+          <div className="max-w-7xl mx-auto text-center relative">
+            {/* Heading */}
+            <div className="mb-16">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
+                ORBITAL PARTNERS
+              </h2>
+              <p className="text-xl text-purple-100/80 mb-12 font-mono">
+                <span className="text-purple-400">{">"}</span> POWERED BY INDUSTRY LEADERS
+              </p>
+            </div>
+
+            {/* Unstop (main partner) */}
+            <div className="mb-24">
+              <h3 className="text-3xl font-bold text-cyan-400 mb-8 font-mono text-center">POWERED BY</h3>
+              <div className="flex justify-center">
+                <a
+                  href="https://unstop.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative bg-black/60 border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 backdrop-blur-sm overflow-hidden cursor-pointer max-w-sm p-6 rounded-xl"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="text-center relative p-0">
+                    <div className="h-20 bg-gradient-to-r from-cyan-400 to-cyan-300 rounded-xl flex items-center justify-center text-black font-bold font-mono text-2xl mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-1 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                      UNSTOP
+                    </div>
+                    <div className="text-cyan-300 font-mono text-lg mb-2">PLATFORM PARTNER</div>
+                    <div className="text-cyan-100/80 font-mono text-sm">
+                      <span className="text-cyan-400">{">"}</span> India's Leading Student Community Platform
+                    </div>
+                  </div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-cyan-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                </a>
+              </div>
+            </div>
+
+            <div className="mb-24">
+              <h3 className="text-3xl font-bold text-orange-400 mb-8 font-mono text-center">CO-POWERED BY</h3>
+              <div className="flex justify-center gap-6 flex-wrap">
+                {/* Time Coaching Gwalior */}
+                <a
+                  href="https://www.time4education.com/Gwalior"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative bg-black/60 border-orange-500/30 hover:border-orange-400/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 backdrop-blur-sm overflow-hidden cursor-pointer max-w-sm p-6 rounded-xl"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="text-center relative p-0">
+                    <div className="h-20 bg-gradient-to-r from-orange-400 to-orange-300 rounded-xl flex items-center justify-center text-black font-bold font-mono text-lg mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-1 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                      T.I.M.E
+                    </div>
+                    <div className="text-orange-300 font-mono text-lg mb-2">T.I.M.E – GWALIOR</div>
+                    <div className="text-orange-100/80 font-mono text-sm">
+                      <span className="text-orange-400">{">"}</span> Shaping Careers. Empowering Dreams.
+                    </div>
+                  </div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                </a>
+              </div>
+            </div>
+
+            {/* Other Sponsors */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-items-center">
+              {[
+                {
+                  name: "GEEKSFORGEEKS",
+                  color: "green",
+                  role: "🎓 KNOWLEDGE PARTNER",
+                  desc: "Leading Programming Education Platform",
+                  link: "https://www.geeksforgeeks.org/",
+                },
+                {
+                  name: "INTERVIEWBUDDY",
+                  color: "purple",
+                  role: "💼 CAREER SUPPORT PARTNER",
+                  desc: "AI-Powered Interview Preparation Platform",
+                  link: "https://interviewbuddy.net/",
+                },
+                {
+                  name: ".XYZ DOMAIN",
+                  color: "blue",
+                  role: "🌐 WEB INNOVATION PARTNER",
+                  desc: "Next Generation Domain Solutions",
+                  link: "https://gen.xyz/",
+                },
+                {
+                  name: "CODECRAFTERS",
+                  color: "cyan",
+                  role: "🧠 TECH PARTNER",
+                  desc: "Advanced Programming Challenges Platform",
+                  link: "https://codecrafters.io/",
+                },
+              ].map((sponsor) => (
+                <a
+                  key={sponsor.name}
+                  href={sponsor.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group bg-black/60 p-6 rounded-2xl border border-${sponsor.color}-500/30 hover:border-${sponsor.color}-400/60 transition-all duration-500 hover:scale-110 hover:-translate-y-2 backdrop-blur-sm cursor-pointer overflow-hidden max-w-xs`}
+                >
+                  <div
+                    className={`h-12 bg-gradient-to-r from-${sponsor.color}-400 to-${sponsor.color}-300 rounded-xl flex items-center justify-center text-black font-bold font-mono text-sm mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-1 relative overflow-hidden`}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                    {sponsor.name}
+                  </div>
+                  <p className={`text-${sponsor.color}-300 font-mono text-sm mb-1`}>{sponsor.role}</p>
+                  <p className={`text-${sponsor.color}-100/80 font-mono text-xs text-center`}>
+                    <span className={`text-${sponsor.color}-400`}>{">"}</span> {sponsor.desc}
+                  </p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Community Section with Enhanced Social Icons */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
           <div className="max-w-4xl mx-auto text-center">
             <div>
@@ -1192,129 +1327,172 @@ export default function HackOrbitLanding() {
                 </a>
               ))}
             </div>
-
-           
           </div>
         </section>
 
-       
+        {/* Organizing Committee Section */}
+        <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 backdrop-blur-3xl"></div>
+          <div className="max-w-7xl mx-auto text-center relative">
+            <div>
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
+                ORGANIZING COMMITTEE
+              </h2>
+              <p className="text-xl text-green-100/80 mb-12 font-mono">
+                <span className="text-green-400">{">"}</span> MEET THE MINDS BEHIND HACKORBIT
+              </p>
+            </div>
 
-           {/* Organizing Committee Section */}
-<section id="team" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
-  <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 backdrop-blur-3xl"></div>
-  <div className="max-w-7xl mx-auto text-center relative">
-    <div>
-      <h2 className="text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
-        ORGANIZING COMMITTEE
-      </h2>
-      <p className="text-xl text-green-100/80 mb-12 font-mono">
-        <span className="text-green-400">{">"}</span> MEET THE MINDS BEHIND HACKORBIT
-      </p>
-    </div>
-
-    {/* Map Rows */}
-    {[1, 2, 3].map((row) => (
-      <div
-        key={row}
-        className={`${
-          row === 1 ? "flex justify-center mb-8" : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8 max-w-6xl mx-auto"
-        }`}
-      >
-        {membersByRow[row]?.map((member, index) => (
-          <Card
-            key={`${member.name}-${index}`}
-            className={`group relative bg-black/40 border-${member.color}-500/30 backdrop-blur-xl hover:border-${member.color}-400/60 transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-${member.color}-500/20 overflow-hidden ${
-              row === 1 ? 'w-48' : ''
-            } ${
-              member.isSpecial ? 'ring-2 ring-yellow-400/30 border-yellow-400/60 shadow-2xl shadow-yellow-500/20' : ''
-            }`}
-          >
-            {member.isSpecial && (
-              <div className="absolute -top-2 -right-2 z-10">
-                <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold text-xs px-2 py-1 animate-pulse">
-                  ⭐ CREATOR
-                </Badge>
-              </div>
-            )}
-            <div className={`absolute inset-0 bg-gradient-to-br from-${member.color}-500/10 ${
-              member.isSpecial ? 'to-yellow-500/20' : member.color === 'purple' ? 'to-pink-500/10' : member.color === 'indigo' ? 'to-blue-500/10' : member.color === 'emerald' ? 'to-green-500/10' : member.color === 'cyan' ? 'to-blue-500/10' : member.color === 'orange' ? 'to-red-500/10' : member.color === 'teal' ? 'to-cyan-500/10' : member.color === 'yellow' ? 'to-orange-500/10' : member.color === 'pink' ? 'to-rose-500/10' : member.color === 'violet' ? 'to-purple-500/10' : 'to-blue-500/10'
-            } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-
-            <CardHeader className="text-center relative p-4">
-              <div className="relative mb-3">
-                <div className={`${member.isSpecial ? 'w-16 h-16' : 'w-12 h-12'} mx-auto rounded-full ${
-                  member.imageUrl ? 'overflow-hidden' : `bg-gradient-to-r from-${member.color}-400 to-${member.color}-500 flex items-center justify-center`
-                } border-2 border-${member.color}-400/50 group-hover:border-${member.color}-400 transition-all duration-500 group-hover:scale-110 ${
-                  member.isSpecial ? 'ring-2 ring-yellow-400/50' : ''
-                }`}>
-                  {member.imageUrl ? (
-                    <img
-                      src={member.imageUrl || "/placeholder.svg"}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  ) : (
-                    <member.icon className={`${member.isSpecial ? 'w-8 h-8' : 'w-6 h-6'} text-black`} />
-                  )}
-                </div>
-                <div className={`absolute inset-0 bg-${member.color}-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                  member.isSpecial ? 'animate-pulse' : ''
-                }`}></div>
-              </div>
-              <CardTitle className={`${member.isSpecial ? 'text-base' : 'text-sm'} text-${member.color}-300 font-mono group-hover:text-${member.color}-200 transition-colors duration-300 mb-1 ${
-                member.isSpecial ? 'font-bold' : ''
-              }`}>
-                {member.name}
-              </CardTitle>
-              <CardDescription className={`text-${member.color}-200/80 font-mono text-xs mb-1 ${
-                member.isSpecial ? 'font-semibold' : ''
-              }`}>
-                {member.role}
-              </CardDescription>
-              <CardDescription className={`text-${member.color}-200/60 font-mono text-xs ${
-                member.isSpecial ? 'mb-2' : ''
-              }`}>
-                {member.organization}
-              </CardDescription>
-            </CardHeader>
-
-            {member.portfolioUrl && (
-              <CardContent className="text-center relative p-2">
-                <div className="flex justify-center space-x-1">
-                  <Button
-                    size="sm"
-                    className={`group/btn bg-gradient-to-r from-${member.color}-500 ${
-                      member.isSpecial ? 'to-yellow-500' : 'to-blue-500'
-                    } hover:from-${member.color}-400 ${
-                      member.isSpecial ? 'hover:to-yellow-400' : 'hover:to-blue-400'
-                    } text-black font-bold border-0 shadow-lg shadow-${member.color}-500/25 transition-all duration-300 hover:scale-105 overflow-hidden text-xs px-2 py-1`}
-                    onClick={() => window.open(member.portfolioUrl!, "_blank")}
+            {/* Map Rows */}
+            {[1, 2, 3].map((row) => (
+              <div
+                key={row}
+                className={`${
+                  row === 1
+                    ? "flex justify-center mb-8"
+                    : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8 max-w-6xl mx-auto"
+                }`}
+              >
+                {membersByRow[row]?.map((member, index) => (
+                  <Card
+                    key={`${member.name}-${index}`}
+                    className={`group relative bg-black/40 border-${member.color}-500/30 backdrop-blur-xl hover:border-${member.color}-400/60 transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:shadow-${member.color}-500/20 overflow-hidden ${
+                      row === 1 ? "w-48" : ""
+                    } ${
+                      member.isSpecial
+                        ? "ring-2 ring-yellow-400/30 border-yellow-400/60 shadow-2xl shadow-yellow-500/20"
+                        : ""
+                    }`}
                   >
-                    <Linkedin className="w-3 h-3 mr-1" />
-                    LinkedIn
-                  </Button>
-                </div>
-              </CardContent>
-            )}
+                    {member.isSpecial && (
+                      <div className="absolute -top-2 -right-2 z-10">
+                        <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold text-xs px-2 py-1 animate-pulse">
+                          ⭐ CREATOR
+                        </Badge>
+                      </div>
+                    )}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br from-${member.color}-500/10 ${
+                        member.isSpecial
+                          ? "to-yellow-500/20"
+                          : member.color === "purple"
+                            ? "to-pink-500/10"
+                            : member.color === "indigo"
+                              ? "to-blue-500/10"
+                              : member.color === "emerald"
+                                ? "to-green-500/10"
+                                : member.color === "cyan"
+                                  ? "to-blue-500/10"
+                                  : member.color === "orange"
+                                    ? "to-red-500/10"
+                                    : member.color === "teal"
+                                      ? "to-cyan-500/10"
+                                      : member.color === "yellow"
+                                        ? "to-orange-500/10"
+                                        : member.color === "pink"
+                                          ? "to-rose-500/10"
+                                          : member.color === "violet"
+                                            ? "to-purple-500/10"
+                                            : "to-blue-500/10"
+                      } opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                    ></div>
 
-            <div className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-${member.color}-500 ${
-              member.isSpecial ? 'to-yellow-500' : member.color === 'purple' ? 'to-pink-500' : member.color === 'indigo' ? 'to-blue-500' : member.color === 'emerald' ? 'to-green-500' : member.color === 'cyan' ? 'to-blue-500' : member.color === 'orange' ? 'to-red-500' : member.color === 'teal' ? 'to-cyan-500' : member.color === 'yellow' ? 'to-orange-500' : member.color === 'pink' ? 'to-rose-500' : member.color === 'violet' ? 'to-purple-500' : 'to-blue-500'
-            } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
-          </Card>
-        ))}
-      </div>
-    ))}
+                    <CardHeader className="text-center relative p-4">
+                      <div className="relative mb-3">
+                        <div
+                          className={`${member.isSpecial ? "w-16 h-16" : "w-12 h-12"} mx-auto rounded-full bg-gradient-to-r from-${member.color}-400 to-${member.color}-500 flex items-center justify-center border-2 border-${member.color}-400/50 group-hover:border-${member.color}-400 transition-all duration-500 group-hover:scale-110 ${
+                            member.isSpecial ? "ring-2 ring-yellow-400/50" : ""
+                          }`}
+                        >
+                          <member.icon className={`${member.isSpecial ? "w-8 h-8" : "w-6 h-6"} text-black`} />
+                        </div>
+                        <div
+                          className={`absolute inset-0 bg-${member.color}-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                            member.isSpecial ? "animate-pulse" : ""
+                          }`}
+                        ></div>
+                      </div>
+                      <CardTitle
+                        className={`${member.isSpecial ? "text-base" : "text-sm"} text-${member.color}-300 font-mono group-hover:text-${member.color}-200 transition-colors duration-300 mb-1 ${
+                          member.isSpecial ? "font-bold" : ""
+                        }`}
+                      >
+                        {member.name}
+                      </CardTitle>
+                      <CardDescription
+                        className={`text-${member.color}-200/80 font-mono text-xs mb-1 ${
+                          member.isSpecial ? "font-semibold" : ""
+                        }`}
+                      >
+                        {member.role}
+                      </CardDescription>
+                      <CardDescription
+                        className={`text-${member.color}-200/60 font-mono text-xs ${member.isSpecial ? "mb-2" : ""}`}
+                      >
+                        {member.organization}
+                      </CardDescription>
+                    </CardHeader>
 
-    <div className="mt-8">
-      <p className="text-green-100/60 font-mono text-sm">
-        <span className="text-green-400">{">"}</span> Dedicated team working together to make HackOrbit a success
-        <br />
-        <span className="text-green-400">{">"}</span> Bringing innovation and excellence to Central India's biggest hackathon
-      </p>
-    </div>
-  </div>
-</section>
+                    {member.portfolioUrl && (
+                      <CardContent className="text-center relative p-2">
+                        <div className="flex justify-center space-x-1">
+                          <Button
+                            size="sm"
+                            className={`group/btn bg-gradient-to-r from-${member.color}-500 ${
+                              member.isSpecial ? "to-yellow-500" : "to-blue-500"
+                            } hover:from-${member.color}-400 ${
+                              member.isSpecial ? "hover:to-yellow-400" : "hover:to-blue-400"
+                            } text-black font-bold border-0 shadow-lg shadow-${member.color}-500/25 transition-all duration-300 hover:scale-105 overflow-hidden text-xs px-2 py-1`}
+                            onClick={() => window.open(member.portfolioUrl!, "_blank")}
+                          >
+                            <Linkedin className="w-3 h-3 mr-1" />
+                            LinkedIn
+                          </Button>
+                        </div>
+                      </CardContent>
+                    )}
 
+                    <div
+                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-${member.color}-500 ${
+                        member.isSpecial
+                          ? "to-yellow-500"
+                          : member.color === "purple"
+                            ? "to-pink-500"
+                            : member.color === "indigo"
+                              ? "to-blue-500"
+                              : member.color === "emerald"
+                                ? "to-green-500"
+                                : member.color === "cyan"
+                                  ? "to-blue-500"
+                                  : member.color === "orange"
+                                    ? "to-red-500"
+                                    : member.color === "teal"
+                                      ? "to-cyan-500"
+                                      : member.color === "yellow"
+                                        ? "to-orange-500"
+                                        : member.color === "pink"
+                                          ? "to-rose-500"
+                                          : member.color === "violet"
+                                            ? "to-purple-500"
+                                            : "to-blue-500"
+                      } transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
+                    ></div>
+                  </Card>
+                ))}
+              </div>
+            ))}
+
+            <div className="mt-8">
+              <p className="text-green-100/60 font-mono text-sm">
+                <span className="text-green-400">{">"}</span> Dedicated team working together to make HackOrbit a
+                success
+                <br />
+                <span className="text-green-400">{">"}</span> Bringing innovation and excellence to Central India's
+                biggest hackathon
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section
           id="faq"
