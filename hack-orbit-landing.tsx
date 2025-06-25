@@ -1548,7 +1548,7 @@ export default function HackOrbitLanding() {
     {(() => {
       const teamMembers = [
         { row: 1, name: "Dr. Punit Kumar Johari", role: "COORDINATOR", organization: "DLG GROUP", color: "purple", icon: Rocket, imageUrl: "https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg", portfolioUrl: "https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/" },
-        { row: 2, name: "Shiv Shrivastava", role: "PRESIDENT", organization: "DLG GROUP", color: "blue", icon: Users, imageUrl: "https://media.licdn.com/dms/image/v2/D4D03AQHKgRv1IDAVtg/profile-displayphoto-shrink_800_800/0/1706464098389?e=1755734400&v=beta&t=WIRTKOaoVMqykrVfAXOy4ZG02vomSSscXkdbfzjJ_Dc", portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/" },
+        { row: 2, name: "Shiv Shrivastava", role: "PRESIDENT", organization: "DLG GROUP", color: "blue", icon: Users, imageUrl: "https://i.ibb.co/XfmvcnqP/download.jpg", portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/" },
         { row: 2, name: "Pooja Bhagel", role: "VICE PRESIDENT", organization: "DLG GROUP", color: "indigo", icon: Award, imageUrl: "https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg", portfolioUrl: "https://www.linkedin.com/in/pooja-baghel-6a8913251/" },
         { row: 2, name: "Tanmay Garg", role: "MANAGEMENT HEAD", organization: "DLG GROUP", color: "emerald", icon: Target, imageUrl: "https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg", portfolioUrl: "https://www.linkedin.com/in/tanmaygarg926/" },
         { row: 2, name: "Shivraj Singh", role: "TECHNICAL HEAD", organization: "DLG GROUP", color: "cyan", icon: Code, imageUrl: "https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg", portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/" },
