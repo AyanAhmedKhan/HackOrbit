@@ -1547,17 +1547,17 @@ export default function HackOrbitLanding() {
 
     {(() => {
       const teamMembers = [
-        { row: 1, name: "Dr. Punit Kumar Johari", role: "COORDINATOR", organization: "DLG GROUP", color: "purple", icon: Rocket, imageUrl: "https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg", portfolioUrl: "https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/" },
-        { row: 2, name: "Shiv Shrivastava", role: "PRESIDENT", organization: "DLG GROUP", color: "blue", icon: Users, imageUrl: "https://i.ibb.co/XfmvcnqP/download.jpg", portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/" },
-        { row: 2, name: "Pooja Bhagel", role: "VICE PRESIDENT", organization: "DLG GROUP", color: "indigo", icon: Award, imageUrl: "https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg", portfolioUrl: "https://www.linkedin.com/in/pooja-baghel-6a8913251/" },
-        { row: 2, name: "Tanmay Garg", role: "MANAGEMENT HEAD", organization: "DLG GROUP", color: "emerald", icon: Target, imageUrl: "https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg", portfolioUrl: "https://www.linkedin.com/in/tanmaygarg926/" },
-        { row: 2, name: "Shivraj Singh", role: "TECHNICAL HEAD", organization: "DLG GROUP", color: "cyan", icon: Code, imageUrl: "https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg", portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/" },
-        { row: 2, name: "Prashant Pippal", role: "MARKETING HEAD", organization: "DLG GROUP", color: "orange", icon: Zap, imageUrl: "https://i.ibb.co/5hdxZp1h/Prashant-pippal-promotion-headjpg.jpg", portfolioUrl: "https://www.linkedin.com/in/prashant-pippal-759325292/" },
-        { row: 3, name: "Riya Payak", role: "MARKETING HEAD", organization: "DLG GROUP", color: "teal", icon: Globe, imageUrl: "https://i.ibb.co/35CSbJvf/Riya-payak-promotion-head.jpg", portfolioUrl: null },
-        { row: 3, name: "Yashshav Khandelwal", role: "CONTENT HEAD", organization: "DLG GROUP", color: "yellow", icon: Trophy, imageUrl: "https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg", portfolioUrl: null },
-        { row: 3, name: "Sanjay Singh", role: "Video Editing Head", organization: "DLG GROUP", color: "pink", icon: MessageCircle, imageUrl: "https://i.ibb.co/SX2PSkHX/sanjaysingh.jpg", portfolioUrl: null },
-        { row: 3, name: "AYAN AHMED KHAN", role: "WEB DEVELOPER", organization: "DLG GROUP", color: "green", icon: Globe, imageUrl: "https://ayanahmedkhan.live/assets/image/image.png", portfolioUrl: "https://ayanahmedkhan.live", isSpecial: true },
-        { row: 3, name: "Gagandeep Kushwah", role: "EXECUTIVE MEMBER", organization: "DLG GROUP", color: "violet", icon: Zap, imageUrl: "https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png", portfolioUrl: "https://www.linkedin.com/in/gagandeepkushwah730221b/" }
+        { row: 1, name: "Dr. Punit Kumar Johari", role: "COORDINATOR", organization: "DLG Club", color: "purple", icon: Rocket, imageUrl: "https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg", portfolioUrl: "https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/" },
+        { row: 2, name: "Shiv Shrivastava", role: "PRESIDENT", organization: "DLG Club", color: "blue", icon: Users, imageUrl: "https://i.ibb.co/XfmvcnqP/download.jpg", portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/" },
+        { row: 2, name: "Pooja Bhagel", role: "VICE PRESIDENT", organization: "DLG Club", color: "indigo", icon: Award, imageUrl: "https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg", portfolioUrl: "https://www.linkedin.com/in/pooja-baghel-6a8913251/" },
+        { row: 2, name: "Tanmay Garg", role: "MANAGEMENT HEAD", organization: "DLG Club", color: "emerald", icon: Target, imageUrl: "https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg", portfolioUrl: "https://www.linkedin.com/in/tanmaygarg926/" },
+        { row: 2, name: "Shivraj Singh", role: "TECHNICAL HEAD", organization: "DLG Club", color: "cyan", icon: Code, imageUrl: "https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg", portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/" },
+        { row: 2, name: "Prashant Pippal", role: "MARKETING HEAD", organization: "DLG Club", color: "orange", icon: Zap, imageUrl: "https://i.ibb.co/5hdxZp1h/Prashant-pippal-promotion-headjpg.jpg", portfolioUrl: "https://www.linkedin.com/in/prashant-pippal-759325292/" },
+        { row: 3, name: "Riya Payak", role: "MARKETING HEAD", organization: "DLG Club", color: "teal", icon: Globe, imageUrl: "https://i.ibb.co/35CSbJvf/Riya-payak-promotion-head.jpg", portfolioUrl: null },
+        { row: 3, name: "Yashshav Khandelwal", role: "CONTENT HEAD", organization: "DLG Club", color: "yellow", icon: Trophy, imageUrl: "https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg", portfolioUrl: null },
+        { row: 3, name: "Sanjay Singh Lodhi", role: "Video Editing Head", organization: "DLG Club", color: "pink", icon: MessageCircle, imageUrl: "https://i.ibb.co/SX2PSkHX/sanjaysingh.jpg", portfolioUrl: "https://www.linkedin.com/in/sanjay-lodhi-8b5458209/" },
+        { row: 3, name: "AYAN AHMED KHAN", role: "WEB DEVELOPER", organization: "DLG Club", color: "green", icon: Globe, imageUrl: "https://ayanahmedkhan.live/assets/image/image.png", portfolioUrl: "https://ayanahmedkhan.live", isSpecial: true },
+        { row: 3, name: "Gagandeep Kushwah", role: "EXECUTIVE MEMBER", organization: "DLG Club", color: "violet", icon: Zap, imageUrl: "https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png", portfolioUrl: "https://www.linkedin.com/in/gagandeepkushwah730221b/" }
       ];
 
       const membersByRow = teamMembers.reduce((acc, member) => {
