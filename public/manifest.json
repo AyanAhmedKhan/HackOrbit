@@ -1,0 +1,43 @@
+{
+  "name": "HackOrbit 2025 - National Level Online Hackathon",
+  "short_name": "HackOrbit 2025",
+  "description": "Central India's premier national level online hackathon by DLG Group and MITS Gwalior",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "technology", "productivity"],
+  "lang": "en-IN",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Register Now",
+      "short_name": "Register",
+      "description": "Register for HackOrbit 2025",
+      "url": "/#register",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "View Themes",
+      "short_name": "Themes",
+      "description": "Explore hackathon themes",
+      "url": "/#themes",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
