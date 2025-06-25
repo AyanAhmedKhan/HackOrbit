@@ -1292,7 +1292,7 @@ export default function HackOrbitLanding() {
             <div className="text-center">
               <div className="bg-black/60 backdrop-blur-xl border border-yellow-400/30 rounded-2xl p-6 md:p-8 max-w-3xl mx-auto">
                 <h4 className="text-xl md:text-2xl font-bold text-yellow-300 mb-4 font-mono">
-                  Ready to Compete for ₹6000+ Cash Prizes?
+                  Join the Ultimate Tech Showdown – Win Rewards Worth ₹ 2.5 Lakhs+
                 </h4>
                 <p className="text-yellow-100/80 font-mono mb-6 leading-relaxed text-sm md:text-base">
                   Join HackOrbit 2025 and compete for cash prizes, hardcopy certificates, premium goodies, and access to
