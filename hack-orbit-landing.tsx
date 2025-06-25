@@ -955,7 +955,7 @@ export default function HackOrbitLanding() {
           </div>
         </section>
 
-<section id="prizes" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
+ <section id="prizes" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 backdrop-blur-3xl"></div>
           <div className="max-w-7xl mx-auto relative">
             {/* Header */}
@@ -1014,40 +1014,40 @@ export default function HackOrbitLanding() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 {/* 1st Place */}
                 <Card className="group relative bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-400/50 backdrop-blur-xl hover:border-yellow-300/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden shadow-2xl hover:shadow-yellow-500/30 ring-2 ring-yellow-400/30">
                   <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  <CardHeader className="text-center relative pb-4">
-                    <div className="relative mb-6">
-                      <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-yellow-400/30 to-orange-400/30 flex items-center justify-center border-2 border-yellow-400/50 group-hover:border-yellow-300/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                        <Trophy className="w-12 h-12 text-yellow-300 transition-all duration-500 group-hover:scale-110" />
+                  <CardHeader className="text-center relative pb-4 px-4">
+                    <div className="relative mb-4">
+                      <div className="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full bg-gradient-to-br from-yellow-400/30 to-orange-400/30 flex items-center justify-center border-2 border-yellow-400/50 group-hover:border-yellow-300/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                        <Trophy className="w-8 h-8 md:w-12 md:h-12 text-yellow-300 transition-all duration-500 group-hover:scale-110" />
                       </div>
-                      <div className="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">
+                      <div className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">
                         1ST
                       </div>
                     </div>
 
-                    <CardTitle className="text-yellow-300 font-mono text-2xl group-hover:text-yellow-200 transition-colors duration-300 mb-2">
+                    <CardTitle className="text-yellow-300 font-mono text-xl md:text-2xl group-hover:text-yellow-200 transition-colors duration-300 mb-2">
                       FIRST PLACE
                     </CardTitle>
 
-                    <div className="text-3xl font-bold text-yellow-400 font-mono mb-4">₹3000</div>
+                    <div className="text-2xl md:text-3xl font-bold text-yellow-400 font-mono mb-4">₹3000</div>
                   </CardHeader>
 
-                  <CardContent className="relative text-center">
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-sm">
-                        <Award className="w-4 h-4 mr-2 text-yellow-400" />
+                  <CardContent className="relative text-center px-4 pb-6">
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-xs md:text-sm">
+                        <Award className="w-3 h-3 md:w-4 md:h-4 mr-2 text-yellow-400 flex-shrink-0" />
                         <span>Hardcopy Certificate</span>
                       </div>
-                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-sm">
-                        <Gift className="w-4 h-4 mr-2 text-yellow-400" />
+                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-xs md:text-sm">
+                        <Gift className="w-3 h-3 md:w-4 md:h-4 mr-2 text-yellow-400 flex-shrink-0" />
                         <span>Premium Goodies & Merch</span>
                       </div>
-                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-sm">
-                        <Target className="w-4 h-4 mr-2 text-yellow-400" />
+                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-xs md:text-sm">
+                        <Target className="w-3 h-3 md:w-4 md:h-4 mr-2 text-yellow-400 flex-shrink-0" />
                         <span>Exclusive Platform Credits</span>
                       </div>
                     </div>
@@ -1058,35 +1058,35 @@ export default function HackOrbitLanding() {
                 <Card className="group relative bg-gradient-to-br from-gray-400/20 to-gray-500/20 border-2 border-gray-400/50 backdrop-blur-xl hover:border-gray-300/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden shadow-2xl hover:shadow-gray-500/30">
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-400/20 to-gray-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  <CardHeader className="text-center relative pb-4">
-                    <div className="relative mb-6">
-                      <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-gray-400/30 to-gray-500/30 flex items-center justify-center border-2 border-gray-400/50 group-hover:border-gray-300/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                        <Award className="w-12 h-12 text-gray-300 transition-all duration-500 group-hover:scale-110" />
+                  <CardHeader className="text-center relative pb-4 px-4">
+                    <div className="relative mb-4">
+                      <div className="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full bg-gradient-to-br from-gray-400/30 to-gray-500/30 flex items-center justify-center border-2 border-gray-400/50 group-hover:border-gray-300/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                        <Award className="w-8 h-8 md:w-12 md:h-12 text-gray-300 transition-all duration-500 group-hover:scale-110" />
                       </div>
-                      <div className="absolute top-0 right-0 bg-gray-400 text-black text-xs font-bold px-2 py-1 rounded-full">
+                      <div className="absolute -top-2 -right-2 bg-gray-400 text-black text-xs font-bold px-2 py-1 rounded-full">
                         2ND
                       </div>
                     </div>
 
-                    <CardTitle className="text-gray-300 font-mono text-2xl group-hover:text-gray-200 transition-colors duration-300 mb-2">
+                    <CardTitle className="text-gray-300 font-mono text-xl md:text-2xl group-hover:text-gray-200 transition-colors duration-300 mb-2">
                       SECOND PLACE
                     </CardTitle>
 
-                    <div className="text-3xl font-bold text-gray-400 font-mono mb-4">₹2000</div>
+                    <div className="text-2xl md:text-3xl font-bold text-gray-400 font-mono mb-4">₹2000</div>
                   </CardHeader>
 
-                  <CardContent className="relative text-center">
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-sm">
-                        <Award className="w-4 h-4 mr-2 text-gray-400" />
+                  <CardContent className="relative text-center px-4 pb-6">
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-xs md:text-sm">
+                        <Award className="w-3 h-3 md:w-4 md:h-4 mr-2 text-gray-400 flex-shrink-0" />
                         <span>Hardcopy Certificate</span>
                       </div>
-                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-sm">
-                        <Gift className="w-4 h-4 mr-2 text-gray-400" />
+                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-xs md:text-sm">
+                        <Gift className="w-3 h-3 md:w-4 md:h-4 mr-2 text-gray-400 flex-shrink-0" />
                         <span>Premium Goodies & Merch</span>
                       </div>
-                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-sm">
-                        <Target className="w-4 h-4 mr-2 text-gray-400" />
+                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-xs md:text-sm">
+                        <Target className="w-3 h-3 md:w-4 md:h-4 mr-2 text-gray-400 flex-shrink-0" />
                         <span>Platform Credits</span>
                       </div>
                     </div>
@@ -1097,35 +1097,35 @@ export default function HackOrbitLanding() {
                 <Card className="group relative bg-gradient-to-br from-orange-600/20 to-yellow-600/20 border-2 border-orange-500/50 backdrop-blur-xl hover:border-orange-400/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden shadow-2xl hover:shadow-orange-500/30">
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  <CardHeader className="text-center relative pb-4">
-                    <div className="relative mb-6">
-                      <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-orange-500/30 to-yellow-500/30 flex items-center justify-center border-2 border-orange-500/50 group-hover:border-orange-400/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                        <Award className="w-12 h-12 text-orange-400 transition-all duration-500 group-hover:scale-110" />
+                  <CardHeader className="text-center relative pb-4 px-4">
+                    <div className="relative mb-4">
+                      <div className="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full bg-gradient-to-br from-orange-500/30 to-yellow-500/30 flex items-center justify-center border-2 border-orange-500/50 group-hover:border-orange-400/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                        <Award className="w-8 h-8 md:w-12 md:h-12 text-orange-400 transition-all duration-500 group-hover:scale-110" />
                       </div>
-                      <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                      <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                         3RD
                       </div>
                     </div>
 
-                    <CardTitle className="text-orange-400 font-mono text-2xl group-hover:text-orange-300 transition-colors duration-300 mb-2">
+                    <CardTitle className="text-orange-400 font-mono text-xl md:text-2xl group-hover:text-orange-300 transition-colors duration-300 mb-2">
                       THIRD PLACE
                     </CardTitle>
 
-                    <div className="text-3xl font-bold text-orange-400 font-mono mb-4">₹1000</div>
+                    <div className="text-2xl md:text-3xl font-bold text-orange-400 font-mono mb-4">₹1000</div>
                   </CardHeader>
 
-                  <CardContent className="relative text-center">
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-sm">
-                        <Award className="w-4 h-4 mr-2 text-orange-400" />
+                  <CardContent className="relative text-center px-4 pb-6">
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-xs md:text-sm">
+                        <Award className="w-3 h-3 md:w-4 md:h-4 mr-2 text-orange-400 flex-shrink-0" />
                         <span>Hardcopy Certificate</span>
                       </div>
-                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-sm">
-                        <Gift className="w-4 h-4 mr-2 text-orange-400" />
+                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-xs md:text-sm">
+                        <Gift className="w-3 h-3 md:w-4 md:h-4 mr-2 text-orange-400 flex-shrink-0" />
                         <span>Premium Goodies & Merch</span>
                       </div>
-                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-sm">
-                        <Target className="w-4 h-4 mr-2 text-orange-400" />
+                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-xs md:text-sm">
+                        <Target className="w-3 h-3 md:w-4 md:h-4 mr-2 text-orange-400 flex-shrink-0" />
                         <span>Platform Credits</span>
                       </div>
                     </div>
@@ -1138,42 +1138,50 @@ export default function HackOrbitLanding() {
                 <Card className="group relative bg-black/60 border-purple-500/40 backdrop-blur-xl hover:border-purple-400/70 transition-all duration-500 hover:scale-102 overflow-hidden shadow-lg hover:shadow-purple-500/25">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/15 to-blue-500/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  <CardHeader className="text-center relative pb-6">
-                    <div className="relative mb-6">
-                      <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center border border-purple-400/30 group-hover:border-purple-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
-                        <Users className="w-10 h-10 text-purple-400 transition-all duration-500 group-hover:scale-110" />
+                  <CardHeader className="text-center relative pb-6 px-4 md:px-6">
+                    <div className="relative mb-4 md:mb-6">
+                      <div className="w-16 h-16 md:w-20 md:h-20 mx-auto rounded-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center border border-purple-400/30 group-hover:border-purple-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
+                        <Users className="w-8 h-8 md:w-10 md:h-10 text-purple-400 transition-all duration-500 group-hover:scale-110" />
                       </div>
                     </div>
 
-                    <CardTitle className="text-purple-300 font-mono text-2xl group-hover:text-purple-200 transition-colors duration-300 mb-4">
+                    <CardTitle className="text-purple-300 font-mono text-xl md:text-2xl group-hover:text-purple-200 transition-colors duration-300 mb-4">
                       4TH - 10TH PLACE WINNERS
                     </CardTitle>
 
-                    <p className="text-purple-100/80 font-mono text-lg leading-relaxed mb-6">
+                    <p className="text-purple-100/80 font-mono text-base md:text-lg leading-relaxed mb-6">
                       7 additional teams receive exclusive winner packages
                     </p>
                   </CardHeader>
 
-                  <CardContent className="relative">
-                    <div className="grid md:grid-cols-3 gap-6 mb-6">
+                  <CardContent className="relative px-4 md:px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
                       <div className="text-center p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
-                        <Award className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-                        <h4 className="text-purple-300 font-mono font-semibold mb-2">Hardcopy Certificates</h4>
-                        <p className="text-purple-200/70 font-mono text-sm">
+                        <Award className="w-6 h-6 md:w-8 md:h-8 text-purple-400 mx-auto mb-3" />
+                        <h4 className="text-purple-300 font-mono font-semibold mb-2 text-sm md:text-base">
+                          Hardcopy Certificates
+                        </h4>
+                        <p className="text-purple-200/70 font-mono text-xs md:text-sm">
                           Official winner certificates with unique verification
                         </p>
                       </div>
 
                       <div className="text-center p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
-                        <Gift className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-                        <h4 className="text-purple-300 font-mono font-semibold mb-2">Premium Goodies</h4>
-                        <p className="text-purple-200/70 font-mono text-sm">Branded merchandise and tech accessories</p>
+                        <Gift className="w-6 h-6 md:w-8 md:h-8 text-purple-400 mx-auto mb-3" />
+                        <h4 className="text-purple-300 font-mono font-semibold mb-2 text-sm md:text-base">
+                          Premium Goodies
+                        </h4>
+                        <p className="text-purple-200/70 font-mono text-xs md:text-sm">
+                          Branded merchandise and tech accessories
+                        </p>
                       </div>
 
                       <div className="text-center p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
-                        <Zap className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-                        <h4 className="text-purple-300 font-mono font-semibold mb-2">Platform Credits</h4>
-                        <p className="text-purple-200/70 font-mono text-sm">
+                        <Zap className="w-6 h-6 md:w-8 md:h-8 text-purple-400 mx-auto mb-3" />
+                        <h4 className="text-purple-300 font-mono font-semibold mb-2 text-sm md:text-base">
+                          Platform Credits
+                        </h4>
+                        <p className="text-purple-200/70 font-mono text-xs md:text-sm">
                           Exclusive access to premium development tools
                         </p>
                       </div>
@@ -1193,7 +1201,7 @@ export default function HackOrbitLanding() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 {[
                   {
                     icon: Award,
@@ -1233,13 +1241,13 @@ export default function HackOrbitLanding() {
                       className={`absolute inset-0 bg-gradient-to-br from-${reward.color}-500/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                     ></div>
 
-                    <CardHeader className="text-center relative pb-4">
-                      <div className="relative mb-6">
+                    <CardHeader className="text-center relative pb-4 px-4">
+                      <div className="relative mb-4 md:mb-6">
                         <div
-                          className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-${reward.color}-500/20 to-${reward.color}-600/20 flex items-center justify-center border border-${reward.color}-400/30 group-hover:border-${reward.color}-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}
+                          className={`w-16 h-16 md:w-20 md:h-20 mx-auto rounded-2xl bg-gradient-to-br from-${reward.color}-500/20 to-${reward.color}-600/20 flex items-center justify-center border border-${reward.color}-400/30 group-hover:border-${reward.color}-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}
                         >
                           <reward.icon
-                            className={`w-10 h-10 text-${reward.color}-400 transition-all duration-500 group-hover:scale-110`}
+                            className={`w-8 h-8 md:w-10 md:h-10 text-${reward.color}-400 transition-all duration-500 group-hover:scale-110`}
                           />
                         </div>
                         <div
@@ -1248,17 +1256,17 @@ export default function HackOrbitLanding() {
                       </div>
 
                       <CardTitle
-                        className={`text-${reward.color}-300 font-mono text-xl group-hover:text-${reward.color}-200 transition-colors duration-300 mb-3`}
+                        className={`text-${reward.color}-300 font-mono text-lg md:text-xl group-hover:text-${reward.color}-200 transition-colors duration-300 mb-3`}
                       >
                         {reward.title}
                       </CardTitle>
 
-                      <p className={`text-${reward.color}-100/80 font-mono text-sm leading-relaxed`}>
+                      <p className={`text-${reward.color}-100/80 font-mono text-xs md:text-sm leading-relaxed`}>
                         {reward.description}
                       </p>
                     </CardHeader>
 
-                    <CardContent className="relative pt-0">
+                    <CardContent className="relative pt-0 px-4">
                       <div className="space-y-2">
                         {reward.features.map((feature, featureIndex) => (
                           <div
@@ -1282,11 +1290,11 @@ export default function HackOrbitLanding() {
 
             {/* Call to Action */}
             <div className="text-center">
-              <div className="bg-black/60 backdrop-blur-xl border border-yellow-400/30 rounded-2xl p-8 max-w-3xl mx-auto">
-                <h4 className="text-2xl font-bold text-yellow-300 mb-4 font-mono">
-                  Ready to Compete for ₹5000+ Cash Prizes?
+              <div className="bg-black/60 backdrop-blur-xl border border-yellow-400/30 rounded-2xl p-6 md:p-8 max-w-3xl mx-auto">
+                <h4 className="text-xl md:text-2xl font-bold text-yellow-300 mb-4 font-mono">
+                  Ready to Compete for ₹6000+ Cash Prizes?
                 </h4>
-                <p className="text-yellow-100/80 font-mono mb-6 leading-relaxed">
+                <p className="text-yellow-100/80 font-mono mb-6 leading-relaxed text-sm md:text-base">
                   Join HackOrbit 2025 and compete for cash prizes, hardcopy certificates, premium goodies, and access to
                   our comprehensive reward ecosystem worth over ₹2.5 Lakhs.
                 </p>
@@ -1297,10 +1305,10 @@ export default function HackOrbitLanding() {
                 >
                   <Button
                     size="lg"
-                    className="group relative bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-black font-bold text-lg px-12 py-4 border-0 shadow-2xl shadow-yellow-500/30 transition-all duration-500 hover:scale-110 hover:shadow-yellow-500/50 overflow-hidden"
+                    className="group relative bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-black font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 border-0 shadow-2xl shadow-yellow-500/30 transition-all duration-500 hover:scale-110 hover:shadow-yellow-500/50 overflow-hidden w-full sm:w-auto"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                    <Trophy className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:rotate-12" />
+                    <Trophy className="w-4 h-4 md:w-5 md:h-5 mr-2 transition-transform duration-300 group-hover:rotate-12" />
                     REGISTER NOW & WIN PRIZES
                   </Button>
                 </a>
