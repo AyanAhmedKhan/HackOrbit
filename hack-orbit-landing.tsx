@@ -20,6 +20,7 @@ import {
   MessageCircle,
   Instagram,
   Linkedin,
+  Gift,
 } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -1187,7 +1188,7 @@ export default function HackOrbitLanding() {
               <div className="text-center mb-12">
                 <h3 className="text-4xl font-bold text-green-400 mb-4 font-mono">GUARANTEED FOR ALL PARTICIPANTS</h3>
                 <p className="text-green-200/80 font-mono text-lg">
-                  <span className="text-green-400">{">"}</span> Every registered participant receives these valuable
+                  <span className="text-green-400">{">"}</span> Every Final Round registered participant receives these valuable
                   rewards
                 </p>
               </div>
