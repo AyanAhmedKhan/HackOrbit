@@ -954,6 +954,360 @@ export default function HackOrbitLanding() {
           </div>
         </section>
 
+<section id="prizes" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 backdrop-blur-3xl"></div>
+          <div className="max-w-7xl mx-auto relative">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
+                PRIZES & REWARDS
+              </h2>
+              <p className="text-xl text-yellow-100/80 font-mono mb-8">
+                <span className="text-yellow-400">{">"}</span> COMPREHENSIVE REWARD ECOSYSTEM FOR ALL PARTICIPANTS
+              </p>
+            </div>
+
+            {/* Total Value Showcase */}
+            <div className="relative mb-20">
+              <div className="bg-gradient-to-br from-yellow-500/20 via-orange-500/20 to-red-500/20 backdrop-blur-xl border-2 border-yellow-400/50 rounded-3xl p-12 max-w-5xl mx-auto relative overflow-hidden group shadow-2xl shadow-yellow-500/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-orange-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Floating decorative elements */}
+                <div className="absolute top-4 right-4 w-20 h-20 bg-yellow-400/20 rounded-full blur-xl animate-pulse"></div>
+                <div
+                  className="absolute bottom-4 left-4 w-16 h-16 bg-orange-400/20 rounded-full blur-xl animate-pulse"
+                  style={{ animationDelay: "1s" }}
+                ></div>
+
+                <div className="relative text-center">
+                  <div className="flex items-center justify-center mb-6">
+                    <Trophy className="w-16 h-16 text-yellow-400 animate-bounce" />
+                  </div>
+
+                  <h3 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 bg-clip-text text-transparent font-mono mb-4 animate-gradient-x">
+                    ₹2.5+ LAKHS
+                  </h3>
+
+                  <p className="text-2xl text-yellow-200 font-mono font-semibold mb-6">COMBINED ESTIMATED VALUE</p>
+
+                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-yellow-400/30">
+                    <p className="text-yellow-100/90 font-mono text-lg leading-relaxed">
+                      <span className="text-yellow-400 font-bold">🔹</span> Includes ₹5000+ cash prizes, premium
+                      goodies, platform credits, learning resources, and exclusive offers
+                    </p>
+                    <p className="text-yellow-200/70 font-mono text-sm mt-3 italic">
+                      * Value is cumulative across all participants. Individual rewards may vary based on sponsor terms
+                      and availability.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Top Winners Section */}
+            <div className="mb-20">
+              <div className="text-center mb-12">
+                <h3 className="text-4xl font-bold text-orange-400 mb-4 font-mono">TOP 10 WINNERS</h3>
+                <p className="text-orange-200/80 font-mono text-lg">
+                  <span className="text-orange-400">{">"}</span> Exclusive rewards for the best performing teams
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                {/* 1st Place */}
+                <Card className="group relative bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-400/50 backdrop-blur-xl hover:border-yellow-300/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden shadow-2xl hover:shadow-yellow-500/30 ring-2 ring-yellow-400/30">
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  <CardHeader className="text-center relative pb-4">
+                    <div className="relative mb-6">
+                      <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-yellow-400/30 to-orange-400/30 flex items-center justify-center border-2 border-yellow-400/50 group-hover:border-yellow-300/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                        <Trophy className="w-12 h-12 text-yellow-300 transition-all duration-500 group-hover:scale-110" />
+                      </div>
+                      <div className="absolute top-0 right-0 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">
+                        1ST
+                      </div>
+                    </div>
+
+                    <CardTitle className="text-yellow-300 font-mono text-2xl group-hover:text-yellow-200 transition-colors duration-300 mb-2">
+                      FIRST PLACE
+                    </CardTitle>
+
+                    <div className="text-3xl font-bold text-yellow-400 font-mono mb-4">₹3000</div>
+                  </CardHeader>
+
+                  <CardContent className="relative text-center">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-sm">
+                        <Award className="w-4 h-4 mr-2 text-yellow-400" />
+                        <span>Hardcopy Certificate</span>
+                      </div>
+                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-sm">
+                        <Gift className="w-4 h-4 mr-2 text-yellow-400" />
+                        <span>Premium Goodies & Merch</span>
+                      </div>
+                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-sm">
+                        <Target className="w-4 h-4 mr-2 text-yellow-400" />
+                        <span>Exclusive Platform Credits</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* 2nd Place */}
+                <Card className="group relative bg-gradient-to-br from-gray-400/20 to-gray-500/20 border-2 border-gray-400/50 backdrop-blur-xl hover:border-gray-300/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden shadow-2xl hover:shadow-gray-500/30">
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-400/20 to-gray-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  <CardHeader className="text-center relative pb-4">
+                    <div className="relative mb-6">
+                      <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-gray-400/30 to-gray-500/30 flex items-center justify-center border-2 border-gray-400/50 group-hover:border-gray-300/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                        <Award className="w-12 h-12 text-gray-300 transition-all duration-500 group-hover:scale-110" />
+                      </div>
+                      <div className="absolute top-0 right-0 bg-gray-400 text-black text-xs font-bold px-2 py-1 rounded-full">
+                        2ND
+                      </div>
+                    </div>
+
+                    <CardTitle className="text-gray-300 font-mono text-2xl group-hover:text-gray-200 transition-colors duration-300 mb-2">
+                      SECOND PLACE
+                    </CardTitle>
+
+                    <div className="text-3xl font-bold text-gray-400 font-mono mb-4">₹2000</div>
+                  </CardHeader>
+
+                  <CardContent className="relative text-center">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-sm">
+                        <Award className="w-4 h-4 mr-2 text-gray-400" />
+                        <span>Hardcopy Certificate</span>
+                      </div>
+                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-sm">
+                        <Gift className="w-4 h-4 mr-2 text-gray-400" />
+                        <span>Premium Goodies & Merch</span>
+                      </div>
+                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-sm">
+                        <Target className="w-4 h-4 mr-2 text-gray-400" />
+                        <span>Platform Credits</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* 3rd Place */}
+                <Card className="group relative bg-gradient-to-br from-orange-600/20 to-yellow-600/20 border-2 border-orange-500/50 backdrop-blur-xl hover:border-orange-400/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden shadow-2xl hover:shadow-orange-500/30">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  <CardHeader className="text-center relative pb-4">
+                    <div className="relative mb-6">
+                      <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-orange-500/30 to-yellow-500/30 flex items-center justify-center border-2 border-orange-500/50 group-hover:border-orange-400/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                        <Award className="w-12 h-12 text-orange-400 transition-all duration-500 group-hover:scale-110" />
+                      </div>
+                      <div className="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        3RD
+                      </div>
+                    </div>
+
+                    <CardTitle className="text-orange-400 font-mono text-2xl group-hover:text-orange-300 transition-colors duration-300 mb-2">
+                      THIRD PLACE
+                    </CardTitle>
+
+                    <div className="text-3xl font-bold text-orange-400 font-mono mb-4">₹1000</div>
+                  </CardHeader>
+
+                  <CardContent className="relative text-center">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-sm">
+                        <Award className="w-4 h-4 mr-2 text-orange-400" />
+                        <span>Hardcopy Certificate</span>
+                      </div>
+                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-sm">
+                        <Gift className="w-4 h-4 mr-2 text-orange-400" />
+                        <span>Premium Goodies & Merch</span>
+                      </div>
+                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-sm">
+                        <Target className="w-4 h-4 mr-2 text-orange-400" />
+                        <span>Platform Credits</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Top 4-10 Winners */}
+              <div className="max-w-4xl mx-auto">
+                <Card className="group relative bg-black/60 border-purple-500/40 backdrop-blur-xl hover:border-purple-400/70 transition-all duration-500 hover:scale-102 overflow-hidden shadow-lg hover:shadow-purple-500/25">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/15 to-blue-500/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  <CardHeader className="text-center relative pb-6">
+                    <div className="relative mb-6">
+                      <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center border border-purple-400/30 group-hover:border-purple-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
+                        <Users className="w-10 h-10 text-purple-400 transition-all duration-500 group-hover:scale-110" />
+                      </div>
+                    </div>
+
+                    <CardTitle className="text-purple-300 font-mono text-2xl group-hover:text-purple-200 transition-colors duration-300 mb-4">
+                      4TH - 10TH PLACE WINNERS
+                    </CardTitle>
+
+                    <p className="text-purple-100/80 font-mono text-lg leading-relaxed mb-6">
+                      7 additional teams receive exclusive winner packages
+                    </p>
+                  </CardHeader>
+
+                  <CardContent className="relative">
+                    <div className="grid md:grid-cols-3 gap-6 mb-6">
+                      <div className="text-center p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
+                        <Award className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+                        <h4 className="text-purple-300 font-mono font-semibold mb-2">Hardcopy Certificates</h4>
+                        <p className="text-purple-200/70 font-mono text-sm">
+                          Official winner certificates with unique verification
+                        </p>
+                      </div>
+
+                      <div className="text-center p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
+                        <Gift className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+                        <h4 className="text-purple-300 font-mono font-semibold mb-2">Premium Goodies</h4>
+                        <p className="text-purple-200/70 font-mono text-sm">Branded merchandise and tech accessories</p>
+                      </div>
+
+                      <div className="text-center p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
+                        <Zap className="w-8 h-8 text-purple-400 mx-auto mb-3" />
+                        <h4 className="text-purple-300 font-mono font-semibold mb-2">Platform Credits</h4>
+                        <p className="text-purple-200/70 font-mono text-sm">
+                          Exclusive access to premium development tools
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Guaranteed Rewards for All Participants */}
+            <div className="mb-20">
+              <div className="text-center mb-12">
+                <h3 className="text-4xl font-bold text-green-400 mb-4 font-mono">GUARANTEED FOR ALL PARTICIPANTS</h3>
+                <p className="text-green-200/80 font-mono text-lg">
+                  <span className="text-green-400">{">"}</span> Every registered participant receives these valuable
+                  rewards
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  {
+                    icon: Award,
+                    title: "Digital Certificates",
+                    description: "Official participation certificates with unique verification codes",
+                    features: ["Blockchain verified", "LinkedIn shareable", "Industry recognized"],
+                    color: "green",
+                  },
+                  {
+                    icon: Target,
+                    title: "Exclusive Discounts",
+                    description: "Premium discount codes from our technology partners",
+                    features: ["Up to 70% off courses", "Platform subscriptions", "Development tools"],
+                    color: "blue",
+                  },
+                  {
+                    icon: Zap,
+                    title: "Platform Credits",
+                    description: "Credits for premium development and learning platforms",
+                    features: ["Cloud computing credits", "API access tokens", "Premium subscriptions"],
+                    color: "purple",
+                  },
+                  {
+                    icon: Code,
+                    title: "Learning Resources",
+                    description: "Access to premium educational content and resources",
+                    features: ["Expert-led workshops", "Technical documentation", "Career guidance"],
+                    color: "cyan",
+                  },
+                ].map((reward, index) => (
+                  <Card
+                    key={reward.title}
+                    className={`group relative bg-black/60 border-${reward.color}-500/40 backdrop-blur-xl hover:border-${reward.color}-400/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden cursor-pointer shadow-lg hover:shadow-${reward.color}-500/25 animate-slide-up h-full`}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br from-${reward.color}-500/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                    ></div>
+
+                    <CardHeader className="text-center relative pb-4">
+                      <div className="relative mb-6">
+                        <div
+                          className={`w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-${reward.color}-500/20 to-${reward.color}-600/20 flex items-center justify-center border border-${reward.color}-400/30 group-hover:border-${reward.color}-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}
+                        >
+                          <reward.icon
+                            className={`w-10 h-10 text-${reward.color}-400 transition-all duration-500 group-hover:scale-110`}
+                          />
+                        </div>
+                        <div
+                          className={`absolute inset-0 bg-${reward.color}-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse`}
+                        ></div>
+                      </div>
+
+                      <CardTitle
+                        className={`text-${reward.color}-300 font-mono text-xl group-hover:text-${reward.color}-200 transition-colors duration-300 mb-3`}
+                      >
+                        {reward.title}
+                      </CardTitle>
+
+                      <p className={`text-${reward.color}-100/80 font-mono text-sm leading-relaxed`}>
+                        {reward.description}
+                      </p>
+                    </CardHeader>
+
+                    <CardContent className="relative pt-0">
+                      <div className="space-y-2">
+                        {reward.features.map((feature, featureIndex) => (
+                          <div
+                            key={featureIndex}
+                            className={`flex items-center text-${reward.color}-200/70 font-mono text-xs`}
+                          >
+                            <div className={`w-1.5 h-1.5 bg-${reward.color}-400 rounded-full mr-3 flex-shrink-0`}></div>
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+
+                    <div
+                      className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-${reward.color}-500 to-${reward.color}-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
+                    ></div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center">
+              <div className="bg-black/60 backdrop-blur-xl border border-yellow-400/30 rounded-2xl p-8 max-w-3xl mx-auto">
+                <h4 className="text-2xl font-bold text-yellow-300 mb-4 font-mono">
+                  Ready to Compete for ₹5000+ Cash Prizes?
+                </h4>
+                <p className="text-yellow-100/80 font-mono mb-6 leading-relaxed">
+                  Join HackOrbit 2025 and compete for cash prizes, hardcopy certificates, premium goodies, and access to
+                  our comprehensive reward ecosystem worth over ₹2.5 Lakhs.
+                </p>
+                <a
+                  href="https://unstop.com/o/wYNVQPM?lb=aDpL27B4&utm_medium=Share&utm_source=shortUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    className="group relative bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-black font-bold text-lg px-12 py-4 border-0 shadow-2xl shadow-yellow-500/30 transition-all duration-500 hover:scale-110 hover:shadow-yellow-500/50 overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                    <Trophy className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:rotate-12" />
+                    REGISTER NOW & WIN PRIZES
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="sponsors" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 backdrop-blur-3xl"></div>
           <div className="max-w-7xl mx-auto text-center relative">
