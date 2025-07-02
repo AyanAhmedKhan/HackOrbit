@@ -502,7 +502,7 @@ export default function HackOrbitLanding() {
 
               {/* VIEW DETAILS -> Also Link */}
               <a
-                href="https://unstop.com/o/wYNVQPM?lb=aDpL27B4&utm_medium=Share&utm_source=shortUrl"
+                href="https://drive.google.com/file/d/14dVBFQR8T85xsLRKa3N6KIRYwOcy0TRr/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -522,7 +522,7 @@ export default function HackOrbitLanding() {
             >
               {[
                 { number: "36-HOUR", label: "HACKATHON", color: "blue", icon: Clock },
-                { number: "₹25K+", label: "PRIZE POOL", color: "purple", icon: Trophy },
+                { number: "₹2.5 Lakhs+", label: "PRIZE POOL", color: "purple", icon: Trophy },
                 { number: "4", label: "MAX TEAM SIZE", color: "cyan", icon: Users },
                 { number: "NATIONAL", label: "LEVEL", color: "green", icon: Globe },
               ].map((stat, index) => (
