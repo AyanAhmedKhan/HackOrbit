@@ -806,7 +806,7 @@ export default function HackOrbitLanding() {
                 {
                   icon: Clock,
                   title: "REGISTRATION CLOSES",
-                  desc: "July 3, 2025 – Last day to board the mission",
+                  desc: "July 5, 2025 – Last day to board the mission",
                   color: "sky",
                 },
                 {
@@ -818,19 +818,19 @@ export default function HackOrbitLanding() {
                 {
                   icon: Clock,
                   title: "ROUND 2 – FINAL SHOWDOWN BEGINS",
-                  desc: "July 6, 2025, 11:00 AM – Hackathon kicks off (36 hours)",
+                  desc: "July 8, 2025, 11:00 AM – Hackathon kicks off (36 hours)",
                   color: "purple",
                 },
                 {
                   icon: Code,
                   title: "SUBMISSION DEADLINE",
-                  desc: "July 7, 2025, 11:00 PM – Wrap up your mission",
+                  desc: "July 9, 2025, 11:00 PM – Wrap up your mission",
                   color: "cyan",
                 },
                 {
                   icon: Trophy,
                   title: "RESULTS ANNOUNCEMENT",
-                  desc: "July 10, 2025 – Winners revealed",
+                  desc: "July 15, 2025 – Winners revealed",
                   color: "green",
                 },
               ].map((item, index) => {
@@ -1678,7 +1678,7 @@ export default function HackOrbitLanding() {
                 {
                   question: "What is the registration fee?",
                   answer:
-                    "The registration fee is ₹100 per team, making it accessible for all students and developers.",
+                    "The non refundable registration fee is ₹100 per team, making it accessible for all students and developers.",
                 },
                 {
                   question: "What are the hackathon themes?",
@@ -1688,7 +1688,7 @@ export default function HackOrbitLanding() {
                 {
                   question: "What prizes can we win?",
                   answer:
-                    "Winners share from ₹25K+ prize pool plus exclusive swags, certificates, and goodies for top 10 teams.",
+                    "Winners share from ₹2.5lakh+ prize pool plus exclusive swags, certificates, and goodies for top 10 teams.",
                 },
               ].map((faq, index) => (
                 <details
