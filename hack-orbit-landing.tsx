@@ -993,7 +993,7 @@ export default function HackOrbitLanding() {
 
                   <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-yellow-400/30">
                     <p className="text-yellow-100/90 font-mono text-lg leading-relaxed">
-                      <span className="text-yellow-400 font-bold">🔹</span> Includes ₹5000+ cash prizes, premium
+                      <span className="text-yellow-400 font-bold">🔹</span> Includes ₹15000+ cash prizes, premium
                       goodies, platform credits, learning resources, and exclusive offers
                     </p>
                     <p className="text-yellow-200/70 font-mono text-sm mt-3 italic">
@@ -1033,7 +1033,7 @@ export default function HackOrbitLanding() {
                       FIRST PLACE
                     </CardTitle>
 
-                    <div className="text-2xl md:text-3xl font-bold text-yellow-400 font-mono mb-4">₹3000</div>
+                    <div className="text-2xl md:text-3xl font-bold text-yellow-400 font-mono mb-4">₹7000</div>
                   </CardHeader>
 
                   <CardContent className="relative text-center px-4 pb-6">
@@ -1072,7 +1072,7 @@ export default function HackOrbitLanding() {
                       SECOND PLACE
                     </CardTitle>
 
-                    <div className="text-2xl md:text-3xl font-bold text-gray-400 font-mono mb-4">₹2000</div>
+                    <div className="text-2xl md:text-3xl font-bold text-gray-400 font-mono mb-4">₹5000</div>
                   </CardHeader>
 
                   <CardContent className="relative text-center px-4 pb-6">
@@ -1111,7 +1111,7 @@ export default function HackOrbitLanding() {
                       THIRD PLACE
                     </CardTitle>
 
-                    <div className="text-2xl md:text-3xl font-bold text-orange-400 font-mono mb-4">₹1000</div>
+                    <div className="text-2xl md:text-3xl font-bold text-orange-400 font-mono mb-4">₹3000</div>
                   </CardHeader>
 
                   <CardContent className="relative text-center px-4 pb-6">
