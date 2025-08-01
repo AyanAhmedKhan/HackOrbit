@@ -6935,6 +6935,19 @@ export default function CertificateVerification() {
             </div>
           </div>
         </div>
+{/* Visitor Counter */}
+<div className="mt-16 text-center">
+  <p className="text-blue-400 font-mono text-sm animate-pulse mb-2">Total Visitors</p>
+  <div
+    className="inline-block rounded-lg border border-blue-500/30 p-2 bg-black/30 backdrop-blur-md shadow-md"
+    dangerouslySetInnerHTML={{
+      __html: `<a href="https://www.hitwebcounter.com" target="_blank">
+        <img src="https://hitwebcounter.com/counter/counter.php?page=21290929&style=0027&nbdigits=5&type=page&initCount=1000"
+             title="Counter Widget" alt="Visit counter For Websites" style="border:0;" />
+      </a>`,
+    }}
+  />
+</div>
       </div>
 
       <style jsx>{`
