@@ -5814,6 +5814,188 @@ const certData = {
     "verified": true,
     "refNo": "KR-2025-827",
     "type": "Participation"
+  },
+  "DLG/HO25/WIN/0001": {
+    "name": "Shubham Singh",
+    "team": "Crusaders Alpha",
+    "verified": true,
+    "refNo": "WR-2025-001",
+    "type": "Winner"
+  },
+  "DLG/HO25/RUN/0002": {
+    "name": "Ashes Nanda",
+    "team": "Bit Happens",
+    "verified": true,
+    "refNo": "WR-2025-002",
+    "type": "1st Runner up"
+  },
+  "DLG/HO25/RUN/0003": {
+    "name": "Bharane Sanket Santosh",
+    "team": "Chakravyuh Solvers",
+    "verified": true,
+    "refNo": "WR-2025-003",
+    "type": "2nd Runner up"
+  },
+  "DLG/HO25/RUN/0004": {
+    "name": "Dhumal Shivam Ganesh",
+    "team": "Chakravyuh Solvers",
+    "verified": true,
+    "refNo": "WR-2025-004",
+    "type": "2nd Runner up"
+  },
+  "DLG/HO25/APR/001": {
+    "name": "Aadraaj Singh Chauhan",
+    "team": "404 Ninja",
+    "verified": true,
+    "refNo": "WR-2025-005",
+    "type": "Top 4"
+  },
+  "DLG/HO25/APR/002": {
+    "name": "ANUSHA SINGH",
+    "team": "404 Ninja",
+    "verified": true,
+    "refNo": "WR-2025-006",
+    "type": "Top 4"
+  },
+  "DLG/HO25/APR/003": {
+    "name": "Suyash Khare",
+    "team": "Akatsuki",
+    "verified": true,
+    "refNo": "WR-2025-007",
+    "type": "Top 5"
+  },
+  "DLG/HO25/APR/004": {
+    "name": "Nikhil Bidha",
+    "team": "Akatsuki",
+    "verified": true,
+    "refNo": "WR-2025-008",
+    "type": "Top 5"
+  },
+  "DLG/HO25/APR/005": {
+    "name": "Shashwat Verma",
+    "team": "Akatsuki",
+    "verified": true,
+    "refNo": "WR-2025-009",
+    "type": "Top 5"
+  },
+  "DLG/HO25/APR/006": {
+    "name": "Naman Prasad",
+    "team": "Akatsuki",
+    "verified": true,
+    "refNo": "WR-2025-010",
+    "type": "Top 5"
+  },
+  "DLG/HO25/APR/007": {
+    "name": "PUSHPENDRA SURYAWANSHI",
+    "team": "Team innovistar",
+    "verified": true,
+    "refNo": "WR-2025-011",
+    "type": "Top 6"
+  },
+  "DLG/HO25/APR/008": {
+    "name": "Akshit pahade",
+    "team": "Team innovistar",
+    "verified": true,
+    "refNo": "WR-2025-012",
+    "type": "Top 6"
+  },
+  "DLG/HO25/APR/009": {
+    "name": "Pratik prajapati",
+    "team": "Team innovistar",
+    "verified": true,
+    "refNo": "WR-2025-013",
+    "type": "Top 6"
+  },
+  "DLG/HO25/APR/010": {
+    "name": "Dhruv Kumar Patel",
+    "team": "DareDevil",
+    "verified": true,
+    "refNo": "WR-2025-014",
+    "type": "Top 7"
+  },
+  "DLG/HO25/APR/011": {
+    "name": "APOORV PAL",
+    "team": "DareDevil",
+    "verified": true,
+    "refNo": "WR-2025-015",
+    "type": "Top 7"
+  },
+  "DLG/HO25/APR/012": {
+    "name": "Kartik Jain",
+    "team": "DareDevil",
+    "verified": true,
+    "refNo": "WR-2025-016",
+    "type": "Top 7"
+  },
+  "DLG/HO25/APR/013": {
+    "name": "ARIN JAIN",
+    "team": "CODING ERA!",
+    "verified": true,
+    "refNo": "WR-2025-017",
+    "type": "Top 8"
+  },
+  "DLG/HO25/APR/014": {
+    "name": "AASTHA SINGH",
+    "team": "CODING ERA!",
+    "verified": true,
+    "refNo": "WR-2025-018",
+    "type": "Top 8"
+  },
+  "DLG/HO25/APR/015": {
+    "name": "PALAK VISHWAKARMA",
+    "team": "CODING ERA!",
+    "verified": true,
+    "refNo": "WR-2025-019",
+    "type": "Top 8"
+  },
+  "DLG/HO25/APR/016": {
+    "name": "Lekhni Bakliwal",
+    "team": "Team Naruto",
+    "verified": true,
+    "refNo": "WR-2025-020",
+    "type": "Top 9"
+  },
+  "DLG/HO25/APR/017": {
+    "name": "Suhani Gupta",
+    "team": "Team Naruto",
+    "verified": true,
+    "refNo": "WR-2025-021",
+    "type": "Top 9"
+  },
+  "DLG/HO25/APR/018": {
+    "name": "Nandani Goyal",
+    "team": "Team Naruto",
+    "verified": true,
+    "refNo": "WR-2025-022",
+    "type": "Top 9"
+  },
+  "DLG/HO25/APR/019": {
+    "name": "Shubhang Sharma",
+    "team": "Hunterz",
+    "verified": true,
+    "refNo": "WR-2025-023",
+    "type": "Top 10"
+  },
+  "DLG/HO25/APR/020": {
+    "name": "Satyam Jhinkwan",
+    "team": "Hunterz",
+    "verified": true,
+    "refNo": "WR-2025-024",
+    "type": "Top 10"
+  },
+  "DLG/HO25/APR/021": {
+    "name": "Abhishek Sahu",
+    "team": "Hunterz",
+    "verified": true,
+    "refNo": "WR-2025-025",
+    "type": "Top 10"
+  },
+  "DLG/HO25/APR/022": {
+    "name": "Saksham kashyap",
+    "team": "Hunterz",
+    "verified": true,
+    "refNo": "WR-2025-026",
+    "type": "Top 10"
   }
 }
 
@@ -5888,9 +6070,10 @@ export default function CertificateVerification() {
   const extractCertId = (text: string): string | null => 
   {
     const patterns = [
-   /DLG\/HO25\/PART\/\d{3}/g,   // matches DLG/HO25/PART/001
+   /DLG\/HO25\/PART\/\d{3}/g,   
    /DLG\/HO25\/PRT\/\d{4}/g,
    /DLG\/HO25\/MNT\/\d{4}/g,
+   /DLG\/HO25\/(WIN|RUN|APR)\/\d{3,4}/g,
    /KR-\d{4}-\d{3}/g,
    /KR-\d{4}-M\d{3}/g,
    /KR-[A-Z0-9]{4}-\d{4}/g,
