@@ -5820,6 +5820,7 @@ const certData = {
 interface VerificationResult {
   isValid: boolean
   certId?: string
+  name?: string; 
   team?: string
   refNo?: string
   type?: string
