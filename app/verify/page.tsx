@@ -5885,14 +5885,16 @@ export default function CertificateVerification() {
   }, [mounted])
 
   // Extract certificate ID from text using regex
-  const extractCertId = (text: string): string | null => {
+  const extractCertId = (text: string): string | null => 
+  {
     const patterns = [
-      /DLG\/HO25\/PRT\/\d{4}/g,
-      /DLG\/HO25\/MNT\/\d{4}/g,
-      /KR-\d{4}-\d{3}/g,
-      /KR-\d{4}-M\d{3}/g,
-      /KR-[A-Z0-9]{4}-\d{4}/g,
-    ]
+   /DLG\/HO25\/PART\/\d{3}/g,   // matches DLG/HO25/PART/001
+   /DLG\/HO25\/PRT\/\d{4}/g,
+   /DLG\/HO25\/MNT\/\d{4}/g,
+   /KR-\d{4}-\d{3}/g,
+   /KR-\d{4}-M\d{3}/g,
+   /KR-[A-Z0-9]{4}-\d{4}/g,
+   ]
 
     for (const pattern of patterns) {
       const matches = text.match(pattern)
@@ -6463,7 +6465,85 @@ export default function CertificateVerification() {
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               </Card>
 
-            
+              {/* File Upload */}
+              <Card className="group relative bg-black/40 border-purple-500/30 backdrop-blur-xl hover:border-purple-400/60 transition-all duration-500 hover:scale-105 hover:-translate-y-1 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <CardHeader className="relative">
+                  <div className="relative mb-4">
+                    <Upload className="h-8 w-8 text-purple-400 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12" />
+                    <div className="absolute inset-0 bg-purple-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  <CardTitle className="text-purple-300 font-mono text-xl group-hover:text-purple-200 transition-colors duration-300">
+                    Upload Certificate Image
+                  </CardTitle>
+                  <CardDescription className="text-purple-200/60 font-mono">
+                    <span className="text-purple-400">{">"}</span> Upload image for automatic OCR verification
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="relative">
+                  {/* Drop Zone */}
+                  <div
+                    ref={dropZoneRef}
+                    onDragOver={handleDragOver}
+                    onDragLeave={handleDragLeave}
+                    onDrop={handleDrop}
+                    className={`border-2 border-dashed rounded-lg p-8 text-center transition-all duration-300 cursor-pointer ${
+                      isDragOver
+                        ? "border-purple-400 bg-purple-500/20 scale-105"
+                        : "border-purple-500/50 hover:border-purple-400 hover:bg-purple-500/10"
+                    }`}
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    <div className="space-y-4">
+                      <div className="flex justify-center">
+                        {file ? (
+                          <ImageIcon className="w-12 h-12 text-purple-400 animate-bounce" />
+                        ) : (
+                          <Upload className="w-12 h-12 text-purple-400 animate-pulse" />
+                        )}
+                      </div>
+                      <div>
+                        <p className="text-purple-300 font-mono font-semibold">
+                          {file ? file.name : "Drop certificate image here or click to upload"}
+                        </p>
+                        <p className="text-purple-200/60 font-mono text-sm mt-2">
+                          <span className="text-purple-400">{">"}</span> Supports JPG, PNG, WEBP files (max 10MB)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/jpeg,image/jpg,image/png,image/webp"
+                    onChange={(e) => e.target.files && handleFileSelect(e.target.files[0])}
+                    className="hidden"
+                  />
+
+                  {/* Processing Progress */}
+                  {isProcessing && (
+                    <div className="mt-4 space-y-2">
+                      <div className="flex justify-between text-sm text-purple-300 font-mono">
+                        <span>
+                          <span className="text-purple-400">{">"}</span> Processing with OCR...
+                        </span>
+                        <span>{Math.round(progress)}%</span>
+                      </div>
+                      <div className="w-full bg-purple-900/30 rounded-full h-3 overflow-hidden">
+                        <div
+                          className="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full transition-all duration-300 animate-pulse"
+                          style={{ width: `${progress}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              </Card>
+
+              
+            </div>
 
             {/* Results Section */}
             <div className="space-y-6">

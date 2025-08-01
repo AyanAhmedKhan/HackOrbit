@@ -516,35 +516,49 @@ export default function HackOrbitLanding() {
             </div>
 
             {/* Post Hackathon Update */}
-            <div className="animate-fade-in-up text-center" style={{ animationDelay: "0.8s" }}>
-              <h2 className="text-3xl font-bold text-cyan-400 mb-4 font-mono">HACKATHON 2025 - WRAP UP</h2>
-              <p className="text-xl text-blue-100/80 font-mono mb-6">
-                <span className="text-blue-400">{">"}</span> Thank you for making HackOrbit 2025 a success!
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                <div className="p-4 bg-blue-500/10 rounded-xl border border-blue-500/30">
-                  <h4 className="text-xl font-semibold text-blue-300 font-mono">Total Registrations</h4>
-                  <p className="text-2xl font-bold text-blue-400 font-mono">2.5K</p>
-                </div>
-                <div className="p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
-                  <h4 className="text-xl font-semibold text-purple-300 font-mono">Total Teams</h4>
-                  <p className="text-2xl font-bold text-purple-400 font-mono">1.3K</p>
-                </div>
-                <div className="p-4 bg-cyan-500/10 rounded-xl border border-cyan-500/30">
-                  <h4 className="text-xl font-semibold text-cyan-300 font-mono">Total Views</h4>
-                  <p className="text-2xl font-bold text-cyan-400 font-mono">162.7K+</p>
-                </div>
-              </div>
-              <p className="text-base text-green-200/80 font-mono mt-6">
-                <span className="text-green-400">{">"}</span> Overall Rating: 4.3
-              </p>
-              <p className="text-base text-yellow-200/80 font-mono mt-4">
-                <span className="text-yellow-400">{">"}</span> See you next year!
-              </p>
-              <Link href="/verify" className="text-base text-orange-200/80 font-mono mt-4 hover:underline">
-                <span className="text-orange-400">{">"}</span> Verify your certificates
-              </Link>
-            </div>
+            {/* Post Hackathon Update */}
+<div className="animate-fade-in-up text-center" style={{ animationDelay: "0.8s" }}>
+  <h2 className="text-4xl font-extrabold text-cyan-400 mb-6 font-mono tracking-wide">
+    HACKATHON 2025 - WRAP UP
+  </h2>
+
+  <p className="text-xl text-blue-100/90 font-mono mb-8">
+    <span className="text-blue-400">{">"}</span> Thank you for making HackOrbit 2025 a success!
+  </p>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-6">
+    <div className="p-6 bg-blue-500/10 rounded-2xl border border-blue-500/30 shadow-md hover:shadow-blue-400/10 transition">
+      <h4 className="text-xl font-semibold text-blue-300 font-mono mb-1">Total Registrations</h4>
+      <p className="text-3xl font-bold text-blue-400 font-mono">2.5K</p>
+    </div>
+    <div className="p-6 bg-purple-500/10 rounded-2xl border border-purple-500/30 shadow-md hover:shadow-purple-400/10 transition">
+      <h4 className="text-xl font-semibold text-purple-300 font-mono mb-1">Total Teams</h4>
+      <p className="text-3xl font-bold text-purple-400 font-mono">1.3K</p>
+    </div>
+    <div className="p-6 bg-cyan-500/10 rounded-2xl border border-cyan-500/30 shadow-md hover:shadow-cyan-400/10 transition">
+      <h4 className="text-xl font-semibold text-cyan-300 font-mono mb-1">Total Views</h4>
+      <p className="text-3xl font-bold text-cyan-400 font-mono">162.7K+</p>
+    </div>
+  </div>
+
+  <p className="text-base text-green-200/80 font-mono mt-4">
+    <span className="text-green-400">{">"}</span> Overall Rating: 4.3
+  </p>
+  <p className="text-base text-yellow-200/80 font-mono mt-2">
+    <span className="text-yellow-400">{">"}</span> See you next year!
+  </p>
+
+  {/* Highlighted CTA */}
+  <div className="mt-8 flex justify-center">
+    <Link
+      href="/verify"
+      className="bg-orange-400/20 hover:bg-orange-400/30 text-orange-300 border border-orange-400/40 font-mono px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 shadow-md hover:shadow-orange-400/10"
+    >
+      <span className="text-orange-100">{">"}</span> Verify Your Certificates
+    </Link>
+  </div>
+</div>
+
           </header>
         </section>
 
