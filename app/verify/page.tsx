@@ -26,14 +26,14 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 
 // Certificate data
 const certData = {
-  "DLG/HO25/PRT/0001": { team: "TechVoyagers", verified: true, refNo: "KR-2025-001", type: "Participation" },
-  "DLG/HO25/PRT/0002": { team: "ByteGuardians", verified: true, refNo: "KR-2025-002", type: "Participation" },
-  "DLG/HO25/PRT/0003": { team: "CryptoCloak", verified: true, refNo: "KR-2025-003", type: "Winner" },
-  "DLG/HO25/PRT/0004": { team: "DataDynamos", verified: true, refNo: "KR-2025-004", type: "Runner-up" },
-  "DLG/HO25/PRT/0005": { team: "CodeCrafters", verified: true, refNo: "KR-2025-005", type: "Participation" },
-  "DLG/HO25/MNT/0001": { team: "Dr. Sarah Johnson", verified: true, refNo: "KR-2025-M001", type: "Mentor" },
-  "DLG/HO25/MNT/0002": { team: "Alex Chen", verified: true, refNo: "KR-2025-M002", type: "Mentor" },
-  "DLG/HO25/MNT/0003": { team: "Priya Sharma", verified: true, refNo: "KR-2025-M003", type: "Mentor" },
+  "DLG/HO25/PRT/0001": { name: "Rahul Singh", team: "TechVoyagers", verified: true, refNo: "KR-2025-001", type: "Participation" },
+  "DLG/HO25/PRT/0002": { name: "Rahul Singh",team: "ByteGuardians", verified: true, refNo: "KR-2025-002", type: "Participation" },
+  "DLG/HO25/PRT/0003": { name: "Rahul Singh",team: "CryptoCloak", verified: true, refNo: "KR-2025-003", type: "Winner" },
+  "DLG/HO25/PRT/0004": { name: "Rahul Singh",team: "DataDynamos", verified: true, refNo: "KR-2025-004", type: "Runner-up" },
+  "DLG/HO25/PRT/0005": { name: "Rahul Singh",team: "CodeCrafters", verified: true, refNo: "KR-2025-005", type: "Participation" },
+  "DLG/HO25/MNT/0001": { name: "Rahul Singh",team: "Dr. Sarah Johnson", verified: true, refNo: "KR-2025-M001", type: "Mentor" },
+  "DLG/HO25/MNT/0002": { name: "Rahul Singh",team: "Alex Chen", verified: true, refNo: "KR-2025-M002", type: "Mentor" },
+  "DLG/HO25/MNT/0003": { name: "Rahul Singh",team: "Priya Sharma", verified: true, refNo: "KR-2025-M003", type: "Mentor" },
 }
 
 interface VerificationResult {
@@ -135,6 +135,7 @@ export default function CertificateVerification() {
       return {
         isValid: true,
         certId,
+        name: cert.name,
         team: cert.team,
         refNo: cert.refNo,
         type: cert.type,
@@ -481,6 +482,7 @@ export default function CertificateVerification() {
               verificationResult.isValid
                 ? `
               ${verificationResult.certId ? `<div class="details"><span class="detail-label">Certificate ID:</span> <span class="detail-value">${verificationResult.certId}</span></div>` : ""}
+              ${verificationResult.name ? `<div class="details"><span class="detail-label">Participant Name:</span> <span class="detail-value">${verificationResult.name}</span></div>` : ""}
               ${verificationResult.type ? `<div class="details"><span class="detail-label">Certificate Type:</span> <span class="detail-value">${verificationResult.type}</span></div>` : ""}
               ${verificationResult.team ? `<div class="details"><span class="detail-label">${verificationResult.type === "Mentor" ? "Mentor Name:" : "Team Name:"}</span> <span class="detail-value">${verificationResult.team}</span></div>` : ""}
               ${verificationResult.refNo ? `<div class="details"><span class="detail-label">Reference Number:</span> <span class="detail-value">${verificationResult.refNo}</span></div>` : ""}
@@ -887,6 +889,13 @@ export default function CertificateVerification() {
                             <span className="text-green-300 font-mono font-bold">{verificationResult.type}</span>
                           </div>
                         )}
+
+                        {verificationResult.name && (
+  <div className="flex justify-between items-center p-4 bg-black/40 rounded-lg border border-green-500/20 backdrop-blur-sm hover:bg-green-500/5 transition-colors duration-300">
+    <span className="text-green-200/80 font-mono">Participant Name:</span>
+    <span className="text-green-300 font-mono font-bold">{verificationResult.name}</span>
+  </div>
+)}
 
                         {verificationResult.team && (
                           <div className="flex justify-between items-center p-4 bg-black/40 rounded-lg border border-green-500/20 backdrop-blur-sm hover:bg-green-500/5 transition-colors duration-300">
