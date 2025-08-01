@@ -20,7 +20,6 @@ import {
   MessageCircle,
   Instagram,
   Linkedin,
-  Gift,
 } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -229,7 +228,6 @@ function CountdownTimer() {
             className="group relative bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-400 hover:to-orange-400 text-white font-bold text-lg px-10 py-4 border-0 shadow-2xl shadow-red-500/30 transition-all duration-500 hover:scale-110 hover:shadow-red-500/50 overflow-hidden animate-bounce"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            <Rocket className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:rotate-45" />
             REGISTER NOW - LIMITED TIME!
           </Button>
         </a>
@@ -395,10 +393,10 @@ export default function HackOrbitLanding() {
 
               {/* Navigation Links */}
               <div className="hidden md:flex space-x-8">
-                {["ABOUT", "THEMES", "TIMELINE", "PRIZES", "SPONSORS"].map((item, index) => (
+                {["ABOUT", "THEMES", "TIMELINE", "PRIZES", "SPONSORS", "VERIFY"].map((item, index) => (
                   <Link
                     key={item}
-                    href={item === "SPONSORS" ? "/sponsors" : `#${item.toLowerCase()}`}
+                    href={item === "SPONSORS" ? "/sponsors" : item === "VERIFY" ? "/verify" : `#${item.toLowerCase()}`}
                     className="relative text-blue-300/80 hover:text-blue-300 transition-all duration-300 font-mono group animate-slide-down"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
@@ -502,51 +500,51 @@ export default function HackOrbitLanding() {
 
               {/* VIEW DETAILS -> Also Link */}
               <a
-                href="https://drive.google.com/file/d/14dVBFQR8T85xsLRKa3N6KIRYwOcy0TRr/view?usp=sharing"
+                href="https://drive.google.com/file/d/1FOG948ASQkglfG2p144GINlzujupjcnf/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button
                   size="lg"
                   variant="outline"
-                  className="group border-2 border-purple-500/50 text-purple-300 hover:bg-purple-500/20 text-lg px-10 py-4 font-mono backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-500/25"
+                  className="group border-2 border-purple-500/50 text-purple-300 hover:bg-purple-500/20 text-lg px-10 py-4 font-mono backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-500/25 bg-transparent"
                 >
                   <ExternalLink className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" />
                   VIEW DETAILS
                 </Button>
               </a>
             </div>
-            <div
-              className="animate-fade-in-up grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16"
-              style={{ animationDelay: "0.8s" }}
-            >
-              {[
-                { number: "36-HOUR", label: "HACKATHON", color: "blue", icon: Clock },
-                { number: "₹2.5 Lakhs+", label: "PRIZE POOL", color: "purple", icon: Trophy },
-                { number: "4", label: "MAX TEAM SIZE", color: "cyan", icon: Users },
-                { number: "NATIONAL", label: "LEVEL", color: "green", icon: Globe },
-              ].map((stat, index) => (
-                <div
-                  key={stat.label}
-                  className={`group relative p-6 bg-${stat.color}-500/10 rounded-2xl border border-${stat.color}-500/30 backdrop-blur-sm hover:bg-${stat.color}-500/20 transition-all duration-500 hover:scale-110 hover:rotate-1 cursor-pointer animate-slide-up`}
-                  style={{ animationDelay: `${0.8 + index * 0.1}s` }}
-                >
-                  <div
-                    className={`absolute inset-0 rounded-2xl bg-${stat.color}-400/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse`}
-                  ></div>
-                  <stat.icon
-                    className={`w-6 h-6 text-${stat.color}-400 mb-2 mx-auto transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12`}
-                  />
-                  <div
-                    className={`text-2xl font-bold text-${stat.color}-400 font-mono transition-all duration-300 group-hover:scale-110`}
-                  >
-                    {stat.number}
-                  </div>
-                  <div className={`text-${stat.color}-200/60 font-mono text-sm`}>{stat.label}</div>
+
+            {/* Post Hackathon Update */}
+            <div className="animate-fade-in-up text-center" style={{ animationDelay: "0.8s" }}>
+              <h2 className="text-3xl font-bold text-cyan-400 mb-4 font-mono">HACKATHON 2025 - WRAP UP</h2>
+              <p className="text-xl text-blue-100/80 font-mono mb-6">
+                <span className="text-blue-400">{">"}</span> Thank you for making HackOrbit 2025 a success!
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <div className="p-4 bg-blue-500/10 rounded-xl border border-blue-500/30">
+                  <h4 className="text-xl font-semibold text-blue-300 font-mono">Total Registrations</h4>
+                  <p className="text-2xl font-bold text-blue-400 font-mono">2.5K</p>
                 </div>
-              ))}
+                <div className="p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
+                  <h4 className="text-xl font-semibold text-purple-300 font-mono">Total Teams</h4>
+                  <p className="text-2xl font-bold text-purple-400 font-mono">1.3K</p>
+                </div>
+                <div className="p-4 bg-cyan-500/10 rounded-xl border border-cyan-500/30">
+                  <h4 className="text-xl font-semibold text-cyan-300 font-mono">Total Views</h4>
+                  <p className="text-2xl font-bold text-cyan-400 font-mono">162.7K+</p>
+                </div>
+              </div>
+              <p className="text-base text-green-200/80 font-mono mt-6">
+                <span className="text-green-400">{">"}</span> Overall Rating: 4.3
+              </p>
+              <p className="text-base text-yellow-200/80 font-mono mt-4">
+                <span className="text-yellow-400">{">"}</span> See you next year!
+              </p>
+              <Link href="/verify" className="text-base text-orange-200/80 font-mono mt-4 hover:underline">
+                <span className="text-orange-400">{">"}</span> Verify your certificates
+              </Link>
             </div>
-            <CountdownTimer />
           </header>
         </section>
 
@@ -955,368 +953,6 @@ export default function HackOrbitLanding() {
           </div>
         </section>
 
- <section id="prizes" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
-          <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-orange-500/5 backdrop-blur-3xl"></div>
-          <div className="max-w-7xl mx-auto relative">
-            {/* Header */}
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
-                PRIZES & REWARDS
-              </h2>
-              <p className="text-xl text-yellow-100/80 font-mono mb-8">
-                <span className="text-yellow-400">{">"}</span> COMPREHENSIVE REWARD ECOSYSTEM FOR ALL PARTICIPANTS
-              </p>
-            </div>
-
-            {/* Total Value Showcase */}
-            <div className="relative mb-20">
-              <div className="bg-gradient-to-br from-yellow-500/20 via-orange-500/20 to-red-500/20 backdrop-blur-xl border-2 border-yellow-400/50 rounded-3xl p-12 max-w-5xl mx-auto relative overflow-hidden group shadow-2xl shadow-yellow-500/20">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-orange-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                {/* Floating decorative elements */}
-                <div className="absolute top-4 right-4 w-20 h-20 bg-yellow-400/20 rounded-full blur-xl animate-pulse"></div>
-                <div
-                  className="absolute bottom-4 left-4 w-16 h-16 bg-orange-400/20 rounded-full blur-xl animate-pulse"
-                  style={{ animationDelay: "1s" }}
-                ></div>
-
-                <div className="relative text-center">
-                  <div className="flex items-center justify-center mb-6">
-                    <Trophy className="w-16 h-16 text-yellow-400 animate-bounce" />
-                  </div>
-
-                  <h3 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-yellow-300 via-yellow-400 to-orange-400 bg-clip-text text-transparent font-mono mb-4 animate-gradient-x">
-                    ₹2.5+ LAKHS
-                  </h3>
-
-                  <p className="text-2xl text-yellow-200 font-mono font-semibold mb-6">COMBINED ESTIMATED VALUE</p>
-
-                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-yellow-400/30">
-                    <p className="text-yellow-100/90 font-mono text-lg leading-relaxed">
-                      <span className="text-yellow-400 font-bold">🔹</span> Includes ₹15000+ cash prizes, premium
-                      goodies, platform credits, learning resources, and exclusive offers
-                    </p>
-                    <p className="text-yellow-200/70 font-mono text-sm mt-3 italic">
-                      * Value is cumulative across all participants. Individual rewards may vary based on sponsor terms
-                      and availability.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Top Winners Section */}
-            <div className="mb-20">
-              <div className="text-center mb-12">
-                <h3 className="text-4xl font-bold text-orange-400 mb-4 font-mono">TOP 10 WINNERS</h3>
-                <p className="text-orange-200/80 font-mono text-lg">
-                  <span className="text-orange-400">{">"}</span> Exclusive rewards for the best performing teams
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                {/* 1st Place */}
-                <Card className="group relative bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-400/50 backdrop-blur-xl hover:border-yellow-300/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden shadow-2xl hover:shadow-yellow-500/30 ring-2 ring-yellow-400/30">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                  <CardHeader className="text-center relative pb-4 px-4">
-                    <div className="relative mb-4">
-                      <div className="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full bg-gradient-to-br from-yellow-400/30 to-orange-400/30 flex items-center justify-center border-2 border-yellow-400/50 group-hover:border-yellow-300/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                        <Trophy className="w-8 h-8 md:w-12 md:h-12 text-yellow-300 transition-all duration-500 group-hover:scale-110" />
-                      </div>
-                      <div className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">
-                        1ST
-                      </div>
-                    </div>
-
-                    <CardTitle className="text-yellow-300 font-mono text-xl md:text-2xl group-hover:text-yellow-200 transition-colors duration-300 mb-2">
-                      FIRST PLACE
-                    </CardTitle>
-
-                    <div className="text-2xl md:text-3xl font-bold text-yellow-400 font-mono mb-4">₹7000</div>
-                  </CardHeader>
-
-                  <CardContent className="relative text-center px-4 pb-6">
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-xs md:text-sm">
-                        <Award className="w-3 h-3 md:w-4 md:h-4 mr-2 text-yellow-400 flex-shrink-0" />
-                        <span>Hardcopy Certificate</span>
-                      </div>
-                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-xs md:text-sm">
-                        <Gift className="w-3 h-3 md:w-4 md:h-4 mr-2 text-yellow-400 flex-shrink-0" />
-                        <span>Premium Goodies & Merch</span>
-                      </div>
-                      <div className="flex items-center justify-center text-yellow-200/90 font-mono text-xs md:text-sm">
-                        <Target className="w-3 h-3 md:w-4 md:h-4 mr-2 text-yellow-400 flex-shrink-0" />
-                        <span>Exclusive Platform Credits</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* 2nd Place */}
-                <Card className="group relative bg-gradient-to-br from-gray-400/20 to-gray-500/20 border-2 border-gray-400/50 backdrop-blur-xl hover:border-gray-300/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden shadow-2xl hover:shadow-gray-500/30">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-400/20 to-gray-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                  <CardHeader className="text-center relative pb-4 px-4">
-                    <div className="relative mb-4">
-                      <div className="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full bg-gradient-to-br from-gray-400/30 to-gray-500/30 flex items-center justify-center border-2 border-gray-400/50 group-hover:border-gray-300/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                        <Award className="w-8 h-8 md:w-12 md:h-12 text-gray-300 transition-all duration-500 group-hover:scale-110" />
-                      </div>
-                      <div className="absolute -top-2 -right-2 bg-gray-400 text-black text-xs font-bold px-2 py-1 rounded-full">
-                        2ND
-                      </div>
-                    </div>
-
-                    <CardTitle className="text-gray-300 font-mono text-xl md:text-2xl group-hover:text-gray-200 transition-colors duration-300 mb-2">
-                      SECOND PLACE
-                    </CardTitle>
-
-                    <div className="text-2xl md:text-3xl font-bold text-gray-400 font-mono mb-4">₹5000</div>
-                  </CardHeader>
-
-                  <CardContent className="relative text-center px-4 pb-6">
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-xs md:text-sm">
-                        <Award className="w-3 h-3 md:w-4 md:h-4 mr-2 text-gray-400 flex-shrink-0" />
-                        <span>Hardcopy Certificate</span>
-                      </div>
-                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-xs md:text-sm">
-                        <Gift className="w-3 h-3 md:w-4 md:h-4 mr-2 text-gray-400 flex-shrink-0" />
-                        <span>Premium Goodies & Merch</span>
-                      </div>
-                      <div className="flex items-center justify-center text-gray-200/90 font-mono text-xs md:text-sm">
-                        <Target className="w-3 h-3 md:w-4 md:h-4 mr-2 text-gray-400 flex-shrink-0" />
-                        <span>Platform Credits</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* 3rd Place */}
-                <Card className="group relative bg-gradient-to-br from-orange-600/20 to-yellow-600/20 border-2 border-orange-500/50 backdrop-blur-xl hover:border-orange-400/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden shadow-2xl hover:shadow-orange-500/30">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                  <CardHeader className="text-center relative pb-4 px-4">
-                    <div className="relative mb-4">
-                      <div className="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full bg-gradient-to-br from-orange-500/30 to-yellow-500/30 flex items-center justify-center border-2 border-orange-500/50 group-hover:border-orange-400/70 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                        <Award className="w-8 h-8 md:w-12 md:h-12 text-orange-400 transition-all duration-500 group-hover:scale-110" />
-                      </div>
-                      <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                        3RD
-                      </div>
-                    </div>
-
-                    <CardTitle className="text-orange-400 font-mono text-xl md:text-2xl group-hover:text-orange-300 transition-colors duration-300 mb-2">
-                      THIRD PLACE
-                    </CardTitle>
-
-                    <div className="text-2xl md:text-3xl font-bold text-orange-400 font-mono mb-4">₹3000</div>
-                  </CardHeader>
-
-                  <CardContent className="relative text-center px-4 pb-6">
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-xs md:text-sm">
-                        <Award className="w-3 h-3 md:w-4 md:h-4 mr-2 text-orange-400 flex-shrink-0" />
-                        <span>Hardcopy Certificate</span>
-                      </div>
-                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-xs md:text-sm">
-                        <Gift className="w-3 h-3 md:w-4 md:h-4 mr-2 text-orange-400 flex-shrink-0" />
-                        <span>Premium Goodies & Merch</span>
-                      </div>
-                      <div className="flex items-center justify-center text-orange-200/90 font-mono text-xs md:text-sm">
-                        <Target className="w-3 h-3 md:w-4 md:h-4 mr-2 text-orange-400 flex-shrink-0" />
-                        <span>Platform Credits</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Top 4-10 Winners */}
-              <div className="max-w-4xl mx-auto">
-                <Card className="group relative bg-black/60 border-purple-500/40 backdrop-blur-xl hover:border-purple-400/70 transition-all duration-500 hover:scale-102 overflow-hidden shadow-lg hover:shadow-purple-500/25">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/15 to-blue-500/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                  <CardHeader className="text-center relative pb-6 px-4 md:px-6">
-                    <div className="relative mb-4 md:mb-6">
-                      <div className="w-16 h-16 md:w-20 md:h-20 mx-auto rounded-2xl bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center border border-purple-400/30 group-hover:border-purple-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
-                        <Users className="w-8 h-8 md:w-10 md:h-10 text-purple-400 transition-all duration-500 group-hover:scale-110" />
-                      </div>
-                    </div>
-
-                    <CardTitle className="text-purple-300 font-mono text-xl md:text-2xl group-hover:text-purple-200 transition-colors duration-300 mb-4">
-                      4TH - 10TH PLACE WINNERS
-                    </CardTitle>
-
-                    <p className="text-purple-100/80 font-mono text-base md:text-lg leading-relaxed mb-6">
-                      7 additional teams receive exclusive winner packages
-                    </p>
-                  </CardHeader>
-
-                  <CardContent className="relative px-4 md:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6">
-                      <div className="text-center p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
-                        <Award className="w-6 h-6 md:w-8 md:h-8 text-purple-400 mx-auto mb-3" />
-                        <h4 className="text-purple-300 font-mono font-semibold mb-2 text-sm md:text-base">
-                          Hardcopy Certificates
-                        </h4>
-                        <p className="text-purple-200/70 font-mono text-xs md:text-sm">
-                          Official winner certificates with unique verification
-                        </p>
-                      </div>
-
-                      <div className="text-center p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
-                        <Gift className="w-6 h-6 md:w-8 md:h-8 text-purple-400 mx-auto mb-3" />
-                        <h4 className="text-purple-300 font-mono font-semibold mb-2 text-sm md:text-base">
-                          Premium Goodies
-                        </h4>
-                        <p className="text-purple-200/70 font-mono text-xs md:text-sm">
-                          Branded merchandise and tech accessories
-                        </p>
-                      </div>
-
-                      <div className="text-center p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
-                        <Zap className="w-6 h-6 md:w-8 md:h-8 text-purple-400 mx-auto mb-3" />
-                        <h4 className="text-purple-300 font-mono font-semibold mb-2 text-sm md:text-base">
-                          Platform Credits
-                        </h4>
-                        <p className="text-purple-200/70 font-mono text-xs md:text-sm">
-                          Exclusive access to premium development tools
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Guaranteed Rewards for All Participants */}
-            <div className="mb-20">
-              <div className="text-center mb-12">
-                <h3 className="text-4xl font-bold text-green-400 mb-4 font-mono">GUARANTEED FOR ALL PARTICIPANTS</h3>
-                <p className="text-green-200/80 font-mono text-lg">
-                  <span className="text-green-400">{">"}</span> Every Final Round registered participant receives these valuable
-                  rewards
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                {[
-                  {
-                    icon: Award,
-                    title: "Digital Certificates",
-                    description: "Official participation certificates with unique verification codes",
-                    features: ["Blockchain verified", "LinkedIn shareable", "Industry recognized"],
-                    color: "green",
-                  },
-                  {
-                    icon: Target,
-                    title: "Exclusive Discounts",
-                    description: "Premium discount codes from our technology partners",
-                    features: ["Up to 70% off courses", "Platform subscriptions", "Development tools"],
-                    color: "blue",
-                  },
-                  {
-                    icon: Zap,
-                    title: "Platform Credits",
-                    description: "Credits for premium development and learning platforms",
-                    features: ["Cloud computing credits", "API access tokens", "Premium subscriptions"],
-                    color: "purple",
-                  },
-                  {
-                    icon: Code,
-                    title: "Learning Resources",
-                    description: "Access to premium educational content and resources",
-                    features: ["Expert-led workshops", "Technical documentation", "Career guidance"],
-                    color: "cyan",
-                  },
-                ].map((reward, index) => (
-                  <Card
-                    key={reward.title}
-                    className={`group relative bg-black/60 border-${reward.color}-500/40 backdrop-blur-xl hover:border-${reward.color}-400/70 transition-all duration-500 hover:scale-105 hover:-translate-y-3 overflow-hidden cursor-pointer shadow-lg hover:shadow-${reward.color}-500/25 animate-slide-up h-full`}
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br from-${reward.color}-500/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                    ></div>
-
-                    <CardHeader className="text-center relative pb-4 px-4">
-                      <div className="relative mb-4 md:mb-6">
-                        <div
-                          className={`w-16 h-16 md:w-20 md:h-20 mx-auto rounded-2xl bg-gradient-to-br from-${reward.color}-500/20 to-${reward.color}-600/20 flex items-center justify-center border border-${reward.color}-400/30 group-hover:border-${reward.color}-400/60 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}
-                        >
-                          <reward.icon
-                            className={`w-8 h-8 md:w-10 md:h-10 text-${reward.color}-400 transition-all duration-500 group-hover:scale-110`}
-                          />
-                        </div>
-                        <div
-                          className={`absolute inset-0 bg-${reward.color}-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse`}
-                        ></div>
-                      </div>
-
-                      <CardTitle
-                        className={`text-${reward.color}-300 font-mono text-lg md:text-xl group-hover:text-${reward.color}-200 transition-colors duration-300 mb-3`}
-                      >
-                        {reward.title}
-                      </CardTitle>
-
-                      <p className={`text-${reward.color}-100/80 font-mono text-xs md:text-sm leading-relaxed`}>
-                        {reward.description}
-                      </p>
-                    </CardHeader>
-
-                    <CardContent className="relative pt-0 px-4">
-                      <div className="space-y-2">
-                        {reward.features.map((feature, featureIndex) => (
-                          <div
-                            key={featureIndex}
-                            className={`flex items-center text-${reward.color}-200/70 font-mono text-xs`}
-                          >
-                            <div className={`w-1.5 h-1.5 bg-${reward.color}-400 rounded-full mr-3 flex-shrink-0`}></div>
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-
-                    <div
-                      className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-${reward.color}-500 to-${reward.color}-300 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
-                    ></div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="text-center">
-              <div className="bg-black/60 backdrop-blur-xl border border-yellow-400/30 rounded-2xl p-6 md:p-8 max-w-3xl mx-auto">
-                <h4 className="text-xl md:text-2xl font-bold text-yellow-300 mb-4 font-mono">
-                  Join the Ultimate Tech Showdown – Win Rewards Worth ₹ 2.5 Lakhs+
-                </h4>
-                <p className="text-yellow-100/80 font-mono mb-6 leading-relaxed text-sm md:text-base">
-                  Join HackOrbit 2025 and compete for cash prizes, hardcopy certificates, premium goodies, and access to
-                  our comprehensive reward ecosystem worth over ₹2.5 Lakhs.
-                </p>
-                <a
-                  href="https://unstop.com/o/wYNVQPM?lb=aDpL27B4&utm_medium=Share&utm_source=shortUrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button
-                    size="lg"
-                    className="group relative bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-black font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 border-0 shadow-2xl shadow-yellow-500/30 transition-all duration-500 hover:scale-110 hover:shadow-yellow-500/50 overflow-hidden w-full sm:w-auto"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                    <Trophy className="w-4 h-4 md:w-5 md:h-5 mr-2 transition-transform duration-300 group-hover:rotate-12" />
-                    REGISTER NOW & WIN PRIZES
-                  </Button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="sponsors" className="py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5 backdrop-blur-3xl"></div>
           <div className="max-w-7xl mx-auto text-center relative">
@@ -1413,7 +1049,7 @@ export default function HackOrbitLanding() {
                   role: "🌐 WEB INNOVATION PARTNER",
                   desc: "Next Generation Domain Solutions",
                   logo: "https://i.ibb.co/F4B2s9bS/xyzdownload-5.png",
-                  link: "https://gen.xyz/"
+                  link: "https://gen.xyz/",
                 },
                 {
                   name: "CODECRAFTERS",
@@ -1534,125 +1170,252 @@ export default function HackOrbitLanding() {
 
         {/* Organizing Committee Section */}
         {/* Organizing Committee Section */}
-{/* Organizing Committee Section */}
-<section id="team" className="overflow-x-hidden py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
-  <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 backdrop-blur-3xl"></div>
-  <div className="max-w-7xl mx-auto text-center relative">
-    <h2 className="text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
-      ORGANIZING COMMITTEE
-    </h2>
-    <p className="text-xl text-green-100/80 mb-12 font-mono">
-      <span className="text-green-400">{">"}</span> MEET THE MINDS BEHIND HACKORBIT
-    </p>
-
-    {(() => {
-      const teamMembers = [
-        { row: 1, name: "Dr. Punit Kumar Johari", role: "COORDINATOR", organization: "DLG Club", color: "purple", icon: Rocket, imageUrl: "https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg", portfolioUrl: "https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/" },
-        { row: 2, name: "Shiv Shrivastava", role: "PRESIDENT", organization: "DLG Club", color: "blue", icon: Users, imageUrl: "https://i.ibb.co/XfmvcnqP/download.jpg", portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/" },
-        { row: 2, name: "Pooja Bhagel", role: "VICE PRESIDENT", organization: "DLG Club", color: "indigo", icon: Award, imageUrl: "https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg", portfolioUrl: "https://www.linkedin.com/in/pooja-baghel-6a8913251/" },
-        { row: 2, name: "Tanmay Garg", role: "MANAGEMENT HEAD", organization: "DLG Club", color: "emerald", icon: Target, imageUrl: "https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg", portfolioUrl: "https://www.linkedin.com/in/tanmaygarg926/" },
-        { row: 2, name: "Shivraj Singh", role: "TECHNICAL HEAD", organization: "DLG Club", color: "cyan", icon: Code, imageUrl: "https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg", portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/" },
-        { row: 2, name: "Prashant Pippal", role: "MARKETING HEAD", organization: "DLG Club", color: "orange", icon: Zap, imageUrl: "https://i.ibb.co/5hdxZp1h/Prashant-pippal-promotion-headjpg.jpg", portfolioUrl: "https://www.linkedin.com/in/prashant-pippal-759325292/" },
-        { row: 3, name: "Riya Payak", role: "MARKETING HEAD", organization: "DLG Club", color: "teal", icon: Globe, imageUrl: "https://i.ibb.co/35CSbJvf/Riya-payak-promotion-head.jpg", portfolioUrl: null },
-        { row: 3, name: "Yashshav Khandelwal", role: "CONTENT HEAD", organization: "DLG Club", color: "yellow", icon: Trophy, imageUrl: "https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg", portfolioUrl: null },
-        { row: 3, name: "Sanjay Singh Lodhi", role: "Video Editing Head", organization: "DLG Club", color: "pink", icon: MessageCircle, imageUrl: "https://i.ibb.co/SX2PSkHX/sanjaysingh.jpg", portfolioUrl: "https://www.linkedin.com/in/sanjay-lodhi-8b5458209/" },
-        { row: 3, name: "AYAN AHMED KHAN", role: "WEB DEVELOPER", organization: "DLG Club", color: "green", icon: Globe, imageUrl: "https://ayanahmedkhan.live/assets/image/image.png", portfolioUrl: "https://ayanahmedkhan.live", isSpecial: true },
-        { row: 3, name: "Gagandeep Kushwah", role: "EXECUTIVE MEMBER", organization: "DLG Club", color: "violet", icon: Zap, imageUrl: "https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png", portfolioUrl: "https://www.linkedin.com/in/gagandeepkushwah730221b/" }
-      ];
-
-      const membersByRow = teamMembers.reduce((acc, member) => {
-        if (!acc[member.row]) acc[member.row] = [];
-        acc[member.row].push(member);
-        return acc;
-      }, {});
-
-      const colorMap = (color) => ({
-        border: `border-${color}-500/30 hover:border-${color}-400/60`,
-        shadow: `hover:shadow-${color}-500/20`,
-        bgGradient: `from-${color}-500`,
-        hoverGradient: `hover:from-${color}-400`,
-        textMain: `text-${color}-300`,
-        textHover: `group-hover:text-${color}-200`,
-        textSub: `text-${color}-200/80`,
-        textOrg: `text-${color}-200/60`,
-        ringBorder: `border-${color}-400/50 group-hover:border-${color}-400`,
-        blurBg: `bg-${color}-400/20`,
-        shadowColor: `shadow-${color}-500/25`
-      });
-
-      const renderMemberCard = (member, index) => {
-        const styles = colorMap(member.color);
-        return (
-          <Card
-            key={`${member.name}-${index}`}
-            className={`w-full max-w-[11rem] sm:max-w-[13rem] group relative bg-black/40 backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 overflow-hidden
-              ${member.isSpecial
-                ? "border-yellow-400/60 hover:border-yellow-300 ring-2 ring-yellow-400/30 shadow-2xl shadow-yellow-500/20"
-                : `${styles.border} ${styles.shadow}`}`}
-          >
-            {member.isSpecial && (
-              <div className="absolute -top-2 -right-2 z-10">
-                <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold text-xs px-2 py-1 animate-pulse">
-                  ⭐ CREATOR
-                </Badge>
-              </div>
-            )}
-            <div className={`absolute inset-0 bg-gradient-to-br ${styles.bgGradient} ${member.isSpecial ? "to-yellow-500/20" : "to-blue-500/10"} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-            <CardHeader className="text-center relative p-4">
-              <div className="relative mb-3">
-                <div className={`w-16 h-16 mx-auto rounded-full ${member.imageUrl ? "overflow-hidden" : `bg-gradient-to-r from-${member.color}-400 to-blue-400 flex items-center justify-center`} ${styles.ringBorder} transition-all duration-500 group-hover:scale-110 ${member.isSpecial ? "ring-2 ring-yellow-400/50" : ""}`}>
-                  {member.imageUrl
-                    ? <img src={member.imageUrl || "/placeholder.svg"} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
-                    : <member.icon className="w-6 h-6 text-black" />}
-                </div>
-                <div className={`absolute inset-0 ${styles.blurBg} rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${member.isSpecial ? "animate-pulse" : ""}`} />
-              </div>
-              <CardTitle className={`text-sm font-mono mb-1 ${styles.textMain} ${styles.textHover}`}>{member.name}</CardTitle>
-              <CardDescription className={`text-xs font-mono mb-1 ${styles.textSub}`}>{member.role}</CardDescription>
-              <CardDescription className={`text-xs font-mono ${styles.textOrg}`}>{member.organization}</CardDescription>
-            </CardHeader>
-            {member.portfolioUrl && (
-              <CardContent className="text-center relative p-2">
-                <div className="flex justify-center space-x-1">
-                  <Button
-                    size="sm"
-                    className={`group/btn text-black font-bold border-0 shadow-lg overflow-hidden text-xs px-2 py-1 transition-all duration-300 hover:scale-105 bg-gradient-to-r ${styles.bgGradient} ${member.isSpecial ? "to-yellow-500 hover:to-yellow-400" : "to-blue-500 hover:to-blue-400"} ${styles.hoverGradient} ${styles.shadowColor}`}
-                    onClick={() => window.open(member.portfolioUrl, "_blank")}
-                  >
-                    <Linkedin className="w-3 h-3 mr-1" /> LinkedIn
-                  </Button>
-                </div>
-              </CardContent>
-            )}
-            <div className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r ${styles.bgGradient} ${member.isSpecial ? "to-yellow-500" : "to-blue-500"} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
-          </Card>
-        );
-      };
-
-      return (
-        <>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {membersByRow[1]?.map(renderMemberCard)}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto justify-items-center w-full px-4">
-            {[...(membersByRow[2] || []), ...(membersByRow[3] || [])].map(renderMemberCard)}
-          </div>
-          <div className="mt-8">
-            <p className="text-green-100/60 font-mono text-sm">
-              <span className="text-green-400">{">"}</span> Dedicated team working together to make HackOrbit a success<br />
-              <span className="text-green-400">{">"}</span> Bringing innovation and excellence to Central India's biggest hackathon<br />
-              <span className="text-green-400">{">"}</span> Huge shoutout to all the DLG team — especially our juniors 👏 Kudos to you all!<br />
-              <span className="text-green-400">{">"}</span> Special appreciation to <strong className="text-green-300">Ayan Ahmed Khan</strong> for leading the web development of this HackOrbit platform 🚀
+        <section id="team" className="overflow-x-hidden py-20 px-4 sm:px-6 lg:px-8 relative scroll-animate">
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-blue-500/5 backdrop-blur-3xl"></div>
+          <div className="max-w-7xl mx-auto text-center relative">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent mb-6 font-mono hover:scale-105 transition-transform duration-300 cursor-default">
+              ORGANIZING COMMITTEE
+            </h2>
+            <p className="text-xl text-green-100/80 mb-12 font-mono">
+              <span className="text-green-400">{">"}</span> MEET THE MINDS BEHIND HACKORBIT
             </p>
+
+            {(() => {
+              const teamMembers = [
+                {
+                  row: 1,
+                  name: "Dr. Punit Kumar Johari",
+                  role: "COORDINATOR",
+                  organization: "DLG Club",
+                  color: "purple",
+                  icon: Rocket,
+                  imageUrl: "https://i.ibb.co/8gqrX4Jy/punit-kumar-johari-coordinator.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/dr-punit-kumar-johari-a9624068/",
+                },
+                {
+                  row: 2,
+                  name: "Shiv Shrivastava",
+                  role: "PRESIDENT",
+                  organization: "DLG Club",
+                  color: "blue",
+                  icon: Users,
+                  imageUrl: "https://i.ibb.co/XfmvcnqP/download.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/shiv-shrivastava-4137bb268/",
+                },
+                {
+                  row: 2,
+                  name: "Pooja Bhagel",
+                  role: "VICE PRESIDENT",
+                  organization: "DLG Club",
+                  color: "indigo",
+                  icon: Award,
+                  imageUrl: "https://i.ibb.co/Q3Bj3M8H/Pooja-Baghel-vice-president.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/pooja-baghel-6a8913251/",
+                },
+                {
+                  row: 2,
+                  name: "Tanmay Garg",
+                  role: "MANAGEMENT HEAD",
+                  organization: "DLG Club",
+                  color: "emerald",
+                  icon: Target,
+                  imageUrl: "https://i.ibb.co/nqM5vKDL/Tanmay-garg-management-head.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/tanmaygarg926/",
+                },
+                {
+                  row: 2,
+                  name: "Shivraj Singh",
+                  role: "TECHNICAL HEAD",
+                  organization: "DLG Club",
+                  color: "cyan",
+                  icon: Code,
+                  imageUrl: "https://i.ibb.co/Xk6Y2xhH/Shivraj-singh-technical-head.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/shivrajsingh435/",
+                },
+                {
+                  row: 2,
+                  name: "Prashant Pippal",
+                  role: "MARKETING HEAD",
+                  organization: "DLG Club",
+                  color: "orange",
+                  icon: Zap,
+                  imageUrl: "https://i.ibb.co/5hdxZp1h/Prashant-pippal-promotion-headjpg.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/prashant-pippal-759325292/",
+                },
+                {
+                  row: 3,
+                  name: "Riya Payak",
+                  role: "MARKETING HEAD",
+                  organization: "DLG Club",
+                  color: "teal",
+                  icon: Globe,
+                  imageUrl: "https://i.ibb.co/35CSbJvf/Riya-payak-promotion-head.jpg",
+                  portfolioUrl: null,
+                },
+                {
+                  row: 3,
+                  name: "Yashshav Khandelwal",
+                  role: "CONTENT HEAD",
+                  organization: "DLG Club",
+                  color: "yellow",
+                  icon: Trophy,
+                  imageUrl: "https://i.ibb.co/7dGQVb36/yashshav-khandelwal-content-head.jpg",
+                  portfolioUrl: null,
+                },
+                {
+                  row: 3,
+                  name: "Sanjay Singh Lodhi",
+                  role: "Video Editing Head",
+                  organization: "DLG Club",
+                  color: "pink",
+                  icon: MessageCircle,
+                  imageUrl: "https://i.ibb.co/SX2PSkHX/sanjaysingh.jpg",
+                  portfolioUrl: "https://www.linkedin.com/in/sanjay-lodhi-8b5458209/",
+                },
+                {
+                  row: 3,
+                  name: "AYAN AHMED KHAN",
+                  role: "WEB DEVELOPER",
+                  organization: "DLG Group",
+                  color: "green",
+                  icon: Globe,
+                  imageUrl: "https://ayanahmedkhan.live/assets/image/image.png",
+                  portfolioUrl: "https://ayanahmedkhan.live",
+                  isSpecial: true,
+                },
+                {
+                  row: 3,
+                  name: "Gagandeep Kushwah",
+                  role: "EXECUTIVE MEMBER",
+                  organization: "DLG Club",
+                  color: "violet",
+                  icon: Zap,
+                  imageUrl: "https://i.ibb.co/yBqSN8sH/Gagandeep-Kushwah.png",
+                  portfolioUrl: "https://www.linkedin.com/in/gagandeepkushwah730221b/",
+                },
+              ]
+
+              const membersByRow = teamMembers.reduce((acc, member) => {
+                if (!acc[member.row]) acc[member.row] = []
+                acc[member.row].push(member)
+                return acc
+              }, {})
+
+              const colorMap = (color) => ({
+                border: `border-${color}-500/30 hover:border-${color}-400/60`,
+                shadow: `hover:shadow-${color}-500/20`,
+                bgGradient: `from-${color}-500`,
+                hoverGradient: `hover:from-${color}-400`,
+                textMain: `text-${color}-300`,
+                textHover: `group-hover:text-${color}-200`,
+                textSub: `text-${color}-200/80`,
+                textOrg: `text-${color}-200/60`,
+                ringBorder: `border-${color}-400/50 group-hover:border-${color}-400`,
+                blurBg: `bg-${color}-400/20`,
+                shadowColor: `shadow-${color}-500/25`,
+              })
+
+              const renderMemberCard = (member, index) => {
+                const styles = colorMap(member.color)
+                return (
+                  <Card
+                    key={`${member.name}-${index}`}
+                    className={`w-full max-w-[11rem] sm:max-w-[13rem] group relative bg-black/40 backdrop-blur-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 overflow-hidden
+              ${
+                member.isSpecial
+                  ? "border-yellow-400/60 hover:border-yellow-300 ring-2 ring-yellow-400/30 shadow-2xl shadow-yellow-500/20"
+                  : `${styles.border} ${styles.shadow}`
+              }`}
+                  >
+                    {member.isSpecial && (
+                      <div className="absolute -top-2 -right-2 z-10">
+                        <Badge className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-bold text-xs px-2 py-1 animate-pulse">
+                          ⭐ CREATOR
+                        </Badge>
+                      </div>
+                    )}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${styles.bgGradient} ${member.isSpecial ? "to-yellow-500/20" : "to-blue-500/10"} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                    />
+                    <CardHeader className="text-center relative p-4">
+                      <div className="relative mb-3">
+                        <div
+                          className={`w-16 h-16 mx-auto rounded-full ${member.imageUrl ? "overflow-hidden" : `bg-gradient-to-r from-${member.color}-400 to-blue-400 flex items-center justify-center`} ${styles.ringBorder} transition-all duration-500 group-hover:scale-110 ${member.isSpecial ? "ring-2 ring-yellow-400/50" : ""}`}
+                        >
+                          {member.imageUrl ? (
+                            <img
+                              src={member.imageUrl || "/placeholder.svg"}
+                              alt={member.name}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <member.icon className="w-6 h-6 text-black" />
+                          )}
+                        </div>
+                        <div
+                          className={`absolute inset-0 ${styles.blurBg} rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${member.isSpecial ? "animate-pulse" : ""}`}
+                        />
+                      </div>
+                      <CardTitle className={`text-sm font-mono mb-1 ${styles.textMain} ${styles.textHover}`}>
+                        {member.name}
+                      </CardTitle>
+                      <CardDescription className={`text-xs font-mono mb-1 ${styles.textSub}`}>
+                        {member.role}
+                      </CardDescription>
+                      <CardDescription className={`text-xs font-mono ${styles.textOrg}`}>
+                        {member.organization}
+                      </CardDescription>
+                    </CardHeader>
+                    {member.portfolioUrl && (
+                      <CardContent className="text-center relative p-2">
+                        <div className="flex justify-center space-x-1">
+                          <Button
+                            size="sm"
+                            className={`group/btn text-black font-bold border-0 shadow-lg overflow-hidden text-xs px-2 py-1 transition-all duration-300 hover:scale-105 bg-gradient-to-r ${styles.bgGradient} ${member.isSpecial ? "to-yellow-500 hover:to-yellow-400" : "to-blue-500 hover:to-blue-400"} ${styles.hoverGradient} ${styles.shadowColor}`}
+                            onClick={() => window.open(member.portfolioUrl, "_blank")}
+                          >
+                            <Linkedin className="w-3 h-3 mr-1" /> LinkedIn
+                          </Button>
+                        </div>
+                      </CardContent>
+                    )}
+                    <div
+                      className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r ${styles.bgGradient} ${member.isSpecial ? "to-yellow-500" : "to-blue-500"} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
+                    />
+                  </Card>
+                )
+              }
+
+              return (
+                <>
+                  <div className="flex flex-wrap justify-center gap-4 mb-8">
+                    {membersByRow[1]?.map(renderMemberCard)}
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto justify-items-center w-full px-4">
+                    {[...(membersByRow[2] || []), ...(membersByRow[3] || [])].map(renderMemberCard)}
+                  </div>
+                  <div className="mt-8">
+                    <p className="text-green-100/60 font-mono text-sm">
+                      <span className="text-green-400">{">"}</span> Dedicated team working together to make HackOrbit a
+                      success
+                      <br />
+                      <span className="text-green-400">{">"}</span> Bringing innovation and excellence to Central
+                      India's biggest hackathon
+                      <br />
+                      <span className="text-green-400">{">"}</span> Huge shoutout to all the DLG team — especially our
+                      juniors 👏 Kudos to you all!
+                      <br />
+                      <span className="text-green-400">{">"}</span> Special appreciation to{" "}
+                      <strong className="text-green-300">Ayan Ahmed Khan</strong> for leading the web development of
+                      this HackOrbit platform 🚀
+                    </p>
+                  </div>
+                </>
+              )
+            })()}
           </div>
-        </>
-      );
-    })()}
-  </div>
-</section>
-
-
-
+        </section>
 
         <section
           id="faq"
